@@ -1,0 +1,17 @@
+.header{
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    margin: 49px 38px 35px 77px;
+  }
+
+  &__logo{
+    &-svg{
+      
+    }
+  }
+}
