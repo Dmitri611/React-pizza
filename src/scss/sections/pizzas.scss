@@ -1,0 +1,29 @@
+.pizzas {
+  padding: 40px 0;
+  width: 100%;
+  font-family: 'Proxima Nova', sans-serif;
+  user-select: none;
+
+  &__container {
+    max-width: 1445px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    }
+
+  &__title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  &__content {
+    padding-top: 50px;
+    flex-wrap: wrap;
+    min-height: 625px;
+    height: 100%;
+    display: flex;
+    gap: 65px 15px;
+  }
+}

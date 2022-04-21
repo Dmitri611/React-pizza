@@ -1,0 +1,144 @@
+.pizza {
+  max-width: 340px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &__image {
+    width: 90%;
+    margin: 5% 0px 0px 5%;
+    transition-duration: .25s;
+
+    &:hover {
+      transform: translateY(5px);
+    }
+
+    &-wrapper {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 10px;
+  }
+
+  &__ingredients {
+    display: flex;
+    background-color: var(--color-pizza-bg);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 77px;
+    height: 100%;
+    text-align: start;
+    padding: 6px;
+  }
+
+  &__params {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-pizza-bg);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px;
+    gap: 5px;
+  }
+
+  &__list {
+    display: flex;
+
+    &-item {
+      padding: 8px;
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      cursor: pointer;
+
+      &--active {
+        cursor: auto;
+      }
+
+      &--active,
+      &:hover {
+        background-color: var(--color-button-text);
+        box-shadow: var(--shadow-1);
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    &-price {
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 27px;
+      letter-spacing: 0.015em;
+    }
+  }
+
+  &__button {
+    background-color: var(--color-button-text);
+    cursor: pointer;
+    border: 1px solid var(--color-bg-button);
+    padding: 11px 16px; 
+    border-radius: 30px;
+    color: var(--color-bg-button);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    &:hover {
+      background-color: var(--color-bg-button);
+      color: var(--color-button-text);
+
+      .pizza__button-span {
+        &::after {
+          color: var(--color-bg-button);
+          background-color: var(--color-button-text);
+        }
+      }
+    }
+
+    &:active {
+      background-color: var(--color-bg-button--hover);
+      transform: translateY(1px);
+    }
+
+    &-span {
+      &::before {
+        content: '+';
+        width: 12px;
+        height: 12px;
+        margin-right: 10px;
+      }
+
+      &::after {
+        content: '0';
+        color: var(--color-button-text);
+        width: 22px;
+        height: 22px;
+        border-radius: 30px;
+        display: inline-block;
+        background-color: var(--color-bg-button);
+        padding-top: 2px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
