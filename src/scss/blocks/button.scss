@@ -1,0 +1,31 @@
+.button{
+  padding: 15px 30px;
+  border: none;
+  background-color: var(--color-bg-button);
+  color: var(--color-button-text);
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 13px;
+    padding: 12px 25px;
+  }
+
+  &:hover {
+    background-color: var(--color-bg-button--hover);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &__container{
+    display: flex;
+    gap: 10px;
+  }
+}

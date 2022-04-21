@@ -1,0 +1,66 @@
+.category{
+  max-width: 1920px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: 'Proxima Nova', sans-serif;
+  user-select: none;
+  margin: 0 auto;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1410px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    flex-wrap: wrap;
+    padding-right: 20px;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 13px;
+      gap: 10px;
+    }
+
+    &-item {
+      padding: 13px 30px;
+      border-radius: 30px;
+      transition: background-color 0.1s ease-in-out;
+      background-color: var(--color-bg-list-item);
+      cursor: pointer;
+
+      @include media-breakpoint-down(xl) {
+        padding: 10px 25px;
+      }
+
+      &:hover {
+        background-color: var(--color-bg-list-item--hover);
+      }
+
+      &:active {
+        background-color: var(--color-bg-list-item--active);
+      }
+
+      &--active {
+        background-color: var(--color-bg-list-item-active);
+        color: var(--color-button-text);
+        cursor: auto;
+        
+        &:hover {
+          background-color: var(--color-bg-list-item-active);
+        }
+      }
+    }
+  }
+
+  &__sort {
+    
+  }
+}

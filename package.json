@@ -10,10 +10,7 @@
     "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
-    "@popperjs/core": "^2.9.3",
-    "bootstrap": "^5.1.0",
-    "modern-normalize": "^1.1.0",
-    "yarn": "^1.22.18"
+    "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
