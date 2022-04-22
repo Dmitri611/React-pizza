@@ -59,6 +59,11 @@
       @include media-breakpoint-down(lg) {
         display: flex;
       }
+
+      @include media-breakpoint-down(md) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 

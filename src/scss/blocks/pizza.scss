@@ -10,6 +10,10 @@
   padding-left: 30px;
   padding-right: 30px;
 
+  @include media-breakpoint-down(lg) {
+    cursor: auto;
+  }
+
   &__image {
     width: 90%;
     margin: 5% 0px 0px 5%;
@@ -91,6 +95,10 @@
       line-height: 27px;
       letter-spacing: 0.015em;
       white-space: nowrap;
+
+      @include media-breakpoint-down(md) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -104,6 +112,11 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      padding: 7px 10px;
+    }
 
     &:hover {
       background-color: var(--color-bg-button);
