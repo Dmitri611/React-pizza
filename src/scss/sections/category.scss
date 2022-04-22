@@ -24,6 +24,10 @@
     flex-wrap: wrap;
     padding-right: 20px;
 
+    @include media-breakpoint-down(lg){
+      display: none;
+    }
+
     @include media-breakpoint-down(xl) {
       font-size: 13px;
       gap: 10px;
@@ -35,10 +39,6 @@
       transition: background-color 0.1s ease-in-out;
       background-color: var(--color-bg-list-item);
       cursor: pointer;
-
-      @include media-breakpoint-down(xl) {
-        padding: 10px 25px;
-      }
 
       &:hover {
         background-color: var(--color-bg-list-item--hover);
@@ -61,6 +61,18 @@
   }
 
   &__sort {
-    
+    white-space: nowrap;
+
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+    }
+  }
+}
+
+.dropdown {
+  display: none;
+
+  @include media-breakpoint-down(lg){
+    display: flex;
   }
 }

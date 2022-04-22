@@ -12,6 +12,10 @@
     display: flex;
     padding: 29px 25px 35px 25px;
     align-items: center;
+
+    @include media-breakpoint-down(md) {
+      padding: 10px;
+    }
   }
 
   &__logo{
@@ -20,14 +24,18 @@
     text-align: center;
     padding-right: 40px;
 
+    @include media-breakpoint-down(md) {
+      padding-right: 10px;
+    }
+
     &-desc{
       font-family: 'Proxima Nova', sans-serif;
       font-size: 16px;
       line-height: 19px;
       color: var(--color-logo-description);
 
-      @include media-breakpoint-down(xl) {
-        font-size: 13px;
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
       }
     }
   }
@@ -38,8 +46,19 @@
     gap: 40px;
     justify-content: flex-end;
 
-    @include media-breakpoint-down(xl) {
-      gap: 25px;
+    &-svg {
+      display: none;
+      width: 40px;  
+      height: 40px;
+      cursor: pointer;
+      margin-top: 5px;
+      &:hover {
+        fill: var(--color-bg-button);
+      }
+
+      @include media-breakpoint-down(lg) {
+        display: flex;
+      }
     }
   }
 
@@ -49,6 +68,10 @@
     cursor: pointer;
     padding-right: 20px;
     padding-top: 20px;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
     
     &-input{
       border-bottom: 1px solid var(--color-bg-button);
