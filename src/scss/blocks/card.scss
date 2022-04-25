@@ -1,4 +1,20 @@
-.pizza {
+#type1,
+#type2,
+#type3,
+#type4,
+#type5{
+  display: none;
+
+  &:checked {
+    &~.card__list-label {
+      background-color: var(--color-button-text);
+      box-shadow: var(--shadow-1);
+      border-radius: 5px;
+    }
+  }
+}
+
+.card {
   max-width: 340px;
   width: 100%;
   text-align: center;
@@ -62,19 +78,22 @@
 
   &__list {
     display: flex;
+    gap: 5px;
 
     &-item {
-      padding: 8px;
-      display: flex;
       flex-grow: 1;
-      justify-content: center;
+      display: flex;
+    }
+
+    &-label {
+      padding: 8px;
+      flex-grow: 1;
       cursor: pointer;
 
       &--active {
         cursor: auto;
       }
 
-      &--active,
       &:hover {
         background-color: var(--color-button-text);
         box-shadow: var(--shadow-1);
@@ -123,7 +142,7 @@
       background-color: var(--color-bg-button);
       color: var(--color-button-text);
 
-      .pizza__button-span {
+      .card__button-span {
         &::after {
           color: var(--color-bg-button);
           background-color: var(--color-button-text);
