@@ -10,8 +10,8 @@ $font-url: "../../fonts/";
 // }
 
 @font-face {
-  font-family: 'Proxima Nova Th';
-  src: url("#{$font-url}/ProximaNova/ProximaNova-Extrabld.woff2") format('woff2');
+  font-family: "Proxima Nova Th";
+  src: url("#{$font-url}/ProximaNova/ProximaNova-Extrabld.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -80,7 +80,6 @@ $font-url: "../../fonts/";
 //   font-style: normal;
 //   font-display: swap;
 // }
-
 
 // @font-face {
 //   font-family: 'Roboto';
@@ -177,6 +176,3 @@ $font-url: "../../fonts/";
 //   font-style: normal;
 //   font-display: swap;
 // }
-
-
-

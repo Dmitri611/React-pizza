@@ -2,10 +2,10 @@
   display: none;
 
   &:checked {
-    &~.header__profile-popup {
+    & ~ .header__profile-popup {
       display: flex;
     }
-    &~.header__profile-label {
+    & ~ .header__profile-label {
       svg {
         fill: var(--color-bg-button);
       }
@@ -13,27 +13,28 @@
   }
 }
 
-.header{
+.header {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
   user-select: none;
   border-bottom: 1px solid var(--color-bottom-line);
 
-  &__container{
+  &__container {
     max-width: 1800px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     padding: 29px 25px 35px 25px;
     align-items: center;
+    gap: 30px;
 
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(md) {
       padding: 0 5px;
     }
   }
 
-  &__logo{
+  &__logo {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -43,12 +44,12 @@
       padding-right: 20px;
     }
 
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(md) {
       padding-right: 0;
     }
 
-    &-desc{
-      font-family: 'Proxima Nova', sans-serif;
+    &-desc {
+      font-family: "Proxima Nova", sans-serif;
       font-size: 16px;
       line-height: 19px;
       color: var(--color-logo-description);
@@ -63,7 +64,7 @@
     }
   }
 
-  &__nav{
+  &__nav {
     display: flex;
     width: 100%;
     gap: 40px;
@@ -74,16 +75,16 @@
     }
   }
 
-  &__search{
+  &__search {
     display: flex;
     align-items: flex-end;
     cursor: pointer;
     padding-right: 20px;
     max-width: 200px;
     width: 100%;
-    font-family: 'Proxima Nova', sans-serif;
-    
-    &-input{
+    font-family: "Proxima Nova", sans-serif;
+
+    &-input {
       border-bottom: 1px solid var(--color-bg-button);
       all: unset;
       color: var(--color-bg-button);
@@ -91,7 +92,7 @@
       width: 100%;
       font-size: 15px;
 
-      &:last-child{
+      &:last-child {
         width: 24px;
         height: 20px;
       }
@@ -125,7 +126,7 @@
 
     &-label {
       display: flex;
-      width: 45px;  
+      width: 45px;
       height: 45px;
       cursor: pointer;
       padding: 10px;
@@ -133,7 +134,7 @@
         fill: var(--color-bg-button);
       }
 
-      @include media-breakpoint-down(md){
+      @include media-breakpoint-down(md) {
         height: 35px;
         width: 35px;
         padding: 7px;
@@ -141,7 +142,7 @@
     }
 
     &-popup {
-      font-family: 'Proxima Nova';
+      font-family: "Proxima Nova";
       display: none;
       position: absolute;
       flex-direction: column;
@@ -154,7 +155,7 @@
       top: 40px;
       font-size: 17px;
 
-      @include media-breakpoint-down(md){
+      @include media-breakpoint-down(md) {
         font-size: 14px;
       }
     }

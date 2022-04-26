@@ -3,11 +3,11 @@
 #nav3,
 #nav4,
 #nav5,
-#nav6{
+#nav6 {
   display: none;
 
   &:checked {
-    &~.content-navigation__label{
+    & ~ .content-navigation__label {
       background-color: var(--color-bg-list-item-active);
       color: var(--color-button-text);
       cursor: auto;
@@ -17,7 +17,7 @@
 
 .content {
   width: 100%;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   user-select: none;
   padding-top: 40px;
   display: flex;
@@ -35,7 +35,7 @@
     padding-bottom: 56px;
   }
 
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(md) {
     padding-bottom: 36px;
   }
 
@@ -63,7 +63,7 @@
         font-size: 14px;
       }
 
-      @include media-breakpoint-down(md){
+      @include media-breakpoint-down(md) {
         font-size: 11px;
       }
     }
@@ -79,8 +79,8 @@
         padding: 8px 18px;
       }
 
-      @include media-breakpoint-down(md){
-        max-width: 6px 12px
+      @include media-breakpoint-down(md) {
+        max-width: 6px 12px;
       }
 
       &:hover {
@@ -102,7 +102,7 @@
     margin-top: 32px;
     flex-direction: column;
 
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(md) {
       margin-top: 25px;
     }
 
@@ -115,7 +115,7 @@
         font-size: 28px;
       }
 
-      @include media-breakpoint-down(md){
+      @include media-breakpoint-down(md) {
         font-size: 21px;
       }
     }
@@ -130,16 +130,16 @@
       margin-left: auto;
       margin-right: auto;
 
-      @include media-breakpoint-down(xl){
+      @include media-breakpoint-down(xl) {
         max-width: 910px;
       }
 
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(lg) {
         max-width: 670px;
         gap: 45px 15px;
       }
 
-      @include media-breakpoint-down(md){
+      @include media-breakpoint-down(md) {
         margin-top: 25px;
         max-width: 330px;
         gap: 25px 10px;

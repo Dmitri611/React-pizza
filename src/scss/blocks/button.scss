@@ -1,9 +1,9 @@
-.button{
+.button {
   padding: 15px 30px;
   border: none;
   background-color: var(--color-bg-button);
   color: var(--color-button-text);
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
@@ -28,7 +28,7 @@
     }
   }
 
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(md) {
     font-size: 10px;
     padding: 9px 15px;
   }
