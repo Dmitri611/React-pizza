@@ -123,10 +123,6 @@
       flex-grow: 1;
       cursor: pointer;
 
-      &--active {
-        cursor: auto;
-      }
-
       &:hover {
         background-color: var(--color-button-text);
         box-shadow: var(--shadow-1);
