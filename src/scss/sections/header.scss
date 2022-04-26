@@ -123,12 +123,12 @@
       display: inline-block;
     }
 
-    &-svg {
+    &-label {
       display: flex;
-      width: 30px;  
-      height: 30px;
+      width: 45px;  
+      height: 45px;
       cursor: pointer;
-      margin-top: 5px;
+      padding: 10px;
       &:hover {
         fill: var(--color-bg-button);
       }
