@@ -5,8 +5,8 @@
     &~.header__profile-popup {
       display: flex;
     }
-    &~label {
-      .header__profile-svg {
+    &~.header__profile-label {
+      svg {
         fill: var(--color-bg-button);
       }
     }
