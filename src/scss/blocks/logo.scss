@@ -11,11 +11,15 @@
   padding-right: 20px;
   white-space: nowrap;
 
-  @include media-breakpoint-down(md) {
-    font-size: 17px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+  @include media-breakpoint-down(xl) {
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: 16px;
   }
 
   &-svg{

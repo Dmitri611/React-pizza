@@ -29,11 +29,27 @@
   margin-right: auto;
   padding-bottom: 96px;
 
+  @include media-breakpoint-down(lg) {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 56px;
+  }
+
+  @include media-breakpoint-down(md){
+    padding-bottom: 36px;
+  }
+
   &-navigation {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
 
     &__list {
       display: flex;
@@ -42,6 +58,14 @@
       font-size: 15px;
       flex-wrap: wrap;
       padding-right: 20px;
+
+      @include media-breakpoint-down(xl) {
+        font-size: 14px;
+      }
+
+      @include media-breakpoint-down(md){
+        font-size: 11px;
+      }
     }
 
     &__label {
@@ -50,6 +74,14 @@
       transition: background-color 0.1s ease-in-out;
       background-color: var(--color-bg-list-item);
       cursor: pointer;
+
+      @include media-breakpoint-down(xl) {
+        padding: 8px 18px;
+      }
+
+      @include media-breakpoint-down(md){
+        max-width: 6px 12px
+      }
 
       &:hover {
         background-color: var(--color-bg-list-item--hover);
@@ -70,23 +102,48 @@
     margin-top: 32px;
     flex-direction: column;
 
+    @include media-breakpoint-down(md){
+      margin-top: 25px;
+    }
+
     &__title {
       font-weight: bold;
       font-size: 32px;
       line-height: 39px;
+
+      @include media-breakpoint-down(xl) {
+        font-size: 28px;
+      }
+
+      @include media-breakpoint-down(md){
+        font-size: 21px;
+      }
     }
 
     &__container {
       display: flex;
-      gap: 65px 15px;
+      gap: 65px 35px;
       margin-top: 35px;
       flex-wrap: wrap;
-      max-width: 1445px;
+      max-width: 1225px;
       width: 100%;
       margin-left: auto;
       margin-right: auto;
-      padding-left: 20px;
-      padding-right: 20px;
+
+      @include media-breakpoint-down(xl){
+        max-width: 910px;
+      }
+
+      @include media-breakpoint-down(lg){
+        max-width: 670px;
+        gap: 45px 15px;
+      }
+
+      @include media-breakpoint-down(md){
+        margin-top: 25px;
+        max-width: 330px;
+        gap: 25px 10px;
+      }
     }
   }
 }

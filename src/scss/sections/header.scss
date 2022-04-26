@@ -1,3 +1,18 @@
+#profile {
+  display: none;
+
+  &:checked {
+    &~.header__profile-popup {
+      display: flex;
+    }
+    &~label {
+      .header__profile-svg {
+        fill: var(--color-bg-button);
+      }
+    }
+  }
+}
+
 .header{
   max-width: 1920px;
   width: 100%;
@@ -13,8 +28,8 @@
     padding: 29px 25px 35px 25px;
     align-items: center;
 
-    @include media-breakpoint-down(md) {
-      padding: 10px;
+    @include media-breakpoint-down(md){
+      padding: 0 5px;
     }
   }
 
@@ -24,8 +39,12 @@
     text-align: center;
     padding-right: 40px;
 
-    @include media-breakpoint-down(md) {
-      padding-right: 10px;
+    @include media-breakpoint-down(xl) {
+      padding-right: 20px;
+    }
+
+    @include media-breakpoint-down(md){
+      padding-right: 0;
     }
 
     &-desc{
@@ -34,8 +53,12 @@
       line-height: 19px;
       color: var(--color-logo-description);
 
-      @include media-breakpoint-down(md) {
-        font-size: 14px;
+      @include media-breakpoint-down(xl) {
+        font-size: 15px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        font-size: 12px;
       }
     }
   }
@@ -46,24 +69,8 @@
     gap: 40px;
     justify-content: flex-end;
 
-    &-svg {
-      display: none;
-      width: 40px;  
-      height: 40px;
-      cursor: pointer;
-      margin-top: 5px;
-      &:hover {
-        fill: var(--color-bg-button);
-      }
-
-      @include media-breakpoint-down(lg) {
-        display: flex;
-      }
-
-      @include media-breakpoint-down(md) {
-        width: 30px;
-        height: 30px;
-      }
+    @include media-breakpoint-down(xl) {
+      gap: 20px;
     }
   }
 
@@ -71,16 +78,93 @@
     display: flex;
     align-items: flex-end;
     cursor: pointer;
-
-    @include media-breakpoint-down(lg) {
-      display: none;
-    }
+    padding-right: 20px;
+    max-width: 200px;
+    width: 100%;
+    font-family: 'Proxima Nova', sans-serif;
     
     &-input{
       border-bottom: 1px solid var(--color-bg-button);
       all: unset;
       color: var(--color-bg-button);
       padding: 10px;
+      width: 100%;
+      font-size: 15px;
+
+      &:last-child{
+        width: 24px;
+        height: 20px;
+      }
+
+      @include media-breakpoint-down(xl) {
+        padding: 5px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        padding: 2px;
+        font-size: 13px;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      max-width: 150px;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  &__profile {
+    display: none;
+    position: relative;
+
+    @include media-breakpoint-down(lg) {
+      display: inline-block;
+    }
+
+    &-svg {
+      display: flex;
+      width: 30px;  
+      height: 30px;
+      cursor: pointer;
+      margin-top: 5px;
+      &:hover {
+        fill: var(--color-bg-button);
+      }
+
+      @include media-breakpoint-down(md){
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    &-popup {
+      font-family: 'Proxima Nova';
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      box-shadow: var(--shadow-2);
+      border-radius: 10px;
+      background-color: var(--color-button-text);
+      padding-top: 13px;
+      padding-bottom: 9px;
+      right: 0;
+      top: 40px;
+      font-size: 17px;
+
+      @include media-breakpoint-down(md){
+        font-size: 14px;
+      }
+    }
+
+    &-link {
+      padding: 10px 14px;
+
+      &:hover {
+        background-color: var(--color-bg-sort);
+        color: var(--color-bg-button);
+      }
     }
   }
 }

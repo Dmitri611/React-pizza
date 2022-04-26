@@ -11,9 +11,26 @@
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 
-  @include media-breakpoint-down(md) {
-    font-size: 14px;
-    padding: 10px 20px;
+  @include media-breakpoint-down(xl) {
+    font-size: 15px;
+    padding: 12px 25px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: 13px;
+    padding: 9px 20px;
+
+    &:nth-child(2) {
+      display: none;
+    }
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(md){
+    font-size: 10px;
+    padding: 9px 15px;
   }
 
   &:hover {

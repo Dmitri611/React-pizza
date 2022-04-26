@@ -15,7 +15,7 @@
 }
 
 .card {
-  max-width: 340px;
+  max-width: 280px;
   width: 100%;
   text-align: center;
   display: flex;
@@ -23,11 +23,13 @@
   box-sizing: border-box;
   font-family: 'Proxima Nova', sans-serif;
   cursor: pointer;
-  padding-left: 30px;
-  padding-right: 30px;
 
   @include media-breakpoint-down(lg) {
-    cursor: auto;
+    max-width: 200px;
+  }
+
+  @include media-breakpoint-down(md){
+    max-width: 160px;
   }
 
   &__image {
@@ -49,6 +51,14 @@
     font-size: 20px;
     line-height: 24px;
     padding-bottom: 10px;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-down(md){
+      font-size: 15px;
+    }
   }
 
   &__ingredients {
@@ -62,6 +72,15 @@
     text-align: start;
     padding: 6px;
     color: var(--color-logo-description);
+
+    @include media-breakpoint-down(lg) {
+      font-size: 13px;
+    }
+
+    @include media-breakpoint-down(md){
+      font-size: 10px;
+      padding: 4px;
+    }
   }
 
   &__params {
@@ -74,11 +93,25 @@
     font-size: 14px;
     padding: 6px;
     gap: 5px;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+    }
+
+    @include media-breakpoint-down(md){
+      font-size: 10px;
+      padding: 4px;
+      gap: 3px;
+    }
   }
 
   &__list {
     display: flex;
     gap: 5px;
+
+    @include media-breakpoint-down(md){
+      gap: 3px;
+    }
 
     &-item {
       flex-grow: 1;
@@ -116,8 +149,12 @@
       letter-spacing: 0.015em;
       white-space: nowrap;
 
-      @include media-breakpoint-down(md) {
-        font-size: 18px;
+      @include media-breakpoint-down(lg) {
+        font-size: 17px;
+      }
+
+      @include media-breakpoint-down(md){
+        font-size: 12px;
       }
     }
   }
@@ -133,9 +170,13 @@
     font-size: 16px;
     line-height: 19px;
 
-    @include media-breakpoint-down(md) {
-      font-size: 14px;
-      padding: 7px 10px;
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      padding: 2px 5px;
+    }
+
+    @include media-breakpoint-down(md){
+      font-size: 9px;
     }
 
     &:hover {
@@ -161,6 +202,11 @@
         width: 12px;
         height: 12px;
         margin-right: 10px;
+
+        @include media-breakpoint-down(lg) {
+          width: 6px;
+          height: 6px;
+        }
       }
 
       &::after {
@@ -173,6 +219,12 @@
         background-color: var(--color-bg-button);
         padding-top: 2px;
         margin-left: 5px;
+
+        @include media-breakpoint-down(lg) {
+          width: 16px;
+          height: 16px;
+          padding-top: 0;
+        }
       }
     }
   }
