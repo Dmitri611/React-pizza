@@ -1,6 +1,12 @@
 #sort:checked {
-  &~.sort__content {
-    display: flex;
+  &~.sort__arrow:before {
+    transform: scale(1, -1);
+  }
+
+  &~.sort__popup{
+    .sort__content {
+      display: flex;
+    }
   }
 }
 
