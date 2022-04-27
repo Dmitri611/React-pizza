@@ -1,10 +1,16 @@
 $breakpoints: (
-  xs: $breakpoints-xs, //0px
-  sm: $breakpoints-sm, //375px
-  md: $breakpoints-md, //667px
-  lg: $breakpoints-lg, //977px
-  xl: $breakpoints-xl, //1292px
-  xxl: $breakpoints-xxl, //1920px
+  xs: $breakpoints-xs,
+  //0px
+  sm: $breakpoints-sm,
+  //375px
+  md: $breakpoints-md,
+  //667px
+  lg: $breakpoints-lg,
+  //977px
+  xl: $breakpoints-xl,
+  //1292px
+  xxl: $breakpoints-xxl,
+  //1920px
 );
 
 @mixin media-breakpoint-up($name, $grid-breakpoints: $breakpoints) {
