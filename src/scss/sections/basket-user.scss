@@ -1,0 +1,114 @@
+.basket-user {
+  width: 100%;
+  height: 100%;
+  font-family: "Proxima Nova", sans-serif;
+  user-select: none;
+  color: var(--color-logo-heading);
+
+  &__container {
+    height: 100%;
+    width: 100%;
+    max-width: 867px;
+    min-height: 830px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+
+    &-title {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+
+      &:before {
+        content: url("../../img//basket-user.svg");
+        width: 29px;
+        height: 29px;
+        margin-right: 17px;
+      }
+    }
+
+    &-clear {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-logo-description);
+      padding: 10px 20px;
+      cursor: pointer;
+
+      &:before {
+        content: url("../../img/basket-user-clear.svg");
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &-total {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 22px;
+      line-height: 27px;
+    }
+
+    &-span {
+      &::after {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      &:first-child::after{
+        content: "3 шт.";
+      }
+      
+      &:last-child::after {
+        content: '45 p';
+        color: var(--color-bg-button);
+      }
+    }
+
+    &-btns {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+}
