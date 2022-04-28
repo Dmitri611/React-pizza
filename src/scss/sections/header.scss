@@ -122,11 +122,11 @@
   }
 
   &__profile {
-    display: none;
+    display: flex;
     position: relative;
 
     @include media-breakpoint-down(lg) {
-      display: inline-block;
+      display: flex;
     }
 
     &-label {
@@ -136,7 +136,11 @@
       cursor: pointer;
       padding: 10px;
       &:hover {
-        fill: var(--color-bg-button);
+        svg {
+          path {
+            fill: var(--color-bg-button);
+          }
+        }
       }
 
       @include media-breakpoint-down(md) {
