@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
   font-size: 16px;
   font-weight: 700;
   gap: 30px;
@@ -44,5 +45,6 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
   }
 }
