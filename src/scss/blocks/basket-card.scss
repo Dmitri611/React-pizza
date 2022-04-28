@@ -8,6 +8,35 @@
   gap: 20px;
   justify-content: space-between;
 
+  &__btn {
+    border: 2px solid var(--color-bg-button);
+    color: var(--color-bg-button);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 23px;
+    padding: 1px 7.5px;
+
+    &:hover {
+      background-color: var(--color-bg-button);
+      color: var(--color-button-text);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &--green {
+      border-color: var(--color-bg-list-item--hover);
+      background-color: var(--color-button-text);
+      color: var(--color-bg-list-item--hover);
+
+      &:hover {
+        background-color: var(--color-button-text);
+        color: var(--color-bg-list-item--hover);
+      }
+    }
+  }
+
   &__product {
     display: flex;
     max-width: 375px;
@@ -45,35 +74,6 @@
   &__quantity {
     display: flex;
     align-items: center;
-
-    &-btn {
-      border: 2px solid var(--color-bg-button);
-      color: var(--color-bg-button);
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 23px;
-      padding: 1px 7.5px;
-
-      &:hover {
-        background-color: var(--color-bg-button);
-        color: var(--color-button-text);
-      }
-
-      &:active {
-        transform: translateY(1px);
-      }
-
-      &--green {
-        border-color: var(--color-bg-list-item--hover);
-        background-color: var(--color-button-text);
-        color: var(--color-bg-list-item--hover);
-
-        &:hover {
-          background-color: var(--color-button-text);
-          color: var(--color-bg-list-item--hover);
-        }
-      }
-    }
 
     &-number {
       border: none;

@@ -3,6 +3,7 @@
   height: 100%;
   font-family: "Proxima Nova", sans-serif;
   user-select: none;
+  font-size: 24px;
   color: var(--color-logo-heading);
 
   &__container {
@@ -74,16 +75,9 @@
     }
 
     &-span {
-      &::after {
-        font-size: 24px;
-        font-weight: 700;
-      }
-      &:first-child::after{
-        content: "3 шт.";
-      }
+      font-weight: 700;
       
-      &:last-child::after {
-        content: '45 p';
+      &--orange{
         color: var(--color-bg-button);
       }
     }
@@ -91,7 +85,6 @@
     &-btns {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
     }
   }
 }
