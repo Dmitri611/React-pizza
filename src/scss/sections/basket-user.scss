@@ -31,42 +31,25 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
     align-items: center;
 
-    &-title {
+    &-left {
       display: flex;
       align-items: center;
       font-weight: 700;
       font-size: 32px;
       line-height: 39px;
-
-      &:before {
-        content: url("../../img//basket-user.svg");
-        width: 29px;
-        height: 29px;
-        margin-right: 17px;
-      }
     }
 
-    &-clear {
-      display: flex;
-      align-items: center;
-      font-size: 16px;
-      line-height: 19px;
-      color: var(--color-logo-description);
-      padding: 10px 20px;
-      cursor: pointer;
+    &-svg {
+      width: 29px;
+      height: 29px;
+      margin-right: 17px;
 
-      &:before {
-        content: url("../../img/basket-user-clear.svg");
+      &:last-child {
         width: 20px;
         height: 20px;
         margin-right: 7px;
-      }
-
-      &:active {
-        transform: translateY(2px);
       }
     }
   }
