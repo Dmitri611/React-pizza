@@ -31,7 +31,8 @@
         Для того, чтобы заказать пиццу, перейди на главную страницу.
       </p>
       <picture>
-        <img class="basket__content-img" src="../../img/empty-basket.jpg" alt="image">
+        <source media="(max-width: 479.98px)" srcset="empty-basket@1x.webp 1x, empty-basket@2x.webp 2x" type="image/webp">
+        <img class="basket__content-img" src="../../img/empty-basket.jpg" alt="image" loading="lazy" 2x>
       </picture>
       <a class="button" href="index.html">Вернуться назад</a>
     </div>
