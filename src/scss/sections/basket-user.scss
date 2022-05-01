@@ -66,6 +66,24 @@
     flex-direction: column;
     gap: 40px;
 
+    &-promo {
+      width: 20%;
+      display: flex;
+      border-color: transparent;
+      border-radius: 5px;
+      color: var(--color-logo-description);
+      background-color: rgba(0, 0, 0, 0.06);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        transition: background-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+      }
+  
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
     &-total {
       display: flex;
       justify-content: space-between;

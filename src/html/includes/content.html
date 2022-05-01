@@ -2,40 +2,49 @@
   <div class="content-navigation">
     <ul class="content-navigation__list">
       <li class="content-navigation__item">
-        <input name="nav" id="nav1" type="radio" checked>
+        <input name="nav" id="nav1" type="radio" checked />
         <label class="content-navigation__label" for="nav1">Все</label>
       </li>
       <li class="content-navigation__item">
-        <input name="nav" id="nav2" type="radio">
+        <input name="nav" id="nav2" type="radio" />
         <label class="content-navigation__label" for="nav2">Мясные</label>
       </li>
       <li class="content-navigation__item">
-        <input name="nav" id="nav3" type="radio">
+        <input name="nav" id="nav3" type="radio" />
         <label class="content-navigation__label" for="nav3">Вегетарианские</label>
       </li>
       <li class="content-navigation__item">
-        <input name="nav" id="nav4" type="radio">
+        <input name="nav" id="nav4" type="radio" />
         <label class="content-navigation__label" for="nav4">Гриль</label>
       </li>
       <li class="content-navigation__item">
-        <input name="nav" id="nav5" type="radio">
+        <input name="nav" id="nav5" type="radio" />
         <label class="content-navigation__label" for="nav5">Острые</label>
       </li>
       <li class="content-navigation__item">
-        <input name="nav" id="nav6" type="radio">
+        <input name="nav" id="nav6" type="radio" />
         <label class="content-navigation__label" for="nav6">Закрытые</label>
       </li>
     </ul>
     <div class="sort">
-      <input id="sort" class="sort__input" type="checkbox">
+      <input id="sort" class="sort__input" type="checkbox" />
       <span class="sort__arrow">Сортировка по:</span>
       <div class="sort__popup">
         <label class="sort__label" for="sort">популярности</label>
-        <div class="sort__content">
-          <a class="sort__content-link sort__content-link--active" href="#">популярности</a>
-          <a class="sort__content-link" href="#">по цене</a>
-          <a class="sort__content-link" href="#">по алфавиту</a>
-        </div>
+        <ul class="sort__content">
+          <li class="sort__content-item">
+            <input type="radio" name="sortlist" id="sort_item1" checked />
+            <label for="sort_item1" class="sort__content-link">популярности</label>
+          </li>
+          <li class="sort__content-item">
+            <input type="radio" name="sortlist" id="sort_item2" />
+            <label for="sort_item2" class="sort__content-link">по цене</label>
+          </li>
+          <li class="sort__content-item">
+            <input type="radio" name="sortlist" id="sort_item3" />
+            <label for="sort_item3" class="sort__content-link">по алфавиту</label>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -44,41 +53,223 @@
     <div class="content-cards__container">
       <article class="card">
         <picture class="card__image-wrapper">
-          <source media="(max-width: 479.98px)" srcset="пепперони@1x.webp 1x, пепперони@2x.webp 2x" type="image/webp">
-          <img
-            class="card__image"
-            src="../../img/pizzas/пепперони.jpeg"
-            alt="pizza"
-            2x
+          <source
+            media="(max-width: 479.98px)"
+            srcset="пепперони@1x.webp 1x, пепперони@2x.webp 2x"
+            type="image/webp"
           />
+          <img class="card__image" src="../../img/pizzas/пепперони.jpeg" alt="pizza" 2x />
         </picture>
         <h2 class="card__name">Пепперони</h2>
         <div class="card__ingredients">
-          Бекон, митболы из говядины, пикантная пепперони, моцарелла, томаты, шампиньоны, сладкий
-          перец, красный лук, чеснок, томатный соус
+          <p>Томатный соус, пикантная пепперони, моцарелла</p>
         </div>
         <div class="card__params">
           <ul class="card__list">
             <li class="card__list-item">
-              <input type="radio" name="type" id="type1" checked>
+              <input type="radio" name="type" id="type1" checked />
               <label class="card__list-label" for="type1">тонкое</label>
             </li>
             <li class="card__list-item">
-              <input type="radio" name="type" id="type2">
+              <input type="radio" name="type" id="type2" />
               <label class="card__list-label" for="type2">традиционное</label>
             </li>
           </ul>
           <ul class="card__list">
             <li class="card__list-item card__list-item--active">
-              <input type="radio" name="size" id="type3" checked>
+              <input type="radio" name="size" id="type3" checked />
               <label class="card__list-label" for="type3">26</label>
             </li>
             <li class="card__list-item">
-              <input type="radio" name="size" id="type4">
+              <input type="radio" name="size" id="type4" />
               <label class="card__list-label" for="type4">30</label>
             </li>
             <li class="card__list-item">
-              <input type="radio" name="size" id="type5">
+              <input type="radio" name="size" id="type5" />
+              <label class="card__list-label" for="type5">36</label>
+            </li>
+          </ul>
+        </div>
+        <div class="card__bottom">
+          <span class="card__bottom-price">От 10.13р</span>
+          <button class="card__button">
+            <span class="card__button-span">Добавить</span>
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__image-wrapper">
+          <source
+            media="(max-width: 479.98px)"
+            srcset="барбекю@1x.webp 1x, барбекю@2x.webp 2x"
+            type="image/webp"
+          />
+          <img class="card__image" src="../../img/pizzas/барбекю.jpeg" alt="pizza" 2x />
+        </picture>
+        <h2 class="card__name">Барбекю</h2>
+        <div class="card__ingredients">
+          <p>Соус барбекю, томатный соус, цыпленок, красный лук, моцарелла, бекон</p>
+        </div>
+        <div class="card__params">
+          <ul class="card__list">
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type1" checked />
+              <label class="card__list-label" for="type1">тонкое</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type2" />
+              <label class="card__list-label" for="type2">традиционное</label>
+            </li>
+          </ul>
+          <ul class="card__list">
+            <li class="card__list-item card__list-item--active">
+              <input type="radio" name="size" id="type3" checked />
+              <label class="card__list-label" for="type3">26</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type4" />
+              <label class="card__list-label" for="type4">30</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type5" />
+              <label class="card__list-label" for="type5">36</label>
+            </li>
+          </ul>
+        </div>
+        <div class="card__bottom">
+          <span class="card__bottom-price">От 10.13р</span>
+          <button class="card__button">
+            <span class="card__button-span">Добавить</span>
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__image-wrapper">
+          <source
+            media="(max-width: 479.98px)"
+            srcset="ветчина и грибы@1x.webp 1x, ветчина и грибы@2x.webp 2x"
+            type="image/webp"
+          />
+          <img class="card__image" src="../../img/pizzas/ветчина и грибы.jpeg" alt="pizza" 2x />
+        </picture>
+        <h2 class="card__name">Ветчина и грибы</h2>
+        <div class="card__ingredients">
+          <p>Томатный соус, моцарелла, ветчина, шампиньоны</p>
+        </div>
+        <div class="card__params">
+          <ul class="card__list">
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type1" checked />
+              <label class="card__list-label" for="type1">тонкое</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type2" />
+              <label class="card__list-label" for="type2">традиционное</label>
+            </li>
+          </ul>
+          <ul class="card__list">
+            <li class="card__list-item card__list-item--active">
+              <input type="radio" name="size" id="type3" checked />
+              <label class="card__list-label" for="type3">26</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type4" />
+              <label class="card__list-label" for="type4">30</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type5" />
+              <label class="card__list-label" for="type5">36</label>
+            </li>
+          </ul>
+        </div>
+        <div class="card__bottom">
+          <span class="card__bottom-price">От 10.13р</span>
+          <button class="card__button">
+            <span class="card__button-span">Добавить</span>
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__image-wrapper">
+          <source
+            media="(max-width: 479.98px)"
+            srcset="гавайская@1x.webp 1x, гавайская@2x.webp 2x"
+            type="image/webp"
+          />
+          <img class="card__image" src="../../img/pizzas/гавайская.jpeg" alt="pizza" 2x />
+        </picture>
+        <h2 class="card__name">Гавайская</h2>
+        <div class="card__ingredients">
+          <p>Ветчина, ананасы, моцарелла, томатный соус</p>
+        </div>
+        <div class="card__params">
+          <ul class="card__list">
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type1" checked />
+              <label class="card__list-label" for="type1">тонкое</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type2" />
+              <label class="card__list-label" for="type2">традиционное</label>
+            </li>
+          </ul>
+          <ul class="card__list">
+            <li class="card__list-item card__list-item--active">
+              <input type="radio" name="size" id="type3" checked />
+              <label class="card__list-label" for="type3">26</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type4" />
+              <label class="card__list-label" for="type4">30</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type5" />
+              <label class="card__list-label" for="type5">36</label>
+            </li>
+          </ul>
+        </div>
+        <div class="card__bottom">
+          <span class="card__bottom-price">От 10.13р</span>
+          <button class="card__button">
+            <span class="card__button-span">Добавить</span>
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__image-wrapper">
+          <source
+            media="(max-width: 479.98px)"
+            srcset="деревенская@1x.webp 1x, деревенская@2x.webp 2x"
+            type="image/webp"
+          />
+          <img class="card__image" src="../../img/pizzas/деревенская.jpeg" alt="pizza" 2x />
+        </picture>
+        <h2 class="card__name">Деревенская</h2>
+        <div class="card__ingredients">
+          <p>Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус</p>
+        </div>
+        <div class="card__params">
+          <ul class="card__list">
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type1" checked />
+              <label class="card__list-label" for="type1">тонкое</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="type" id="type2" />
+              <label class="card__list-label" for="type2">традиционное</label>
+            </li>
+          </ul>
+          <ul class="card__list">
+            <li class="card__list-item card__list-item--active">
+              <input type="radio" name="size" id="type3" checked />
+              <label class="card__list-label" for="type3">26</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type4" />
+              <label class="card__list-label" for="type4">30</label>
+            </li>
+            <li class="card__list-item">
+              <input type="radio" name="size" id="type5" />
               <label class="card__list-label" for="type5">36</label>
             </li>
           </ul>

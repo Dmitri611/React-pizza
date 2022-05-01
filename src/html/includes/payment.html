@@ -1,0 +1,42 @@
+<section class="payment">
+  <div class="payment__container">
+    <h1 class="payment__title">Куда доставить?</h1>
+    <form class="payment-form" action="#">
+      <p>Введите адрес доставки</p>
+      <article class="payment-form__card">
+        <input class="payment-form__input" type="text" placeholder="Улица">
+        <input class="payment-form__input payment-form__input--size-s" type="text" placeholder="Дом">
+      </article>
+      <article class="payment-form__card">
+        <input class="payment-form__input payment-form__input--size-s" type="text" placeholder="Квартира">
+        <input class="payment-form__input payment-form__input--size-s" type="text" placeholder="Подъезд">
+        <input class="payment-form__input payment-form__input--size-s" type="text" placeholder="Код двери">
+        <input class="payment-form__input payment-form__input--size-s" type="text" placeholder="Этаж">
+      </article>
+      <p>Введите название адреса</p>
+      <article class="payment-form__card">
+        <input class="payment-form__input" type="text" placeholder="Название адреса">
+      </article>
+      <p>Выберите время доставки</p>
+      <article class="payment-form__card">
+        <input class="payment-form__input" type="time">
+        <label class="payment-form__card-label" for="time">
+          <input type="checkbox" id="time">
+          Как можно быстрее
+        </label>
+      </article>
+      <p>Выберите способ оплаты</p>
+      <article class="payment-form__card">
+        <label class="payment-form__card-label" for="pay"><input type="radio" name="pay" id="pay">Картой курьеру</label>
+        <label class="payment-form__card-label" for="pay1"><input type="radio" name="pay" id="pay1">Наличкой курьеру</label>
+      </article>
+      <article class="payment-form__card">
+        <textarea class="payment-form__input" rows="7" placeholder="Комментарий к заказу"></textarea>
+      </article>
+      <div class="payment-form__bottom">
+        <a class="button button--size-s" href="basket-user.html">Назад</a>
+        <a class="button button--size-s" href="page404.html">Подтвердить заказ</a>
+      </div>
+    </form>
+  </div>
+</section>

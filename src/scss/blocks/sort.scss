@@ -80,16 +80,35 @@
     @include media-breakpoint-down(xl) {
       font-size: 13px;
     }
+    
+    &-item {
+      display: flex;
+    }
 
     &-link {
+      width: 100%;
       padding: 10px 14px;
       color: var(--color-logo-heading);
 
-      &:hover,
-      &--active {
+      &:hover{
         background-color: var(--color-bg-sort);
         color: var(--color-bg-button);
+        cursor: pointer;
       }
+    }
+  }
+}
+
+#sort_item1,
+#sort_item2,
+#sort_item3 {
+  display: none;
+
+  &:checked {
+    &~.sort__content-link{
+      background-color: var(--color-bg-sort);
+      color: var(--color-bg-button);
+      cursor: auto;
     }
   }
 }
