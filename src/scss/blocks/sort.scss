@@ -80,7 +80,7 @@
     @include media-breakpoint-down(xl) {
       font-size: 13px;
     }
-    
+
     &-item {
       display: flex;
     }
@@ -90,7 +90,7 @@
       padding: 10px 14px;
       color: var(--color-logo-heading);
 
-      &:hover{
+      &:hover {
         background-color: var(--color-bg-sort);
         color: var(--color-bg-button);
         cursor: pointer;
@@ -105,7 +105,7 @@
   display: none;
 
   &:checked {
-    &~.sort__content-link{
+    & ~ .sort__content-link {
       background-color: var(--color-bg-sort);
       color: var(--color-bg-button);
       cursor: auto;

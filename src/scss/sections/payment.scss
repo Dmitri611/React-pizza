@@ -22,7 +22,7 @@
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
@@ -55,15 +55,15 @@
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.1);
-        transition: background-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
       }
-  
+
       &:focus-visible {
         outline: none;
       }
     }
 
-    input[type="time"]{
+    input[type="time"] {
       cursor: pointer;
       font-size: 18px;
     }
