@@ -119,9 +119,13 @@
     }
 
     &-label {
-      padding: 5px;
+      padding: 9px;
       flex-grow: 1;
       cursor: pointer;
+
+      @include media-breakpoint-down(md) {
+        padding: 6px;
+      }
 
       &:hover {
         background-color: var(--color-button-text);
