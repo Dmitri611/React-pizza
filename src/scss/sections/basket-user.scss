@@ -19,6 +19,12 @@
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 10px;
+      padding-right: 10px;
+      min-height: 700px;
+    }
   }
 
   &__content {
@@ -26,6 +32,10 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @include media-breakpoint-down(md) {
+      gap: 20px;
+    }
   }
 
   &__top {
@@ -33,6 +43,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include media-breakpoint-down(md) {
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+    }
 
     &-left {
       display: flex;
@@ -59,12 +75,20 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    @include media-breakpoint-down(md) {
+      gap: 20px;
+    }
   }
 
   &__bottom {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @include media-breakpoint-down(md) {
+      gap: 20px;
+    }
 
     &-promo {
       width: 20%;
@@ -73,6 +97,11 @@
       border-radius: 5px;
       color: var(--color-logo-description);
       background-color: rgba(0, 0, 0, 0.06);
+
+      @include media-breakpoint-down(md) {
+        width: 35%;
+        font-size: 17px;
+      }
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.1);
@@ -90,6 +119,12 @@
       gap: 20px;
       font-size: 22px;
       line-height: 27px;
+
+      @include media-breakpoint-down(md) {
+        font-size: 16px;
+        gap: 10px;
+        flex-direction: column;
+      }
     }
 
     &-span {
@@ -103,6 +138,12 @@
     &-btns {
       display: flex;
       justify-content: space-between;
+
+      @include media-breakpoint-down(md) {
+        align-items: center;
+        gap: 15px;
+        flex-direction: column;
+      }
     }
   }
 }

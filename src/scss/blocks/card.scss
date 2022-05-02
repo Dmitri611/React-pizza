@@ -29,7 +29,7 @@
   }
 
   @include media-breakpoint-down(md) {
-    max-width: 163px;
+    max-width: 160px;
   }
 
   &__image {
@@ -219,9 +219,11 @@
         margin-left: 5px;
 
         @include media-breakpoint-down(lg) {
-          width: 18px;
-          height: 18px;
-          padding-top: 0;
+          height: 17px;
+          padding-top: 0px;
+          width: 16px;
+          margin-top: 2px;
+      
         }
       }
     }

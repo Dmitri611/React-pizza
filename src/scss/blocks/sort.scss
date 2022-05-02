@@ -3,7 +3,7 @@
     transform: scale(1, -1);
   }
 
-  & ~ .sort__popup {
+  & ~ .sort__dropdown {
     .sort__content {
       display: flex;
     }
@@ -52,7 +52,7 @@
     }
   }
 
-  &__popup {
+  &__dropdown {
     display: inline-block;
     position: relative;
   }

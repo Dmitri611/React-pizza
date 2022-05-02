@@ -8,6 +8,97 @@
   gap: 20px;
   justify-content: space-between;
 
+  @include media-breakpoint-down(md) {
+    padding-top: 20px;
+    gap: 10px;
+  }
+
+  &__product {
+    display: flex;
+    max-width: 340px;
+    width: 100%;
+    align-items: center;
+
+    @include media-breakpoint-down(md) {
+      max-width: 188px;
+    }
+
+    &-image {
+      width: 95px;
+      height: 80px;
+      padding-right: 15px;
+      margin-top: 5%;
+      margin-left: 5%;
+
+      @include media-breakpoint-down(md) {
+        width: 55px;
+        height: 50px;
+        padding-right: 5px;
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 3px;
+      word-break: break-all;
+    }
+
+    &-heading {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 27px;
+
+      @include media-breakpoint-down(md) {
+        font-size: 15px;
+      }
+    }
+
+    &-desc {
+      font-size: 18px;
+      line-height: 22px;
+      color: var(--color-logo-description);
+
+      @include media-breakpoint-down(md) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+
+    &-number {
+      border: none;
+      text-align: center;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 27px;
+
+      @include media-breakpoint-down(md) {
+        font-size: 15px;
+        width: 25px;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: var(--color-logo-heading);
+
+    @include media-breakpoint-down(md) {
+      font-size: 15px;
+    }
+  }
+
   &__btn {
     border: 2px solid var(--color-bg-button);
     color: var(--color-bg-button);
@@ -15,6 +106,11 @@
     cursor: pointer;
     font-size: 23px;
     padding: 1px 7.5px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 15px;
+      padding: 0px 4.2px;
+    }
 
     &:hover {
       background-color: var(--color-bg-button);
@@ -35,63 +131,5 @@
         color: var(--color-bg-list-item--hover);
       }
     }
-  }
-
-  &__product {
-    display: flex;
-    max-width: 375px;
-    width: 100%;
-    align-items: center;
-
-    &-image {
-      width: 95px;
-      height: 80px;
-      padding-right: 15px;
-      margin-top: 5%;
-      margin-left: 5%;
-    }
-
-    &-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 3px;
-    }
-
-    &-heading {
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 27px;
-    }
-
-    &-desc {
-      font-size: 18px;
-      line-height: 22px;
-      color: var(--color-logo-description);
-    }
-  }
-
-  &__quantity {
-    display: flex;
-    align-items: center;
-
-    &-number {
-      border: none;
-      text-align: center;
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 27px;
-
-      &:focus-visible {
-        outline: none;
-      }
-    }
-  }
-
-  &__price {
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 27px;
-    color: var(--color-logo-heading);
   }
 }

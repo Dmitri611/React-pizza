@@ -14,7 +14,6 @@
   &__container {
     height: 100%;
     width: 100%;
-    max-width: 390px;
     min-height: 830px;
     gap: 30px;
     display: flex;
@@ -29,8 +28,6 @@
   }
 
   &-form {
-    min-width: 340px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -42,6 +39,8 @@
 
     @include media-breakpoint-down(md) {
       font-size: 14px;
+      min-width: 340px;
+      width: 100%;
     }
 
     &__input {
@@ -76,6 +75,10 @@
     input[type="time"] {
       cursor: pointer;
       font-size: 18px;
+
+      @include media-breakpoint-down(md) {
+        width: 30%;
+      }
     }
 
     &__card {
