@@ -5,7 +5,7 @@
   user-select: none;
 
   &__logo {
-    color: var(--color-logo-description);
+    color: var(--color-logo-footer);
     padding-bottom: 20px;
 
     @include media-breakpoint-down(lg) {
