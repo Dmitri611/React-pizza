@@ -68,11 +68,24 @@
     align-items: center;
     display: flex;
     width: 100%;
-    gap: 40px;
+    gap: 30px;
     justify-content: flex-end;
 
     @include media-breakpoint-down(xl) {
       gap: 14px;
+    }
+
+    &-basket {
+      display: flex;
+      padding: 10px;
+
+      &:hover {
+        svg {
+          path {
+            fill: var(--color-bg-button);
+          }
+        }
+      }
     }
 
     &-item {
