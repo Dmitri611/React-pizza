@@ -129,6 +129,8 @@
       width: 100%;
       margin-left: auto;
       margin-right: auto;
+      justify-content: space-between;
+
 
       @include media-breakpoint-down(xl) {
         max-width: 910px;
@@ -141,7 +143,7 @@
 
       @include media-breakpoint-down(md) {
         margin-top: 25px;
-        max-width: 330px;
+        max-width: 430px;
         gap: 25px 10px;
       }
     }
