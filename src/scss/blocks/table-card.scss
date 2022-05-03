@@ -4,7 +4,7 @@
   max-height: 490px;
   height: 100%;
   grid-template-columns: 50px 95px repeat(3, 200px) 100px 80px;
-  grid-template-rows: repeat(5, 80px);
+  grid-template-rows: 80px;
   grid-row-gap: 18px;
   grid-column-gap: 9px;
   overflow: auto;
@@ -62,7 +62,6 @@
       display: flex;
       width: 80px;
       height: 80px;
-      background-color: inherit;
     }
   }
 }

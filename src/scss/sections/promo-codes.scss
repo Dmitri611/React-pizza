@@ -33,11 +33,17 @@
   }
 
   .table-card {
-    grid-template-columns: 50px 90px repeat(5, 200px) 100px;
+    grid-template-columns: 50px 80px 100px 200px 50px 100px;
+    grid-template-rows: repeat(5, 80px);
     
     &__block {
-      grid-column: 1 / 9;
-      grid-template-columns: 50px 90px repeat(5, 200px) 100px;
+      grid-column: 1 / 7;
+      grid-template-columns: 50px 80px 100px 200px 50px 100px;
+    }
+
+    &__item-img {  
+      width: 70px;
+      height: 70px;
     }
   }
 
