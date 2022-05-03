@@ -17,7 +17,6 @@
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-  user-select: none;
   border-bottom: 1px solid var(--color-bottom-line);
 
   &__container {
@@ -90,47 +89,6 @@
 
     &-item {
       display: flex;
-    }
-  }
-
-  &__search {
-    display: flex;
-    align-items: flex-end;
-    cursor: pointer;
-    padding-right: 20px;
-    max-width: 200px;
-    width: 100%;
-    font-family: "Proxima Nova", sans-serif;
-
-    &-input {
-      border-bottom: 1px solid var(--color-bg-button);
-      all: unset;
-      color: var(--color-bg-button);
-      padding: 10px;
-      width: 100%;
-      font-size: 15px;
-
-      &:last-child {
-        width: 24px;
-        height: 20px;
-      }
-
-      @include media-breakpoint-down(xl) {
-        padding: 5px;
-      }
-
-      @include media-breakpoint-down(lg) {
-        padding: 2px;
-        font-size: 13px;
-      }
-    }
-
-    @include media-breakpoint-down(lg) {
-      max-width: 150px;
-    }
-
-    @include media-breakpoint-down(md) {
-      display: none;
     }
   }
 

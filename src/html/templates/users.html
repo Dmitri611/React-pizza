@@ -1,0 +1,10 @@
+<% var data = { title: "React pizza" } %>
+<%= _.template(require('./../includes/_html-top.html').default)(data) %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<main class="main">
+  <%= _.template(require('./../includes/users.html').default)(data) %>
+</main>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
+<%= _.template(require('./../includes/_html-bottom.html').default)(data) %>
