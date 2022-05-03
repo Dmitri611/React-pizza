@@ -1,10 +1,31 @@
-#sort:checked {
-  & ~ .sort__arrow:before {
-    transform: scale(1, -1);
-  }
+#sort {
+  display: none;
 
-  & ~ .sort__dropdown {
-    .sort__content {
+  &:checked {
+    & ~ .sort__arrow:before {
+      transform: scale(1, -1);
+    }
+  
+    & ~ .sort__dropdown {
+      .sort__content {
+        display: flex;
+      }
+    }
+  }
+}
+
+#status1,
+#status2,
+#status3,
+#status4,
+#status5 {
+  display: none;
+
+  &:checked {
+    & ~ .sort__arrow:before {
+      transform: scale(1, -1);
+    }
+    & ~ .sort__content {
       display: flex;
     }
   }
@@ -34,10 +55,6 @@
     }
   }
 
-  &__input {
-    display: none;
-  }
-
   &__label {
     display: flex;
     padding: 10px;
@@ -53,7 +70,7 @@
   }
 
   &__dropdown {
-    display: inline-block;
+    display: block;
     position: relative;
   }
 
@@ -68,6 +85,7 @@
     padding-bottom: 9px;
     right: 7px;
     font-size: 15px;
+    z-index: 1;
 
     @include media-breakpoint-down(xl) {
       font-size: 13px;

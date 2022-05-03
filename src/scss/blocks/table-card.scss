@@ -3,7 +3,7 @@
   display: grid;
   max-height: 490px;
   height: 100%;
-  grid-template-columns: 50px 95px repeat(3, 200px) 100px 80px;
+  grid-template-columns: 50px 95px repeat(3, 200px) 100px 100px;
   grid-template-rows: 80px;
   grid-row-gap: 18px;
   grid-column-gap: 9px;
@@ -18,7 +18,7 @@
     grid-column: 1 / 8;
     grid-auto-flow: column;
     grid-column-gap: 9px;
-    grid-template-columns: 50px 95px repeat(3, 200px) 100px 80px;
+    grid-template-columns: 50px 95px repeat(3, 200px) 100px 100px;
 
     &:first-child{
       background-color: var(--color-bg-button--hover);
@@ -54,6 +54,7 @@
   &__item {
     display: flex;
     align-items: center;
+    flex-direction: column;
     font-size: 15px;
     justify-content: center;
     word-break: break-all;
