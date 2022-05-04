@@ -1,40 +1,56 @@
+#search,
+#search-products,
+#search-users,
+#search-promo,
+#search-orders {
+  display: none;
+
+  &:checked {
+    & ~ .search__form {
+      display: flex;
+    }
+  }
+}
+
 .search {
-  display: flex;
-  align-items: flex-end;
-  cursor: pointer;
-  padding-right: 20px;
-  max-width: 200px;
-  width: 100%;
-  font-family: "Proxima Nova", sans-serif;
+  display: inline-block;
+  position: relative;
 
-  &-input {
-    border-bottom: 1px solid var(--color-bg-button);
-    all: unset;
-    color: var(--color-bg-button);
-    padding: 10px;
-    width: 100%;
-    font-size: 15px;
+  &__label {
+    display:flex;
+    padding: 10px 20px;
+    cursor: pointer;
 
-    &:last-child {
-      width: 24px;
-      height: 20px;
+    &:hover {
+      svg {
+        path {
+          fill: var(--color-bg-button--hover);
+        }
+      }
     }
 
-    @include media-breakpoint-down(xl) {
-      padding: 5px;
-    }
-
-    @include media-breakpoint-down(lg) {
-      padding: 2px;
-      font-size: 13px;
+    &-svg {
+      width: 30px;
+      height: 30px;
     }
   }
 
-  @include media-breakpoint-down(lg) {
-    max-width: 150px;
-  }
-
-  @include media-breakpoint-down(md) {
+  &__form {
     display: none;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+
+    &-input {
+      // all: unset;
+      color: var(--color-bg-button);
+      font-size: 15px;
+
+      &:focus-visible {
+        outline: unset;
+      }
+    }
   }
 }
