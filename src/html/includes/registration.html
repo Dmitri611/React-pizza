@@ -4,33 +4,52 @@
     <form class="form-auth" action="#">
       <article class="form-auth__card">
         <p>login</p>
-        <input type="text" placeholder="login" />
+        <input 
+          type="text" 
+          placeholder="login"
+          minlength="2"
+          maxlength="20"
+          pattern=^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$
+          />
         <i class="form-auth__card-desc"
-          >Логин должен содержать минимум 5 символов и может содержать только латинские буквы, цифры и
-          тире!</i
+          >2-20 символов, которыми могут быть буквы и цифры, первый символ обязательно буква</i
         >
       </article>
       <article class="form-auth__card">
         <p>password</p>
-        <input type="password" placeholder="password" />
+        <input 
+          type="password" 
+          placeholder="password" 
+          minlength="8"
+          pattern=(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
+          />
         <i class="form-auth__card-desc"
-          >Длина пароля минимум 8 символов, в нем должны использоваться только латинские
-          буквы и как минимум 1 цифра!</i
+          >Строчные и прописные латинские буквы, цифры, спецсимволы. Минимум 8 символов</i
         >
       </article>
       <article class="form-auth__card">
         <p>password</p>
-        <input type="password" placeholder="password" />
+        <input 
+          type="password" 
+          placeholder="password" 
+          
+          />
         <i class="form-auth__card-desc">Повторите пароль еще раз!</i>
       </article>
       <article class="form-auth__card">
         <p>email</p>
-        <input type="text" placeholder="email" />
+        <input 
+          type="text" 
+          placeholder="email" 
+          pattern=^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$
+          />
         <i class="form-auth__card-desc">Укажите свою настоящую почту!</i>
       </article>
       <div class="form-auth__bottom">
         <a class="button button--size-s" href="index.html">Вернуться назад</a>
-        <a class="button button--size-s" href="page404.html">Регистрация</a>
+        <a class="button button--size-s" href="page404.html">Регистрация
+          <input style="display: none;" type="submit">
+        </a>
       </div>
     </form>
   </div>
