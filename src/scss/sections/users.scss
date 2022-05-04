@@ -23,6 +23,10 @@
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
+
+    @include media-breakpoint-down(lg) {
+      min-height: 580px;
+    }
   }
 
   &__content {
@@ -34,10 +38,31 @@
 
   .table-card {
     grid-template-columns: 50px 90px repeat(5, 200px) 100px;
+
+    @include media-breakpoint-down(xl) {
+      grid-column-gap: 5px;
+      grid-template-columns: 40px 70px repeat(5, 130px) 90px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      grid-column-gap: 1px;
+      grid-row-gap: 15px;
+      grid-template-columns: 30px 50px repeat(5, 90px) 60px;
+    }
     
     &__block {
       grid-column: 1 / 9;
       grid-template-columns: 50px 90px repeat(5, 200px) 100px;
+
+      @include media-breakpoint-down(xl) {
+        grid-column-gap: 5px;
+        grid-template-columns: 40px 70px repeat(5, 130px) 90px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        grid-column-gap: 1px;
+        grid-template-columns: 30px 50px repeat(5, 90px) 60px;
+      }
     }
   }
 

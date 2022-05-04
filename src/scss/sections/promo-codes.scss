@@ -23,6 +23,10 @@
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
+
+    @include media-breakpoint-down(lg) {
+      min-height: 580px;
+    }
   }
 
   &__content {
