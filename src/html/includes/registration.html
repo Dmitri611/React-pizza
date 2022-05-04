@@ -21,11 +21,11 @@
           type="password" 
           placeholder="password" 
           minlength="8"
-          pattern=(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
-          />
-        <i class="form-auth__card-desc"
-          >Строчные и прописные латинские буквы, цифры, спецсимволы. Минимум 8 символов</i
-        >
+          pattern=".{8,}"
+        />
+        <i class="form-auth__card-desc">
+          Минимум 8 символов
+        </i>
       </article>
       <article class="form-auth__card">
         <p>password</p>
