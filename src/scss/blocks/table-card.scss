@@ -41,6 +41,7 @@
     &-item {
       text-align: center;
       padding: 15px;
+      max-width: 300px;
     }
 
     &-btn {
@@ -59,14 +60,9 @@
       height: 25px;
     }
 
-    &-image {
-      width: 25px;
-      height: 25px;
-      visibility: hidden;
-
-      &:hover {
-        visibility: visible;
-      }
+    &-img {
+      width: 70px;
+      height: 70px;
     }
   }
 }

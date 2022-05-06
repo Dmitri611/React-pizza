@@ -1,8 +1,8 @@
-<section class="products">
-  <div class="products__container">
-    <div class="products__content">
+<section class="container">
+  <div class="container__inner">
+    <div class="products">
       <div class="products__header">
-        <h1 class="products__title">Pizzas</h1>
+        <h1 class="container__title">Pizzas</h1>
         <div class="search">
           <input id="search-products" type="checkbox" />
           <label class="search__label" for="search-products">
@@ -25,93 +25,250 @@
           </form>
         </div>
       </div>
-      <div class="table-card">
-        <article class="table-card__block">
-          <span class="table-card__item">№</span>
-          <span class="table-card__item">Картинка</span>
-          <span class="table-card__item">Название</span>
-          <span class="table-card__item">Категория</span>
-          <span class="table-card__item">Ингредиенты</span>
-          <span class="table-card__item">Стоимость</span>
-          <span class="table-card__item">Удалить</span>
-        </article>
-        <article class="table-card__block">
-          <span class="table-card__item">1</span>
-          <picture class="table-card__item">
-            <img class="table-card__item-img" src="../../img/pizzas/Пепперони.webp" alt="pizza">
-          </picture>
-          <span class="table-card__item">Пепперони</span>
-          <span class="table-card__item">Мясная</span>
-          <span class="table-card__item">
-            Томатный соус, пикантная пепперони, моцарелла
-          </span>
-          <span class="table-card__item">От 10.13р</span>
-          <div class="table-card__item">
-            <button class="table-card__btn">×</button>
-          </div>
-        </article>
-        <article class="table-card__block">
-          <span class="table-card__item">2</span>
-          <picture class="table-card__item">
-            <img class="table-card__item-img" src="../../img/pizzas/Барбекю.webp" alt="pizza">
-          </picture>
-          <span class="table-card__item">Барбекю</span>
-          <span class="table-card__item">Мясная</span>
-          <span class="table-card__item">
-            Соус барбекю, томатный соус, цыпленок, красный лук, моцарелла, бекон
-          </span>
-          <span class="table-card__item">От 10.13р</span>
-          <div class="table-card__item">
-            <button class="table-card__btn">×</button>
-          </div>
-        </article>
-        <article class="table-card__block">
-          <span class="table-card__item">3</span>
-          <picture class="table-card__item">
-            <img class="table-card__item-img" src="../../img/pizzas/Ветчина-и-грибы.webp" alt="pizza">
-          </picture>
-          <span class="table-card__item">Ветчина и грибы</span>
-          <span class="table-card__item">Мясная</span>
-          <span class="table-card__item">
-            Томатный соус, моцарелла, ветчина, шампиньоны
-          </span>
-          <span class="table-card__item">От 10.13р</span>
-          <div class="table-card__item">
-            <button class="table-card__btn">×</button>
-          </div>
-        </article>
-        <article class="table-card__block">
-          <span class="table-card__item">4</span>
-          <picture class="table-card__item">
-            <img class="table-card__item-img" src="../../img/pizzas/Гавайская.webp" alt="pizza">
-          </picture>
-          <span class="table-card__item">Гавайская</span>
-          <span class="table-card__item">Мясная</span>
-          <span class="table-card__item">
-            Ветчина, ананасы, моцарелла, томатный соус
-          </span>
-          <span class="table-card__item">От 10.13р</span>
-          <div class="table-card__item">
-            <button class="table-card__btn">×</button>
-          </div>
-        </article>
-        <article class="table-card__block">
-          <span class="table-card__item">5</span>
-          <picture class="table-card__item">
-            <img class="table-card__item-img" src="../../img/pizzas/Деревенская.webp" alt="pizza">
-          </picture>
-          <span class="table-card__item">Деревенская</span>
-          <span class="table-card__item">Мясная</span>
-          <span class="table-card__item">
-            Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок,
-            моцарелла, томатный соус
-          </span>
-          <span class="table-card__item">От 10.13р</span>
-          <div class="table-card__item">
-            <button class="table-card__btn">×</button>
-          </div>
-        </article>
-      </div>
+      <table class="table">
+        <tbody class="table__content">
+          <tr class="table__block">
+            <th class="table__block-item">№</th>
+            <th class="table__block-item">Картинка</th>
+            <th class="table__block-item">Название</th>
+            <th class="table__block-item">Категория</th>
+            <th class="table__block-item">Ингредиенты</th>
+            <th class="table__block-item">Стоимость</th>
+            <th class="table__block-item">Изменить</th>
+            <th class="table__block-item">Удалить</th>
+          </tr>
+          <tr class="table__block">
+            <td class="table__block-item">1</td>
+            <td class="table__block-item">
+              <picture>
+                <img class="table__block-img" src="../../img/pizzas/Пепперони.webp" alt="pizza">
+              </picture>
+            </td>
+            <td class="table__block-item">Пепперони</td>
+            <td class="table__block-item">Мясная</td>
+            <td class="table__block-item">
+              Томатный соус, пикантная пепперони, моцарелла
+            </td>
+            <td class="table__block-item">От 10.13р</td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 30"
+                  width="30px"
+                  height="30px"
+                >
+                  <path
+                    d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  height="24px"
+                >
+                  <path
+                    d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__block">
+            <td class="table__block-item">2</td>
+            <td class="table__block-item">
+              <picture>
+                <img class="table__block-img" src="../../img/pizzas/Пепперони.webp" alt="pizza">
+              </picture>
+            </td>
+            <td class="table__block-item">Пепперони</td>
+            <td class="table__block-item">Мясная</td>
+            <td class="table__block-item">
+              Томатный соус, пикантная пепперони, моцарелла
+            </td>
+            <td class="table__block-item">От 10.13р</td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 30"
+                  width="30px"
+                  height="30px"
+                >
+                  <path
+                    d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  height="24px"
+                >
+                  <path
+                    d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__block">
+            <td class="table__block-item">3</td>
+            <td class="table__block-item">
+              <picture>
+                <img class="table__block-img" src="../../img/pizzas/Пепперони.webp" alt="pizza">
+              </picture>
+            </td>
+            <td class="table__block-item">Пепперони</td>
+            <td class="table__block-item">Мясная</td>
+            <td class="table__block-item">
+              Томатный соус, пикантная пепперони, моцарелла
+            </td>
+            <td class="table__block-item">От 10.13р</td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 30"
+                  width="30px"
+                  height="30px"
+                >
+                  <path
+                    d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  height="24px"
+                >
+                  <path
+                    d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__block">
+            <td class="table__block-item">4</td>
+            <td class="table__block-item">
+              <picture>
+                <img class="table__block-img" src="../../img/pizzas/Пепперони.webp" alt="pizza">
+              </picture>
+            </td>
+            <td class="table__block-item">Пепперони</td>
+            <td class="table__block-item">Мясная</td>
+            <td class="table__block-item">
+              Томатный соус, пикантная пепперони, моцарелла
+            </td>
+            <td class="table__block-item">От 10.13р</td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 30"
+                  width="30px"
+                  height="30px"
+                >
+                  <path
+                    d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  height="24px"
+                >
+                  <path
+                    d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__block">
+            <td class="table__block-item">5</td>
+            <td class="table__block-item">
+              <picture>
+                <img class="table__block-img" src="../../img/pizzas/Пепперони.webp" alt="pizza">
+              </picture>
+            </td>
+            <td class="table__block-item">Пепперони</td>
+            <td class="table__block-item">Мясная</td>
+            <td class="table__block-item">
+              Томатный соус, пикантная пепперони, моцарелла
+            </td>
+            <td class="table__block-item">От 10.13р</td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 30"
+                  width="30px"
+                  height="30px"
+                >
+                  <path
+                    d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td class="table__block-item">
+              <button class="table__block-btn">
+                <svg
+                  class="table__block-svg"
+                  fill="#181818"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  height="24px"
+                >
+                  <path
+                    d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"
+                  />
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <ul class="products__footer">
         <li>
           <a class="button button--size-s" href="admin-page.html">Назад</a>
