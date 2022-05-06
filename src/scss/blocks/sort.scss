@@ -5,7 +5,7 @@
     & ~ .sort__arrow:before {
       transform: scale(1, -1);
     }
-  
+
     & ~ .sort__dropdown {
       .sort__content {
         display: flex;
@@ -37,22 +37,13 @@
   align-items: center;
   white-space: nowrap;
 
-  &__arrow {
+  &__text {
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
     align-items: center;
     display: flex;
     justify-content: center;
-    &::before {
-      content: url("../../img/arrow.svg");
-      padding-right: 7px;
-      display: flex;
-    }
-
-    @include media-breakpoint-down(xl) {
-      font-size: 13px;
-    }
   }
 
   &__label {

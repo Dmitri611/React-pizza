@@ -1,19 +1,19 @@
 .table {
   display: flex;
-	color: var(--color-logo-heading);
+  color: var(--color-logo-heading);
   font-family: var(--font-family);
   max-height: 400px;
   overflow: auto;
   margin-bottom: 20px;
 
   &__content {
-    border-spacing: 0 20px;
+    border-spacing: 0 15px;
   }
 
   &__block {
     font-size: 16px;
     font-weight: 600;
-    
+
     .sort__label {
       text-decoration: none;
       color: var(--color-logo-heading);
@@ -34,9 +34,10 @@
       }
     }
 
-    &:first-child{
+    &:first-child {
       background-color: var(--color-bg-button);
       color: var(--color-button-text);
+      cursor: auto;
     }
     &-item {
       text-align: center;
@@ -66,7 +67,3 @@
     }
   }
 }
-
-
-
-
