@@ -27,4 +27,23 @@
     line-height: 39px;
     color: var(--color-logo-heading);
   }
+
+  &__content {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__footer {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
