@@ -17,7 +17,7 @@
 
 .content {
   width: 100%;
-  font-family: "Proxima Nova", sans-serif;
+  font-family: var(--font-family);
   padding-top: 40px;
   display: flex;
   flex-direction: column;

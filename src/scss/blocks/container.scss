@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-family);
+
+  &__inner {
+
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    color: var(--color-logo-heading);
+  }
+}

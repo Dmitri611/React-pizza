@@ -1,7 +1,7 @@
 .basket-card {
   display: flex;
   border-top: 1px solid var(--color-bottom-line);
-  font-family: "Proxima Nova", sans-serif;
+  font-family: var(--font-family);
   color: var(--color-logo-heading);
   padding-top: 30px;
   align-items: center;
