@@ -4,25 +4,10 @@
       <div class="container__header">
         <h1 class="container__title">Заказы</h1>
         <div class="search">
-          <input id="search-orders" type="checkbox" />
-          <label class="search__label" for="search-orders">
-            <svg
-              class="search__label-svg"
-              fill="#000000"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 30 30"
-              width="30px"
-              height="30px"
-            >
-              <path
-                d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
-              />
-            </svg>
-          </label>
-          <form class="search__form" action="#" target="_self">
-            <input class="search__form-input" type="search" class="" placeholder="Поиск" />
-            <input class="search__form-input" type="submit" class="" value="🔍" />
-          </form>
+          <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"/></svg>
+          <input class="search__input" type="search" placeholder="Поиск...">
+          <button class="search__btn" type="submit">
+          </button>
         </div>
       </div>
       <table class="table">
@@ -47,20 +32,20 @@
             <td class="table__block-item">10.13р</td>
             <td class="table__block-item">
               <div class="sort__dropdown">
-                <input id="status1" class="sort__input" type="checkbox" />
+                <input id="status1" type="checkbox" />
                 <label class="sort__label" for="status1">обработан</label>
                 <ul class="sort__content">
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item1" checked />
-                    <label for="sort_item1" class="sort__content-link">обработан</label>
+                    <input class="sort__content-input" type="radio" name="sortlist2" checked />
+                    <label class="sort__content-link">обработан</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item2" />
-                    <label for="sort_item2" class="sort__content-link">отменён</label>
+                    <input class="sort__content-input" type="radio" name="sortlist2" />
+                    <label class="sort__content-link">отменён</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item3" />
-                    <label for="sort_item3" class="sort__content-link">выполнен</label>
+                    <input class="sort__content-input" type="radio" name="sortlist2" />
+                    <label class="sort__content-link">выполнен</label>
                   </li>
                 </ul>
               </div>
@@ -107,20 +92,20 @@
             <td class="table__block-item">10.13р</td>
             <td class="table__block-item">
               <div class="sort__dropdown">
-                <input id="status2" class="sort__input" type="checkbox" />
+                <input id="status2" type="checkbox" />
                 <label class="sort__label" for="status2">обработан</label>
                 <ul class="sort__content">
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item1" checked />
-                    <label for="sort_item1" class="sort__content-link">обработан</label>
+                    <input class="sort__content-input" type="radio" name="sortlist3" checked />
+                    <label class="sort__content-link">обработан</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item2" />
-                    <label for="sort_item2" class="sort__content-link">отменён</label>
+                    <input class="sort__content-input" type="radio" name="sortlist3" />
+                    <label class="sort__content-link">отменён</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item3" />
-                    <label for="sort_item3" class="sort__content-link">выполнен</label>
+                    <input class="sort__content-input" type="radio" name="sortlist3" />
+                    <label class="sort__content-link">выполнен</label>
                   </li>
                 </ul>
               </div>
@@ -167,20 +152,20 @@
             <td class="table__block-item">10.13р</td>
             <td class="table__block-item">
               <div class="sort__dropdown">
-                <input id="status3" class="sort__input" type="checkbox" />
+                <input id="status3" type="checkbox" />
                 <label class="sort__label" for="status3">обработан</label>
                 <ul class="sort__content">
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item1" checked />
-                    <label for="sort_item1" class="sort__content-link">обработан</label>
+                    <input class="sort__content-input" type="radio" name="sortlist4" checked />
+                    <label class="sort__content-link">обработан</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item2" />
-                    <label for="sort_item2" class="sort__content-link">отменён</label>
+                    <input class="sort__content-input" type="radio" name="sortlist4" />
+                    <label class="sort__content-link">отменён</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item3" />
-                    <label for="sort_item3" class="sort__content-link">выполнен</label>
+                    <input class="sort__content-input" type="radio" name="sortlist4" />
+                    <label class="sort__content-link">выполнен</label>
                   </li>
                 </ul>
               </div>
@@ -227,20 +212,20 @@
             <td class="table__block-item">10.13р</td>
             <td class="table__block-item">
               <div class="sort__dropdown">
-                <input id="status4" class="sort__input" type="checkbox" />
+                <input id="status4" type="checkbox" />
                 <label class="sort__label" for="status4">обработан</label>
                 <ul class="sort__content">
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item1" checked />
-                    <label for="sort_item1" class="sort__content-link">обработан</label>
+                    <input class="sort__content-input" type="radio" name="sortlist5" checked />
+                    <label class="sort__content-link">обработан</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item2" />
-                    <label for="sort_item2" class="sort__content-link">отменён</label>
+                    <input class="sort__content-input" type="radio" name="sortlist5" />
+                    <label class="sort__content-link">отменён</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item3" />
-                    <label for="sort_item3" class="sort__content-link">выполнен</label>
+                    <input class="sort__content-input" type="radio" name="sortlist5" />
+                    <label class="sort__content-link">выполнен</label>
                   </li>
                 </ul>
               </div>
@@ -287,20 +272,20 @@
             <td class="table__block-item">10.13р</td>
             <td class="table__block-item">
               <div class="sort__dropdown">
-                <input id="status5" class="sort__input" type="checkbox" />
+                <input id="status5" type="checkbox" />
                 <label class="sort__label" for="status5">обработан</label>
                 <ul class="sort__content">
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item1" checked />
-                    <label for="sort_item1" class="sort__content-link">обработан</label>
+                    <input class="sort__content-input" type="radio" name="sortlist6" checked />
+                    <label class="sort__content-link">обработан</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item2" />
-                    <label for="sort_item2" class="sort__content-link">отменён</label>
+                    <input class="sort__content-input" type="radio" name="sortlist6" />
+                    <label class="sort__content-link">отменён</label>
                   </li>
                   <li class="sort__content-item">
-                    <input type="radio" name="sortlist" id="sort_item3" />
-                    <label for="sort_item3" class="sort__content-link">выполнен</label>
+                    <input class="sort__content-input" type="radio" name="sortlist6" />
+                    <label class="sort__content-link">выполнен</label>
                   </li>
                 </ul>
               </div>
