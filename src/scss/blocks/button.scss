@@ -12,6 +12,7 @@
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   white-space: nowrap;
+  user-select: none;
 
   @include media-breakpoint-down(xl) {
     font-size: 15px;

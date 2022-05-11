@@ -4,12 +4,19 @@
     <form class="form-auth" action="#">
       <div class="form-auth__card">
         <p>login</p>
-        <input class="form-auth__input" type="text" placeholder="login" />
+        <input class="form-auth__input"
+          autocomplete="country-name"
+          type="text"
+          placeholder="login"
+          minlength="2"
+          maxlength="20"
+          pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"
+        />
         <i class="form-auth__card-desc">Введите ваш логин!</i>
       </div>
       <div class="form-auth__card">
         <p>password</p>
-        <input class="form-auth__input" type="password" placeholder="password" />
+        <input class="form-auth__input" autocomplete="current-password" type="password" placeholder="password" minlength="8" pattern=".{8,}" />
         <i class="form-auth__card-desc">Введите ваш пароль!</i>
       </div>
       <div class="form-auth__bottom">

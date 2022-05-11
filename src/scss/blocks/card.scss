@@ -6,6 +6,7 @@
   flex-direction: column;
   box-sizing: border-box;
   font-family: var(--font-family);
+  user-select: none;
 
   &__image {
     width: 90%;

@@ -44,6 +44,7 @@
     gap: 10px;
     margin-top: auto;
     margin-bottom: auto;
+    user-select: none;
 
     @include media-breakpoint-down(lg) {
       gap: 5px;

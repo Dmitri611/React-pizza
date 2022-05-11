@@ -5,6 +5,7 @@
       <div class="form-auth__card">
         <p>login</p>
         <input class="form-auth__input"
+          autocomplete="country-name"
           type="text"
           placeholder="login"
           minlength="2"
@@ -17,12 +18,12 @@
       </div>
       <div class="form-auth__card">
         <p>password</p>
-        <input class="form-auth__input" type="password" placeholder="password" minlength="8" pattern=".{8,}" />
+        <input class="form-auth__input" autocomplete="new-password" type="password" placeholder="password" minlength="8" pattern=".{8,}" />
         <i class="form-auth__card-desc"> Минимум 8 символов </i>
       </div>
       <div class="form-auth__card">
         <p>password</p>
-        <input class="form-auth__input" type="password" placeholder="password" />
+        <input class="form-auth__input" type="password" autocomplete="new-password" placeholder="password" />
         <i class="form-auth__card-desc">Повторите пароль еще раз!</i>
       </div>
       <div class="form-auth__card">

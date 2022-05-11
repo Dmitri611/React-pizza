@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
 
     &__list {
       display: flex;
