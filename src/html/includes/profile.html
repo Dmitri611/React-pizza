@@ -2,44 +2,44 @@
   <div class="container__inner">
     <h1 class="container__title">Личный кабинет</h1>
     <form class="form-auth" action="#">
-      <article class="form-auth__card">
+      <div class="form-auth__card">
         <p>Имя</p>
-        <input
+        <input class="form-auth__input"
           type="text"
           placeholder="Имя"
           minlength="2"
           pattern="^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$"
         />
-      </article>
-      <article class="form-auth__card">
+      </div>
+      <div class="form-auth__card">
         <p>Фамилия</p>
-        <input
+        <input class="form-auth__input"
           type="text"
           placeholder="Фамилия"
           minlength="2"
           pattern="^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$"
         />
-      </article>
-      <article class="form-auth__card">
+      </div>
+      <div class="form-auth__card">
         <p>Номер телефона</p>
-        <input
+        <input class="form-auth__input"
           type="tel"
           placeholder="Номер телефона"
           pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
         />
-      </article>
-      <article class="form-auth__card">
+      </div>
+      <div class="form-auth__card">
         <p>Адрес доставки</p>
-        <input type="text" placeholder="Адрес доставки" />
-      </article>
-      <article class="form-auth__card">
+        <input class="form-auth__input" type="text" placeholder="Адрес доставки" />
+      </div>
+      <div class="form-auth__card">
         <p>Почта</p>
-        <input
+        <input class="form-auth__input"
           type="email"
           placeholder="email"
           pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         />
-      </article>
+      </div>
       <a class="button button--size-s" href="page404.html">История заказов</a>
       <div class="form-auth__bottom">
         <a class="button button--size-s" href="index.html">Назад</a>

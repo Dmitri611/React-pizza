@@ -1,0 +1,70 @@
+#canvas {
+  width: 252px;
+  height: 252px;
+  background-color: var(--color-bg-list-item--hover);
+}
+
+.modal-form {
+	position: fixed;
+	font-family: var(--font-family);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--color-bg-model);
+  box-shadow: var(--shadow-1);
+	z-index: 1;
+	display: none;
+	pointer-events: none;
+
+  &:target {
+    display: block;
+    pointer-events: auto;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 39px;
+    color: var(--color-logo-heading);
+  }
+
+  &__container{ 
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 589px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: var(--color-button-text);
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  &__head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.close {
+	background-color:var(--color-logo-description);
+	line-height: 25px;
+	text-align: center;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 12px;
+}

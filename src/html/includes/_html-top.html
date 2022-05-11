@@ -13,3 +13,72 @@
     <link rel="shortcut icon" href="favicon/favicon.ico"/>
   </head>
   <body>
+    <div id="modal-form" class="modal-form">
+      <div class="modal-form__container">
+        <div class="modal-form__content">
+          <div class="modal-form__head">
+            <h2 class="modal-form__title">Добавить пиццу</h2>
+            <a href="#close" class="table__block-btn">
+              <svg
+                class="table__block-svg"
+                fill="#181818"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24px"
+                height="24px"
+              >
+                <path
+                  d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"
+                />
+              </svg>
+            </a>
+          </div>
+          <form class="form-auth" action="#">
+            <div class="form-auth__card">
+              <p>Фото</p>
+              <canvas id="canvas"></canvas>
+              <input id="file" accept="image.*" type="file">
+            </div>
+            <div class="form-auth__card">
+              <p>Название</p>
+              <input class="form-auth__input"
+                type="text"
+                placeholder="Название"
+              />
+            </div>
+            <div class="form-auth__card">
+              <p>Категория</p>
+              <input class="form-auth__input"
+                type="text"
+                placeholder="Категория"
+              />
+            </div>
+            <div class="form-auth__card">
+              <p>Ингредиенты</p>
+              <input class="form-auth__input"
+                type="text"
+                placeholder="Ингредиенты"
+              />
+            </div>
+            <div class="form-auth__card">
+              <p>Цена</p>
+              <input class="form-auth__input" type="text" placeholder="Цена" />
+            </div>
+            <button class="button button--size-s">Добавить</button>
+            <input style="display: none" type="submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-warn" class="modal-warn">
+      <div class="modal-warn__container">
+        <div class="modal-warn__content">
+          <h2 class="modal-warn__title">Вы уверены что хотите удалить?</h2>
+          <div class="modal-warn__content-bottom">
+            <a href="#close" class="button button--size-s">отмена</a>
+            <a href="#close" class="button button--size-s">принять</a>
+          </div>
+        </div>
+      </div>
+    </div>

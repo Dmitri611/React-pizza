@@ -2,9 +2,9 @@
   <div class="registr__container">
     <h1 class="registr__title">Регистрация</h1>
     <form class="form-auth" action="#">
-      <article class="form-auth__card">
+      <div class="form-auth__card">
         <p>login</p>
-        <input
+        <input class="form-auth__input"
           type="text"
           placeholder="login"
           minlength="2"
@@ -14,26 +14,26 @@
         <i class="form-auth__card-desc"
           >2-20 символов, которыми могут быть буквы и цифры, первый символ обязательно буква</i
         >
-      </article>
-      <article class="form-auth__card">
+      </div>
+      <div class="form-auth__card">
         <p>password</p>
-        <input type="password" placeholder="password" minlength="8" pattern=".{8,}" />
+        <input class="form-auth__input" type="password" placeholder="password" minlength="8" pattern=".{8,}" />
         <i class="form-auth__card-desc"> Минимум 8 символов </i>
-      </article>
-      <article class="form-auth__card">
+      </div>
+      <div class="form-auth__card">
         <p>password</p>
-        <input type="password" placeholder="password" />
+        <input class="form-auth__input" type="password" placeholder="password" />
         <i class="form-auth__card-desc">Повторите пароль еще раз!</i>
-      </article>
-      <article class="form-auth__card">
+      </div>
+      <div class="form-auth__card">
         <p>email</p>
-        <input
+        <input class="form-auth__input"
           type="text"
           placeholder="email"
           pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         />
         <i class="form-auth__card-desc">Укажите свою настоящую почту!</i>
-      </article>
+      </div>
       <div class="form-auth__bottom">
         <a class="button button--size-s" href="index.html">Вернуться назад</a>
         <a class="button button--size-s" href="page404.html"
