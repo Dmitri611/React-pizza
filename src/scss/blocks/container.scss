@@ -30,7 +30,7 @@
 
   &__title {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     line-height: 39px;
     color: var(--color-logo-heading);
   }

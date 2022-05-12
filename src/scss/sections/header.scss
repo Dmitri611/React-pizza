@@ -38,7 +38,7 @@
     padding-right: 40px;
 
     &-desc {
-      font-family: "Proxima Nova", sans-serif;
+      font-family: var(--font-family);
       font-size: 16px;
       line-height: 19px;
       color: var(--color-logo-description);
@@ -87,7 +87,7 @@
   }
 
   &__dropdown {    
-    font-family: "Proxima Nova", sans-serif;
+    font-family: var(--font-family);
     display: none;
     position: absolute;
     flex-direction: column;

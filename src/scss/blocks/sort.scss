@@ -40,7 +40,7 @@
   white-space: nowrap;
 
   &__text {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 14px;
     line-height: 17px;
     align-items: center;

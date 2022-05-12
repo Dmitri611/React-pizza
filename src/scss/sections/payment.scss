@@ -5,7 +5,7 @@
 
   &__title {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     line-height: 39px;
     color: var(--color-logo-heading);
   }
@@ -37,7 +37,7 @@
     text-align: center;
     align-items: center;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     gap: 30px;
     color: var(--color-logo-description);
 
@@ -98,7 +98,7 @@
 
       &-desc {
         font-size: 13px;
-        font-weight: 500;
+        font-weight: var(--font-weight-normal);
         text-align: start;
       }
 
