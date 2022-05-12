@@ -14,19 +14,6 @@
   white-space: nowrap;
   user-select: none;
 
-  @include media-breakpoint-down(xl) {
-    font-size: 15px;
-    padding: 12px 25px;
-  }
-
-  @include media-breakpoint-down(lg) {
-    padding: 9px 20px;
-  }
-
-  @include media-breakpoint-down(md) {
-    padding: 9px 15px;
-  }
-
   &:hover {
     background-color: var(--color-bg-button--hover);
   }
