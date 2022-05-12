@@ -45,7 +45,7 @@
     }
 
     @include media-breakpoint-down(md) {
-      gap: 20px;
+      gap: 30px;
     }
   }
 
@@ -103,7 +103,7 @@
     gap: 40px;
 
     &-promo {
-      width: 20%;
+      max-width: 160px;
       display: flex;
       border-color: transparent;
       border-radius: 5px;
@@ -122,10 +122,17 @@
 
     &-total {
       display: flex;
-      justify-content: space-between;
       gap: 20px;
       font-size: 22px;
       line-height: 27px;
+
+      @include media-breakpoint-up(md) {
+        justify-content: space-between;
+      }
+  
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
     }
 
     &-span {
