@@ -13,16 +13,12 @@
 
   &-navigation {
     user-select: none;
+    width: 100%;
 
     @include media-breakpoint-up(lg) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
-    }
-
-    @include media-breakpoint-down(lg) {
-      width: 90%;
     }
 
     &__list {
