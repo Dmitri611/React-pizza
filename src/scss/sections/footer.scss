@@ -5,16 +5,7 @@
 
   &__logo {
     color: var(--color-logo-footer);
-    padding-bottom: 20px;
-
-    @include media-breakpoint-down(lg) {
-      display: flex;
-      justify-content: center;
-    }
-
-    @include media-breakpoint-down(md) {
-      padding: 5px;
-    }
+    padding-bottom: 9px;
   }
 
   &__container {
@@ -24,46 +15,33 @@
     padding-top: 30px;
     padding-bottom: 30px;
     display: flex;
+    gap: 20px;    
 
     @include media-breakpoint-down(lg) {
       flex-direction: column;
-      padding-top: 5px;
-      padding-bottom: 20px;
-    }
-
-    @include media-breakpoint-down(md) {
-      width: 90%;
+      align-items: center;
     }
   }
 
   &__list {
     display: flex;
     width: 100%;
-    justify-content: space-around;
-    align-items: center;
     gap: 10px;
     margin-top: auto;
     margin-bottom: auto;
     user-select: none;
+    flex-wrap: wrap;
+    padding-right: 10px;
+    padding-left: 10px;
 
     @include media-breakpoint-down(lg) {
-      gap: 5px;
+      justify-content: center;
     }
 
-    @include media-breakpoint-down(md) {
-      margin-top: 10px;
-      flex-direction: column;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
 
     &-item {
       display: flex;
       text-align: center;
-
-      @include media-breakpoint-down(md) {
-        width: 100%;
-      }
     }
 
     &-link {
@@ -73,18 +51,10 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      white-space: nowrap;
 
       &:hover {
         color: var(--color-bg-button);
-      }
-
-      @include media-breakpoint-down(lg) {
-        font-size: 17px;
-      }
-
-      @include media-breakpoint-down(md) {
-        padding: 5px 10px;
-        font-size: 15px;
       }
     }
   }
