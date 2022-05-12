@@ -12,11 +12,18 @@
   padding-bottom: 96px;
 
   &-navigation {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     user-select: none;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 90%;
+    }
 
     &__list {
       display: flex;
@@ -24,7 +31,14 @@
       font-weight: var(--font-weight-bold);
       font-size: 15px;
       flex-wrap: wrap;
-      padding-right: 20px;
+
+      @include media-breakpoint-up(md) {
+        padding-right: 20px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 20px;
+      }
     }
 
     &__input {
