@@ -3,24 +3,53 @@
   border-top: 1px solid var(--color-bottom-line);
   font-family: var(--font-family);
   color: var(--color-logo-heading);
-  padding-top: 30px;
   align-items: center;
-  gap: 20px;
-  justify-content: space-between;
   user-select: none;
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+    padding-top: 30px;
+    gap: 20px;
+  }
+  
+  @include media-breakpoint-down(sm) {
+    padding-top: 10px;
+    gap: 10px;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    justify-content: space-between;
+    gap: 10px;
+  }
 
   &__product {
     display: flex;
-    max-width: 340px;
     width: 100%;
     align-items: center;
 
+    @include media-breakpoint-up(md) {
+      max-width: 340px;
+    }
+  
+    @include media-breakpoint-down(md) {
+      max-width: 280px;
+    }
+
     &-image {
-      width: 95px;
-      height: 80px;
-      padding-right: 15px;
       margin-top: 5%;
       margin-left: 5%;
+
+      @include media-breakpoint-up(md) {
+        width: 95px;
+        height: 80px;
+        padding-right: 15px;
+      }
+    
+      @include media-breakpoint-down(md) {
+        width: 55px;
+        height: 50px;
+        padding-right: 5px;
+      }
     }
 
     &-text {
@@ -33,14 +62,28 @@
 
     &-heading {
       font-weight: var(--font-weight-bold);
-      font-size: 22px;
       line-height: 27px;
+
+      @include media-breakpoint-up(md) {
+        font-size: 22px;
+      }
+    
+      @include media-breakpoint-down(md) {
+        font-size: 17px;
+      }
     }
 
     &-desc {
-      font-size: 18px;
       line-height: 22px;
       color: var(--color-logo-description);
+
+      @include media-breakpoint-up(md) {
+        font-size: 18px;
+      }
+    
+      @include media-breakpoint-down(md) {
+        font-size: 13px;
+      }
     }
   }
 
@@ -52,8 +95,15 @@
       border: none;
       text-align: center;
       font-weight: var(--font-weight-bold);
-      font-size: 22px;
-      line-height: 27px;
+
+      @include media-breakpoint-up(md) {
+        font-size: 22px;
+      }
+    
+      @include media-breakpoint-down(md) {
+        max-width: 30px;
+        font-size: 17px;
+      }
 
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
@@ -69,9 +119,17 @@
 
   &__price {
     font-weight: var(--font-weight-bold);
-    font-size: 22px;
     line-height: 27px;
     color: var(--color-logo-heading);
+    white-space: nowrap;
+
+    @include media-breakpoint-up(md) {
+      font-size: 22px;
+    }
+  
+    @include media-breakpoint-down(md) {
+      font-size: 17px;
+    }
   }
 
   &__btn {
@@ -79,8 +137,15 @@
     color: var(--color-bg-button);
     border-radius: 50%;
     cursor: pointer;
-    font-size: 23px;
     padding: 1px 7.5px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 23px;
+    }
+  
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+    }
 
     &:hover {
       background-color: var(--color-bg-button);
