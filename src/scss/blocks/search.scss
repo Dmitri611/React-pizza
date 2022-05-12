@@ -4,6 +4,12 @@
   width: 30px;
   height: 30px;
 
+  &:hover {
+    .search__icon {
+      fill: var(--color-bg-button);
+    }
+  }
+
   &__icon {
     width: 30px;
     height: 30px;
@@ -29,12 +35,26 @@
     transition: width 0.5s;
 
     &:focus {
-      background-color: var(--color-bg-list-item-active);
-      width: 250px;
       cursor: text;
       z-index: 1;
       opacity: 1;
       transition: opacity 0.5s, width 0.5s;
+
+      @include media-breakpoint-between(md, lg) {
+        width: 200px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 250px;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100vw;
+      }
+
+      @include media-breakpoint-up(md) {
+        background-color: var(--color-bg-list-item-active);
+      }
     }
   }
 
