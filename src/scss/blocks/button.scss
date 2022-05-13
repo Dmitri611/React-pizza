@@ -11,6 +11,7 @@
   transition: background-color 0.2s ease-in-out;
   white-space: nowrap;
   user-select: none;
+  justify-content: center;
 
   @include media-breakpoint-up(md) {
     font-size: 16px;
@@ -37,7 +38,14 @@
     align-items: center;
     line-height: 19px;
     color: var(--color-logo-description);
-    padding: 10px 20px;
+
+    @include media-breakpoint-up(md) {
+      padding: 10px 20px;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 8px 17px;
+    }
 
     &:hover {
       background-color: transparent;
