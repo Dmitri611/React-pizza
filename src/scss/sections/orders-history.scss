@@ -37,13 +37,11 @@
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
-}
+    }
 
     &-img {
       width: 60px;
