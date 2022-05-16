@@ -44,6 +44,12 @@
       opacity: 0;
       cursor: pointer;
 
+      &:not(:hover) {
+        &~.content-navigation__label {
+          background-color: var(--color-bg-list-item);
+        }
+      }
+
       &:hover {
         &~.content-navigation__label {
           background-color: var(--color-bg-list-item--hover);
@@ -63,7 +69,6 @@
     &__label {
       border-radius: 30px;
       transition: background-color 0.1s ease-in-out;
-      background-color: var(--color-bg-list-item);
       cursor: pointer;
       
       @include media-breakpoint-down(sm) {
@@ -72,14 +77,6 @@
 
       @include media-breakpoint-up(sm) {
         padding: 13px 30px;
-      }
-
-      &:hover {
-        background-color: var(--color-bg-list-item--hover);
-      }
-
-      &:active {
-        background-color: var(--color-bg-list-item--active);
       }
     }
 

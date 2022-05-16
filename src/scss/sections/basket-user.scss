@@ -108,7 +108,10 @@
       border-color: transparent;
       border-radius: 5px;
       color: var(--color-logo-description);
-      background-color: rgba(0, 0, 0, 0.06);
+
+      &:not(:hover) {
+        background-color: rgba(0, 0, 0, 0.06);
+      }
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.1);

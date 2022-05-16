@@ -84,7 +84,6 @@
     &-link {
       width: 100%;
       padding: 10px 14px;
-      color: var(--color-logo-heading);
     }
 
     &-input {
@@ -92,6 +91,13 @@
       height: 100%;
       position: absolute;
       opacity: 0;
+
+      &:not(:hover) {
+        .sort__content-link {
+          color: var(--color-logo-heading);
+          background-color: transparent;
+        }
+      }
 
       &:hover {
         cursor: pointer;

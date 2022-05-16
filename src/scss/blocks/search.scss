@@ -4,7 +4,7 @@
   &:checked {
     & ~ .search__content {
       opacity: 1;
-      transition: opacity .5s, width 1s;
+      transition: opacity .5s, width .5s;
 
       @include media-breakpoint-down(md) {
         width: 99vw;
@@ -37,7 +37,6 @@
   }
 
   &__content {
-    transition: opacity .5s, width 1s;
     width: 0;
     display: flex;
     opacity: 0;

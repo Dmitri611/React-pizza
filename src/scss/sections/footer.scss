@@ -46,12 +46,15 @@
 
     &-link {
       padding: 10px 20px;
-      color: var(--color-button-text);
       font-size: 20px;
       width: 100%;
       display: flex;
       justify-content: center;
       white-space: nowrap;
+
+      &:not(:hover) {
+        color: var(--color-button-text);
+      }
 
       &:hover {
         color: var(--color-bg-button);

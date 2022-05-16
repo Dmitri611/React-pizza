@@ -7,16 +7,27 @@
   box-sizing: border-box;
   font-family: var(--font-family);
   user-select: none;
+  border-radius: 15px;
+  padding: 10px;
+
+  &:not(:hover) {
+    box-shadow: var(--shadow-2);
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-3);
+    transform: translateY(2px);
+
+    .card__image {
+      transform: translateY(5px);
+    }
+  }
 
   &__image {
     width: 90%;
     margin-top: 5%;
     margin-left: 5%;
     transition-duration: 0.25s;
-
-    &:hover {
-      transform: translateY(5px);
-    }
 
     &-wrapper {
       width: 100%;
@@ -38,16 +49,17 @@
     font-size: 15px;
     font-weight:  var(--font-weight-normal);
     min-height: 77px;
-    height: 100%;
     text-align: start;
     padding: 6px;
     color: var(--color-logo-description);
   }
 
   &__params {
+    width: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     background-color: var(--color-pizza-bg);
     border-radius: 10px;
     font-weight: var(--font-weight-bold);
@@ -72,6 +84,9 @@
       position: absolute;
       opacity: 0;
       cursor: pointer;
+      &:checked {
+        cursor: auto;
+      }
 
       &:hover,
       &:checked {
@@ -86,12 +101,6 @@
     &-label {
       padding: 9px;
       flex-grow: 1;
-
-      &:hover {
-        background-color: var(--color-button-text);
-        box-shadow: var(--shadow-1);
-        border-radius: 5px;
-      }
     }
   }
 
@@ -112,15 +121,18 @@
   }
 
   &__button {
-    background-color: var(--color-button-text);
     cursor: pointer;
     border: 1px solid var(--color-bg-button);
     padding: 11px 16px;
     border-radius: 30px;
-    color: var(--color-bg-button);
     font-weight: var(--font-weight-bold);
     font-size: 16px;
     line-height: 19px;
+
+    &:not(:hover) {
+      background-color: var(--color-button-text);
+      color: var(--color-bg-button);
+    }
 
     &:hover {
       background-color: var(--color-bg-button);
@@ -128,7 +140,6 @@
     }
 
     &:active {
-      background-color: var(--color-bg-button--hover);
       transform: translateY(1px);
     }
   }

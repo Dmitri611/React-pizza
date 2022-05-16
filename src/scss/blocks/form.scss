@@ -17,7 +17,10 @@
     border-bottom: 1px solid;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: rgba(0, 0, 0, 0.06);
+
+    &:not(:hover) {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.1);
@@ -62,6 +65,7 @@
     
     @include media-breakpoint-down(md) {
       justify-content: center;
+      padding-bottom: 10px;
     }
 
     @include media-breakpoint-up(md) {

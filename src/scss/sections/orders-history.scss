@@ -60,13 +60,22 @@
     width: 100%;
     text-align: start;
     border-radius: 20px;
-    box-shadow: var(--shadow-2);
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     user-select: none;
     padding: 20px 20px 15px;
     gap: 20px;
+    transition-duration: .3s;
+
+    &:not(:hover) {
+      box-shadow: var(--shadow-2);
+    }
+
+    &:hover {
+      box-shadow: var(--shadow-3);
+      transform: translateY(2px);
+    }
 
     &-wrapper {
       padding-bottom: 10px;

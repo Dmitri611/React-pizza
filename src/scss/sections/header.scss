@@ -139,7 +139,11 @@
 
     &-link {
       padding: 10px 14px;
-      color: var(--color-logo-heading);
+
+      &:not(:hover) {
+        color: var(--color-logo-heading);
+        background-color: transparent;
+      }
 
       &:hover {
         background-color: var(--color-bg-sort);
