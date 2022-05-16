@@ -91,6 +91,11 @@
     &-basket {
       display: flex;
       padding: 10px;
+    }
+
+    &-item {
+      display: flex;
+      position: relative;
 
       &:hover {
         svg {
@@ -99,11 +104,6 @@
           }
         }
       }
-    }
-
-    &-item {
-      display: flex;
-      position: relative;
     }
 
     &-label {

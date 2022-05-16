@@ -22,6 +22,14 @@
         display: flex;
       }
     }
+
+    &~.search__label {
+      svg {
+        path {
+          fill: var(--color-bg-button);
+        }
+      }
+    }
   }
 }
 

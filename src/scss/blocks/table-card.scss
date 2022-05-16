@@ -35,6 +35,11 @@
       color: var(--color-logo-heading);
     }
 
+    .sort__content-link {
+      background-color: transparent;
+      color: var(--color-logo-heading);
+    }
+
     &:hover {
       cursor: pointer;
       background-color: var(--color-bg-button);
@@ -50,7 +55,7 @@
 
       .sort__label {
         text-decoration: none;
-        color: var(--color-button-text);
+        color: var(--color-button-text);  
       }
     }
 
