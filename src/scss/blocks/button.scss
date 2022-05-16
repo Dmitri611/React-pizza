@@ -31,7 +31,7 @@
     transform: translateY(1px);
   }
 
-  &--size-s {
+  &--size-m {
     background-color: transparent;
     border: transparent;
     align-items: center;
@@ -54,6 +54,53 @@
           stroke: var(--color-bg-button);
         }
       }
+    }
+  }
+
+  &--size-s {
+    border: 2px solid var(--color-bg-button);
+    color: var(--color-bg-button);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 1px 7.5px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 23px;
+    }
+  
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: var(--color-bg-button);
+      color: var(--color-button-text);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &--size-s-x {
+    border-color: var(--color-bg-list-item--hover);
+    background-color: var(--color-button-text);
+    color: var(--color-bg-list-item--hover);
+
+    &:hover {
+      background-color: var(--color-button-text);
+      color: var(--color-bg-list-item--hover);
+    }
+  }
+
+  &--table {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 7px 15px;
+
+    &:active {
+      transform: translateY(2px);
     }
   }
 }
