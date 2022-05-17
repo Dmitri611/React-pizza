@@ -2,10 +2,10 @@
   display: none;
 
   &:checked {
-    & ~ .header__dropdown {
+    & ~ .header__dropdown { // TODO
       display: flex;
     }
-    & ~ .header__nav-label {
+    & ~ .header__nav-label { // TODO
       svg {
         path {
           fill: var(--color-bg-button);
@@ -18,13 +18,13 @@
 .header {
   max-width: 1920px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto; // TODO
   border-bottom: 1px solid var(--color-bottom-line);
 
   &__container {
     max-width: 1800px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; // TODO
     display: flex;
 
     @include media-breakpoint-up(lg) {
@@ -98,8 +98,8 @@
       position: relative;
 
       &:hover {
-        svg {
-          path {
+        svg { // TODO
+          path { // TODO
             fill: var(--color-bg-button);
           }
         }
@@ -113,8 +113,8 @@
       cursor: pointer;
       padding: 10px;
       &:hover {
-        svg {
-          path {
+        svg { // TODO
+          path { // TODO
             fill: var(--color-bg-button);
           }
         }
@@ -122,7 +122,7 @@
     }
   }
 
-  &__dropdown {    
+  &__dropdown {     // TODO
     font-family: var(--font-family);
     display: none;
     position: absolute;

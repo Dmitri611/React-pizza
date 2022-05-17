@@ -1,4 +1,4 @@
-.modal-warn {
+.modal-warn { // TODO
 	position: fixed;
 	font-family: var(--font-family);
 	top: 0;
@@ -22,7 +22,7 @@
     color: var(--color-logo-heading);
 
     @include media-breakpoint-down(md) {
-      font-size: 18;
+      font-size: 18px;
     }
 
     @include media-breakpoint-up(md) {

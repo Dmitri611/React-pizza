@@ -30,12 +30,12 @@
       font-size: 16px;
     }
 
-    .sort__label {
+    .sort__label { // TODO
       text-decoration: none;
       color: var(--color-logo-heading);
     }
 
-    .sort__content-link {
+    .sort__content-link { // TODO
       background-color: transparent;
       color: var(--color-logo-heading);
     }
@@ -45,15 +45,15 @@
       background-color: var(--color-bg-button);
       color: var(--color-button-text);
 
-      .table__block-svg {
+      .table__block-svg { // TODO
         fill: var(--color-button-text);
       }
 
-      .button {
+      .button { // TODO
         color: var(--color-button-text);
       }
 
-      .sort__label {
+      .sort__label { // TODO
         text-decoration: none;
         color: var(--color-button-text);  
       }

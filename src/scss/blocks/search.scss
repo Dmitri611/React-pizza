@@ -1,8 +1,14 @@
+// .search {
+//   #search-input:checked ~ &__content {
+
+//   }
+// }
+
 #search-input {
   display: none;
   
   &:checked {
-    & ~ .search__content {
+    & ~ .search__content { // TODO
       opacity: 1;
       transition: opacity .5s, width .2s;
 
@@ -23,7 +29,7 @@
       }
     }
 
-    &~.search__label {
+    &~.search__label { // TODO
       svg {
         path {
           fill: var(--color-bg-button);
@@ -59,7 +65,7 @@
 
     @include media-breakpoint-down(md) {
       right: 0;
-      height: 9vh;
+      height: 9vh; // TODO
       background-color: var(--color-button-text);
     }
 

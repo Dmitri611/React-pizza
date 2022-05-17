@@ -36,8 +36,8 @@
     }
 
     &-image {
-      margin-top: 5%;
-      margin-left: 5%;
+      margin-top: 5%; // todo
+      margin-left: 5%; // todo
 
       @include media-breakpoint-up(md) {
         width: 95px;
