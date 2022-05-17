@@ -37,8 +37,10 @@
     cursor: pointer;
     font-size: 14px;
     line-height: 17px;
-    color: var(--color-bg-button);
-    text-decoration: underline dotted;
+
+    &--color-red {
+      color: var(--color-bg-button);
+    }
   }
 
   &__dropdown {
