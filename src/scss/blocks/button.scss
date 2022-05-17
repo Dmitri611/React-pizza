@@ -8,6 +8,7 @@
   white-space: nowrap;
 
   &--default {
+    display: flex;
     color: var(--color-button-text);
     border: none;
     border-radius: 30px;

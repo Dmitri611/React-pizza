@@ -131,40 +131,4 @@
       font-size: 17px;
     }
   }
-
-  &__btn {
-    border: 2px solid var(--color-bg-button);
-    color: var(--color-bg-button);
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 1px 7.5px;
-
-    @include media-breakpoint-up(md) {
-      font-size: 23px;
-    }
-  
-    @include media-breakpoint-down(md) {
-      font-size: 20px;
-    }
-
-    &:hover {
-      background-color: var(--color-bg-button);
-      color: var(--color-button-text);
-    }
-
-    &:active {
-      transform: translateY(1px);
-    }
-
-    &--green {
-      border-color: var(--color-bg-list-item--hover);
-      background-color: var(--color-button-text);
-      color: var(--color-bg-list-item--hover);
-
-      &:hover {
-        background-color: var(--color-button-text);
-        color: var(--color-bg-list-item--hover);
-      }
-    }
-  }
 }
