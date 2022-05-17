@@ -41,17 +41,17 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      opacity: 0;
+      opacity: 0; // TODO
       cursor: pointer;
 
       &:not(:hover) {
-        &~.content-navigation__label {
+        &~.content-navigation__label { // TODO
           background-color: var(--color-bg-list-item);
         }
       }
 
       &:hover {
-        &~.content-navigation__label {
+        &~.content-navigation__label { // TODO
           background-color: var(--color-bg-list-item--hover);
         }
       }
@@ -59,7 +59,7 @@
       &:checked {
         cursor: auto;
 
-        & ~ .content-navigation__label {
+        & ~ .content-navigation__label { // TODO
           background-color: var(--color-bg-list-item-active);
           color: var(--color-button-text);
         }

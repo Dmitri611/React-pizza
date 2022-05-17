@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--color-logo-heading);
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto; // TODO
 
   &__logo {
     color: var(--color-logo-footer);
@@ -11,7 +11,7 @@
   &__container {
     max-width: 1800px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; // TODO
     padding-top: 30px;
     padding-bottom: 30px;
     display: flex;

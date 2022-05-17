@@ -1,10 +1,10 @@
-#canvas {
+#canvas { // TODO
   width: 252px;
   height: 252px;
   background-color: var(--color-bg-list-item--hover);
 }
 
-.modal-form {
+.modal-form { // TODO
 	position: fixed;
 	font-family: var(--font-family);
 	top: 0;
@@ -62,7 +62,7 @@
   }
 }
 
-.close {
+.close { // TODO
 	background-color:var(--color-logo-description);
 	line-height: 25px;
 	text-align: center;

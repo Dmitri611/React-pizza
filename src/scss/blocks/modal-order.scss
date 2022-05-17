@@ -1,5 +1,5 @@
 .modal-order {
-	position: fixed;
+	position: fixed; // TODO
 	font-family: var(--font-family);
 	top: 0;
 	right: 0;
@@ -80,8 +80,8 @@
     align-items: center;
 
     &-img {
-      margin-top: 5%;
-      margin-left: 5%;
+      margin-top: 5%; // TODO
+      margin-left: 5%; // TODO
 
       @include media-breakpoint-up(md) {
         width: 95px;
@@ -130,7 +130,7 @@
   }
 }
 
-.close {
+.close { // TODO
 	background-color:var(--color-logo-description);
 	line-height: 25px;
 	text-align: center;

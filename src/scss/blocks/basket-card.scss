@@ -36,8 +36,8 @@
     }
 
     &-image {
-      margin-top: 5%;
-      margin-left: 5%;
+      margin-top: 5%; // TODO
+      margin-left: 5%; // TODO
 
       @include media-breakpoint-up(md) {
         width: 95px;
@@ -148,8 +148,8 @@
     }
 
     &:hover {
-      background-color: var(--color-bg-button);
-      color: var(--color-button-text);
+      background-color: var(--color-bg-button); // TODO
+      color: var(--color-button-text); // TODO
     }
 
     &:active {
@@ -162,8 +162,8 @@
       color: var(--color-bg-list-item--hover);
 
       &:hover {
-        background-color: var(--color-button-text);
-        color: var(--color-bg-list-item--hover);
+        background-color: var(--color-button-text); // TODO
+        color: var(--color-bg-list-item--hover); // TODO
       }
     }
   }
