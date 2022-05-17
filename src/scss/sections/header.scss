@@ -18,13 +18,15 @@
 .header {
   max-width: 1920px;
   width: 100%;
-  margin: 0 auto; // TODO
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 1px solid var(--color-bottom-line);
 
   &__container {
     max-width: 1800px;
     width: 100%;
-    margin: 0 auto; // TODO
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
 
     @include media-breakpoint-up(lg) {
@@ -57,7 +59,6 @@
 
     &-desc {
       justify-content: center;
-      font-family: var(--font-family);
       font-size: 16px;
       line-height: 19px;
       color: var(--color-logo-description);
@@ -123,7 +124,6 @@
   }
 
   &__dropdown {     // TODO
-    font-family: var(--font-family);
     display: none;
     position: absolute;
     flex-direction: column;

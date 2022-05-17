@@ -1,6 +1,5 @@
 .modal-warn { // TODO
 	position: fixed;
-	font-family: var(--font-family);
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -36,7 +35,6 @@
   }
 
   &__content {
-    
     width: 100%;
     display: flex;
     position: relative;

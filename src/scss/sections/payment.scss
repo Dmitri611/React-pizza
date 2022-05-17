@@ -1,7 +1,6 @@
 .payment {
   width: 100%;
   height: 100%;
-  font-family: var(--font-family);
 
   &__title {
     font-size: 28px;
@@ -16,10 +15,7 @@
     min-height: 830px;
     gap: 30px;
     display: flex;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 50px auto;
     align-items: center;
     flex-direction: column;
     padding-left: 20px;
@@ -53,10 +49,13 @@
       border-color: transparent;
       border-radius: 5px;
       color: var(--color-logo-description);
-      padding-left: 15px;
       padding-top: 10px;
       padding-bottom: 10px;
       background-color: rgba(0, 0, 0, 0.06);
+
+      @include media-breakpoint-up(md) {
+        padding-left: 15px;
+      }
 
       @include media-breakpoint-down(md) {
         padding-left: 10px;

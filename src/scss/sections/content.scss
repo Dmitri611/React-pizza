@@ -1,15 +1,11 @@
 .content {
   width: 100%;
-  font-family: var(--font-family);
-  padding-top: 40px;
   display: flex;
   flex-direction: column;
   max-width: 1495px;
-  padding-left: 25px;
-  padding-right: 25px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 96px;
+  padding: 40px 25px 96px;
 
   &-navigation {
     user-select: none;
