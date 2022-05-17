@@ -1,17 +1,19 @@
 #profile {
   display: none;
 
-  &:checked {
-    & ~ .header__dropdown { // TODO
-      display: flex;
-    }
-    & ~ .header__nav-label { // TODO
-      svg {
-        path {
-          fill: var(--color-bg-button);
-        }
-      }
-    }
+  &:checked ~ .header__dropdown {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    box-shadow: var(--shadow-2);
+    border-radius: 10px;
+    background-color: var(--color-button-text);
+    padding-top: 13px;
+    padding-bottom: 9px;
+    right: 0;
+    top: 45px;
+    font-size: 17px;
+    z-index: 1;
   }
 }
 
@@ -30,7 +32,7 @@
     display: flex;
 
     @include media-breakpoint-up(lg) {
-      padding: 29px 25px 35px 25px; 
+      padding: 29px 25px 35px 25px;
       gap: 30px;
     }
 
@@ -49,7 +51,7 @@
     flex-direction: column;
     text-align: center;
 
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(lg) {
       margin-right: 40px;
     }
 
@@ -98,12 +100,8 @@
       display: flex;
       position: relative;
 
-      &:hover {
-        svg { // TODO
-          path { // TODO
-            fill: var(--color-bg-button);
-          }
-        }
+      &:hover path {
+        fill: var(--color-bg-button);
       }
     }
 
@@ -113,29 +111,14 @@
       height: 45px;
       cursor: pointer;
       padding: 10px;
-      &:hover {
-        svg { // TODO
-          path { // TODO
-            fill: var(--color-bg-button);
-          }
-        }
+      &:hover path {
+        fill: var(--color-bg-button);
       }
     }
   }
 
-  &__dropdown {     // TODO
+  &__dropdown {
     display: none;
-    position: absolute;
-    flex-direction: column;
-    box-shadow: var(--shadow-2);
-    border-radius: 10px;
-    background-color: var(--color-button-text);
-    padding-top: 13px;
-    padding-bottom: 9px;
-    right: 0;
-    top: 45px;
-    font-size: 17px;
-    z-index: 1;
 
     &-link {
       padding: 10px 14px;

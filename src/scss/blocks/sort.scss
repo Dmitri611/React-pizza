@@ -1,11 +1,3 @@
-#sort {
-  display: none;
-
-  &:checked ~ .sort__dropdown .sort__content {
-    display: flex;
-  }
-}
-
 @for $n from 1 through 5 {
   #status#{$n} {
     display: none;
@@ -21,6 +13,14 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
+
+  #sort {
+    display: none;
+  
+    &:checked ~ .sort__dropdown .sort__content {
+      display: flex;
+    }
+  }
 
   &__text {
     font-weight: var(--font-weight-bold);
@@ -68,39 +68,26 @@
     &-link {
       width: 100%;
       padding: 10px 14px;
-    }
-
-    &-input {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      opacity: 0;
+      cursor: pointer;
 
       &:not(:hover) {
-        .sort__content-link {
-          // TODO
-          color: var(--color-logo-heading);
-          background-color: transparent;
-        }
+        color: var(--color-logo-heading);
+        background-color: transparent;
       }
 
       &:hover {
-        cursor: pointer;
-        & ~ .sort__content-link {
-          // TODO
-          background-color: var(--color-bg-sort);
-          color: var(--color-bg-button);
-        }
+        background-color: var(--color-bg-sort);
+        color: var(--color-bg-button);
       }
+    }
 
-      &:checked {
+    &-input {
+      display: none;
+
+      &:checked ~.sort__content-link {
         cursor: auto;
-
-        & ~ .sort__content-link {
-          // TODO
-          background-color: var(--color-bg-sort);
-          color: var(--color-bg-button);
-        }
+        background-color: var(--color-bg-sort);
+        color: var(--color-bg-button);
       }
     }
   }

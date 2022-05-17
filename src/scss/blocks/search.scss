@@ -1,48 +1,35 @@
-// .search {
-//   #search-input:checked ~ &__content {
+.search {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 
-//   }
-// }
-
-#search-input {
-  display: none;
+  #search-input {
+    display: none;
   
-  &:checked {
-    & ~ .search__content { // TODO
+    &:checked ~ .search__content {
       opacity: 1;
-      transition: opacity .5s, width .2s;
-
+      transition: opacity 0.5s, width 0.2s;
+  
       @include media-breakpoint-down(md) {
         width: 99vw;
       }
-
+  
       @include media-breakpoint-up(md) {
         width: 290px;
       }
 
       .search__content-input {
         display: flex;
-      }
-
-      .search__content-btn {
-        display: flex;
-      }
-    }
-
-    &~.search__label { // TODO
-      svg {
-        path {
-          fill: var(--color-bg-button);
-        }
+        width: 78%;
+        color: var(--color-logo-description);
+        font-size: 20px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding-left: 15px;
       }
     }
   }
-}
-
-.search {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
 
   &__label {
     display: flex;
@@ -65,30 +52,23 @@
 
     @include media-breakpoint-down(md) {
       right: 0;
-      height: 9vh; // TODO
+      height: 79px;
       background-color: var(--color-button-text);
     }
 
     &-input {
-      width: 78%;
-      color: var(--color-logo-description);
       display: none;
-      font-size: 20px;
-      outline: none;
-      border: none;
-      background-color: transparent;
-      padding-left: 15px;
+
       &::-webkit-search-cancel-button {
         cursor: pointer;
         width: 22px;
         height: 22px;
         -webkit-appearance: none;
-        background: url('../../img/delete.svg') no-repeat;
+        background: url("../../img/delete.svg") no-repeat;
       }
     }
 
     &-btn {
-      width: 12%;
       display: none;
     }
   }
