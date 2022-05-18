@@ -1,75 +1,51 @@
 .search {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  min-width: 50px;
+  min-height: 45px;
+  position: relative;
 
-  #search-input {
-    display: none;
+  &__content {
+    display: flex;
+    border-radius: 40px;
+    border: 1px solid;
+    z-index: 1;
+    background-color: var(--color-button-text);
+    position: absolute;
+    right: 0;
   
-    &:checked ~ .search__content {
-      opacity: 1;
-      transition: opacity 0.5s, width 0.2s;
+    &:hover {
+      border-color: var(--color-bg-button);
   
-      @include media-breakpoint-down(md) {
-        width: 99vw;
-      }
-  
-      @include media-breakpoint-up(md) {
-        width: 290px;
-      }
-
-      .search__content-input {
-        display: flex;
-        width: 78%;
-        color: var(--color-logo-description);
-        font-size: 20px;
-        outline: none;
-        border: none;
-        background-color: transparent;
+      .search__input {
+        width: 240px;
         padding-left: 15px;
       }
     }
   }
 
-  &__label {
+  &__btn {
     display: flex;
+    align-items: center;
     cursor: pointer;
-    z-index: 2;
+    border: none;
+    background: none;
   }
 
-  &__content {
+  &__input {
+    border: none;
+    background: none;
+    outline: none;
+    transition: .4s;
+    line-height: 40px;
     width: 0;
     display: flex;
-    opacity: 0;
-    z-index: 1;
-    position: absolute;
-    border-radius: 5px;
+    font-size: 20px;
 
-    @include media-breakpoint-up(md) {
-      right: 35px;
-      background-color: var(--color-bg-list-item--hover);
-    }
-
-    @include media-breakpoint-down(md) {
-      right: 0;
-      height: 79px;
-      background-color: var(--color-button-text);
-    }
-
-    &-input {
-      display: none;
-
-      &::-webkit-search-cancel-button {
-        cursor: pointer;
-        width: 22px;
-        height: 22px;
-        -webkit-appearance: none;
-        background: url("../../img/delete.svg") no-repeat;
-      }
-    }
-
-    &-btn {
-      display: none;
+    &::-webkit-search-cancel-button {
+      cursor: pointer;
+      width: 22px;
+      height: 22px;
+      -webkit-appearance: none;
+      background: url("../../img/delete.svg") no-repeat;
     }
   }
 }
