@@ -5,19 +5,33 @@
 
   &__content {
     display: flex;
-    border-radius: 40px;
-    border: 1px solid;
     z-index: 1;
     background-color: var(--color-button-text);
     position: absolute;
     right: 0;
+
+    @include media-breakpoint-down(md) {
+      border: none;
+    }
+
+    @include media-breakpoint-up(md) {
+      border-radius: 40px;
+      border: 1px solid;
+    }
   
     &:hover {
       border-color: var(--color-bg-button);
   
       .search__input {
-        width: 240px;
         padding-left: 15px;
+
+        @include media-breakpoint-down(md) {
+          width: 90vw;
+        }
+
+        @include media-breakpoint-up(md) {
+          width: 240px;
+        }
       }
     }
   }
