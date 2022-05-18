@@ -6,9 +6,6 @@
 
   &__title {
     font-size: 22px;
-    font-weight: var(--font-weight-bold);
-    line-height: 39px;
-    color: var(--color-logo-heading);
   }
 
   &__container{ 
@@ -17,7 +14,6 @@
 
   &__content {
     height: 100%;
-    padding: 20px 20px 13px 20px;
     gap: 20px;
     color: var(--color-logo-description);
     font-size: 18px;
@@ -85,12 +81,18 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    background-color: var(--color-button-text);
+    top: 0;
+    padding: 20px;
   }
 
   &__body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 
     &-text {
       font-size: 15px;
@@ -103,5 +105,9 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    position: sticky;
+    background-color: var(--color-button-text);
+    bottom: 0;
+    padding: 20px;
   }
 }
