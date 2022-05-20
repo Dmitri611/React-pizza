@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import styles from "./home.module.scss";
-import HomeList from "./home-list/home-list";
-import Sort from "./sort/sort";
-import Content from "./content/content";
+import HomeList from "./components/home-list/home-list";
+import Sort from "./components/sort/sort";
+import Content from "./components/content/content";
 
 export default function Home() {
   return (

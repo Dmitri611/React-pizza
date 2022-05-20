@@ -1,0 +1,16 @@
+@import "src/scss/styles.scss";
+
+.bottom {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+  }
+}

@@ -2,11 +2,11 @@
 @import "~modern-normalize/modern-normalize.css";
 
 //base
-@import "variables";
-@import "fonts";
-@import "reboot";
-@import "mixins.scss";
-@import "root.scss";
+@import "base/variables";
+@import "base/fonts";
+@import "base/reboot";
+@import "base/mixins.scss";
+@import "base/root.scss";
 
 //blocks
 // @import "blocks/logo.scss";

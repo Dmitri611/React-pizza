@@ -3,10 +3,10 @@ import classNames from "classnames";
 import React from "react";
 import styles from "./section.module.scss";
 
-const Section = ({children, title}) => {
+const Section = ({ children, title, className }) => {
   return (
     <section className={styles.section}>
-      <div className={classNames(styles.section__inner, styles['section__inner--size-m'])}>
+      <div className={classNames(styles.section__inner, styles[className])}>
         <h1 className={styles.section__title}>{title}</h1>
         {children}
       </div>

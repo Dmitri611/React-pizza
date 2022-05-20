@@ -48,8 +48,12 @@ const HeaderList = () => {
             </svg>
           }
         >
-          <DropdownItem path="/profile" text="Вход" />
+          <Link to="/login">
+            <DropdownItem path="/profile" text="Вход" />
+          </Link>
+          <Link to="/registration">
           <DropdownItem text="Регистрация" />
+          </Link>
           <Link to="/profile">
             <DropdownItem text="Кабинет" />
           </Link>

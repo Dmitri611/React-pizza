@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./sort.module.scss";
-import Dropdown from "../../../dropdown/dropdown";
-import DropdownItem from "../../../dropdown/dropdown-item/dropdown-item";
+import Dropdown from "../../../../dropdown/dropdown";
+import DropdownItem from "../../../../dropdown/dropdown-item/dropdown-item";
 
 const Sort = () => {
   const [value, setValue] = useState("популярности");

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./card.module.scss";
-import Button from "../../../button/button";
+import Button from "../../../../button/button";
 
-import image from "../../../../uploads/pizzas/pepperoni.webp";
+import image from "../../../../../uploads/pizzas/pepperoni.webp";
 
 const Card = () => {
   return (
