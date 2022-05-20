@@ -9,9 +9,10 @@
   white-space: nowrap;
 
   &--reset {
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-bold);
     border: none;
     background: transparent;
+    color: var(--color-bg-button);
   }
 
   &--nav {
