@@ -109,6 +109,11 @@
     align-items: center;
     gap: 10px;
 
+    &_span {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
     &_price {
       font-weight: var(--font-weight-bold);
       font-size: 22px;

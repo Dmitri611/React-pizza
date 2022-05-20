@@ -8,17 +8,6 @@ export default function Content() {
       <h1 className={styles.content__title}>Все пиццы</h1>
       <div className={styles.content__container}>
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
       </div>
     </div>
   );

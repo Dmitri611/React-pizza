@@ -65,9 +65,9 @@ const Card = () => {
       <div className={styles.card__bottom}>
         <span className={styles.card__bottom_price}>От 10.13р</span>
         <Button className="button--product">
-          <span>+</span>
+          <span className={styles.card__bottom_span}>+</span>
           Добавить
-          <span>0</span>
+          <span className={styles.card__bottom_span}>0</span>
         </Button>
       </div>
     </div>
