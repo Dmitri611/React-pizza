@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./header-list.module.scss";
+import { Link } from "react-router-dom";
 import Search from "../search/search";
 import Dropdown from "../../dropdown/dropdown";
 import DropdownItem from "../../dropdown/dropdown-item/dropdown-item";
@@ -47,9 +48,11 @@ const HeaderList = () => {
             </svg>
           }
         >
-          <DropdownItem text="Вход" />
+          <DropdownItem path="/profile" text="Вход" />
           <DropdownItem text="Регистрация" />
-          <DropdownItem text="Кабинет" />
+          <Link to="/profile">
+            <DropdownItem text="Кабинет" />
+          </Link>
           <DropdownItem text="Настройки" />
         </Dropdown>
       </li>
