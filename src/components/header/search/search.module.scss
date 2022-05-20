@@ -25,14 +25,20 @@
       border-color: var(--color-bg-button);
 
       .search__input {
-        padding-left: 15px;
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
+          width: 86vw;
+          padding-left: 15px;
+        }
+
+        @include media-breakpoint-between(sm, md) {
           width: 90vw;
+          padding-left: 25px;
         }
 
         @include media-breakpoint-up(md) {
           width: 240px;
+          padding-left: 15px;
         }
       }
     }
