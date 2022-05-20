@@ -1,0 +1,39 @@
+@import "../../../scss/styles.scss";
+
+.list {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  user-select: none;
+  flex-wrap: wrap;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  @include media-breakpoint-down(lg) {
+    justify-content: center;
+  }
+
+  &__item {
+    display: flex;
+    text-align: center;
+  }
+
+  &__text {
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+
+    &:not(:hover) {
+      color: var(--color-button-text);
+    }
+
+    &:hover {
+      color: var(--color-bg-button);
+    }
+  }
+}

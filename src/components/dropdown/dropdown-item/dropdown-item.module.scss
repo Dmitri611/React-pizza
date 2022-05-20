@@ -1,0 +1,24 @@
+@import "../../../scss/styles.scss";
+
+.item {
+  display: flex;
+  position: relative;
+
+  &__text {
+    width: 100%;
+    padding: 10px 14px;
+    cursor: pointer;
+    border: none;
+    text-align: start;
+
+    &:not(:hover) {
+      color: var(--color-logo-heading);
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: var(--color-bg-sort);
+      color: var(--color-bg-button);
+    }
+  }
+}

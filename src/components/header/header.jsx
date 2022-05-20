@@ -1,33 +1,20 @@
 import React from "react";
-// import styles from './header.scss';
+import styles from "./header.module.scss";
+import Logo from "../logo/logo";
+import HeaderList from "./header-list/header-list";
 
-export default function Header() {
+const Header = () => {
   return (
-    <div className="header">
-      <div className="header__container">
-        <div className="header__logo">
-          <a className="logo" href="#">
-            <h1>pizza lab</h1>
-          </a>
-          <p className="header__logo-desc">Лучшая пицца в мире!</p>
+    <header className={styles.header}>
+      <div className={styles.header__container}>
+        <div className={styles.header__logo}>
+          <Logo />
+          <p className={styles.header__logo_desc}>Живите вкусно!</p>
         </div>
-        <form className="header__search" action="/search/" target="_blank">
-          <input
-            className="header__search-input"
-            type="search"
-            required
-            placeholder="Поиск по сайту"
-          />
-          <input className="header__search-input" type="submit" value="🔍" />
-        </form>
-        <div className="header__nav">
-          <button className="button">Корзина</button>
-          <div className="button__container">
-            <button className="button">Вход</button>
-            <button className="button">Регистрация</button>
-          </div>
-        </div>
+        <HeaderList />
       </div>
-    </div>
+    </header>
   );
-}
+};
+
+export default Header;

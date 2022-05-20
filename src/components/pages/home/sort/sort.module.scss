@@ -1,0 +1,16 @@
+@import "../../../../scss/styles.scss";
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__text {
+    font-weight: var(--font-weight-bold);
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}

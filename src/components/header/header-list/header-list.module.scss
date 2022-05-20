@@ -1,0 +1,32 @@
+@import "../../../scss/styles.scss";
+
+.list {
+  user-select: none;
+  align-items: center;
+  display: flex;
+  width: 100%;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: row-reverse;
+    gap: 15px;
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: flex-end;
+    gap: 30px;
+  }
+
+  &__basket {
+    display: flex;
+    padding: 10px;
+  }
+
+  &__item {
+    display: flex;
+    position: relative;
+
+    &:hover path {
+      fill: var(--color-bg-button);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.dropdown {
+  display: block;
+  position: relative;
+  user-select: none;
+
+  &__content {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    box-shadow: var(--shadow-2);
+    border-radius: 10px;
+    background-color: var(--color-button-text);
+    padding-top: 13px;
+    padding-bottom: 9px;
+    right: 7px;
+    font-size: 15px;
+    z-index: 1;
+
+    &--none {
+      display: none;
+    }
+  }
+}

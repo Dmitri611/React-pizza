@@ -1,0 +1,29 @@
+@import "../../scss/styles.scss";
+
+.footer {
+  background-color: var(--color-logo-heading);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__container {
+    max-width: 1800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    gap: 20px;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    color: var(--color-logo-footer);
+    padding-bottom: 9px;
+  }
+}

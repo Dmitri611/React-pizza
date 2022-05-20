@@ -1,0 +1,175 @@
+@import "../../scss//styles.scss";
+
+.button {
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+
+  &--reset {
+    font-weight: var(--font-weight-normal);
+    border: none;
+    background: transparent;
+  }
+
+  &--nav {
+    font-weight: var(--font-weight-bold);
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+
+    &:not(:hover) {
+      background-color: var(--color-bg-list-item);
+    }
+
+    &:hover {
+      background-color: var(--color-bg-list-item--hover);
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 10px 25px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      padding: 13px 30px;
+    }
+  }
+
+  &--active {
+    font-weight: var(--font-weight-bold);
+    border: none;
+    border-radius: 30px;
+    background-color: var(--color-bg-list-item-active);
+    color: var(--color-button-text);
+    padding: 13px 30px;
+  }
+
+  &--default {
+    display: flex;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-button-text);
+    border: none;
+    border-radius: 30px;
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+      padding: 15px 30px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+
+    &:not(:hover) {
+      background-color: var(--color-bg-button);
+    }
+
+    &:hover {
+      background-color: var(--color-bg-button--hover);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &--size-m {
+    font-weight: var(--font-weight-bold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: transparent;
+
+    @include media-breakpoint-up(md) {
+      padding: 10px 20px;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 8px 17px;
+    }
+
+    &:not(:hover) {
+      background-color: transparent;
+      color: var(--color-logo-description);
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: var(--color-bg-button);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    .basket-user__top-svg {
+      path {
+        stroke: var(--color-bg-button);
+      }
+    }
+  }
+
+  &--size-s {
+    font-weight: var(--font-weight-bold);
+    border: 2px solid var(--color-bg-button);
+    border-radius: 50%;
+    padding: 1px 7.5px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 23px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+    }
+
+    &:not(:hover) {
+      background-color: transparent;
+      color: var(--color-bg-button);
+    }
+
+    &:hover {
+      background-color: var(--color-bg-button);
+      color: var(--color-button-text);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &--edit {
+    font-weight: var(--font-weight-bold);
+    background-color: transparent;
+    padding: 7px 15px;
+    border: none;
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &--product {
+    font-weight: var(--font-weight-bold);
+    border: 1px solid var(--color-bg-button);
+    padding: 11px 16px;
+    border-radius: 30px;
+
+    &:not(:hover) {
+      background-color: transparent;
+      color: var(--color-bg-button);
+    }
+
+    &:hover {
+      background-color: var(--color-bg-button);
+      color: var(--color-button-text);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
