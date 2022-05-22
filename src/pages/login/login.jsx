@@ -1,10 +1,10 @@
 import React from "react";
-import Section from "../../../components/section/section";
-import Form from "../../form/form";
-import FormCard from "../../form/form-card/form-card";
-import FormBottom from "../../form/form-bottom/form-bottom";
+import Section from "../../components/section/section";
+import Form from "../../components/form/form";
+import FormCard from "../../components/form/form-card/form-card";
+import FormBottom from "../../components/form/form-bottom/form-bottom";
 import { Link } from "react-router-dom";
-import Button from "../../button/button";
+import Button from "../../components/button/button";
 
 export default function Login() {
   return (

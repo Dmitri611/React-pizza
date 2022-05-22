@@ -3,11 +3,10 @@ import "./scss/styles.scss";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout";
 
-//pages
-import Home from "./components/pages/home/home";
-import Profile from "./components/pages/profile/profile";
-import Login from "./components/pages/login/login";
-import Registration from "./components/pages/registration/registration";
+import Home from "./pages/home/home";
+import Profile from "./pages/profile/profile";
+import Login from "./pages/login/login";
+import Registration from "./pages/registration/registration";
 
 export default function App() {
   return (

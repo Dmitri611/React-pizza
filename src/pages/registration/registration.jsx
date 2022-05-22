@@ -1,16 +1,16 @@
 import React from "react";
-import Section from "../../section/section";
-import Form from "../../form/form";
-import FormCard from "../../form/form-card/form-card";
-import FormBottom from "../../form/form-bottom/form-bottom";
+import Section from "../../components/section/section";
+import Form from "../../components/form/form";
+import FormCard from "../../components/form/form-card/form-card";
+import FormBottom from "../../components/form/form-bottom/form-bottom";
 import { Link } from "react-router-dom";
-import Button from "../../button/button";
+import Button from "../../components/button/button";
 
 export default function Registration() {
   return (
     <Section className="section__inner--size-m" title="Регистрация">
       <Form>
-      <FormCard
+        <FormCard
           title="Логин"
           type="text"
           placeholder="Логин"
@@ -21,10 +21,10 @@ export default function Registration() {
         />
         <FormCard
           title="Пароль"
-          autocomplete="new-password" 
-          type="password" 
-          placeholder="Пароль" 
-          minlength="8" 
+          autocomplete="new-password"
+          type="password"
+          placeholder="Пароль"
+          minlength="8"
           pattern=".{8,}"
           description="Минимум 8 символов"
         />
@@ -37,10 +37,10 @@ export default function Registration() {
           description="Укажите свою настоящую почту!"
         />
         <FormBottom>
-            <Link to="/">
+          <Link to="/">
             <Button className="button--size-m" text="Назад" />
-            </Link>
-            <Button type="submit" className="button--size-m" text="Регистрация" />
+          </Link>
+          <Button type="submit" className="button--size-m" text="Регистрация" />
         </FormBottom>
       </Form>
     </Section>

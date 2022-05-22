@@ -25,7 +25,6 @@
       border-color: var(--color-bg-button);
 
       .search__input {
-
         @include media-breakpoint-down(sm) {
           width: 86vw;
           padding-left: 15px;

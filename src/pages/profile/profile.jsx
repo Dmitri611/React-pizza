@@ -1,9 +1,9 @@
 import React from "react";
-import Section from "../../section/section";
-import Form from "../../form/form";
-import FormCard from "../../form/form-card/form-card";
-import FormBottom from "../../form/form-bottom/form-bottom";
-import Button from "../../button/button";
+import Section from "../../components/section/section";
+import Form from "../../components/form/form";
+import FormCard from "../../components/form/form-card/form-card";
+import FormBottom from "../../components/form/form-bottom/form-bottom";
+import Button from "../../components/button/button";
 import { Link } from "react-router-dom";
 
 export default function Profile() {

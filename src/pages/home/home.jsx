@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./home.module.scss";
 import HomeList from "./components/home-list/home-list";
-import Sort from "./components/sort/sort";
+import Sort from "../../pages/home/components/sort/sort";
 import Content from "./components/content/content";
 
 export default function Home() {

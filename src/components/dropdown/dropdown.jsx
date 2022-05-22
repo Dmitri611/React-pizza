@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import styles from "./dropdown.module.scss";
 import Button from "../button/button";
+import styles from "./dropdown.module.scss";
 
 const Dropdown = ({ children, btnContent }) => {
   const [checked, setChecked] = useState(false);
