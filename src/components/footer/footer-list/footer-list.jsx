@@ -1,33 +1,34 @@
 import React from "react";
 import styles from "./footer-list.module.scss";
+import { Link } from "react-router-dom";
 
 const FooterList = () => {
   return (
     <ul className={styles.list}>
       <li className={styles["list__item"]}>
-        <a href="#" className={styles.list__text}>
+        <Link to="/" className={styles.list__text}>
           О Нас
-        </a>
+        </Link>
       </li>
       <li className={styles.list__item}>
-        <a href="#" className={styles.list__text}>
+        <Link to="/" className={styles.list__text}>
           Оставить отзыв
-        </a>
+        </Link>
       </li>
       <li className={styles.list__item}>
-        <a href="#" className={styles.list__text}>
+        <Link to="/" className={styles.list__text}>
           Работа у нас
-        </a>
+        </Link>
       </li>
       <li className={styles.list__item}>
-        <a href="#" className={styles.list__text}>
+        <Link to="/" className={styles.list__text}>
           Акции
-        </a>
+        </Link>
       </li>
       <li className={styles.list__item}>
-        <a href="#" className={styles.list__text}>
+        <Link to="/" className={styles.list__text}>
           Контакты
-        </a>
+        </Link>
       </li>
     </ul>
   );

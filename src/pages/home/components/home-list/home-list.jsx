@@ -22,7 +22,7 @@ const HomeList = () => {
               className={styles.list__input}
               name="category"
               type="radio"
-              checked={item === activeCategory}
+              defaultChecked={item === activeCategory}
               onClick={() => setActiveCategory(item)}
             />
             <span className={styles.list__text}>{item}</span>

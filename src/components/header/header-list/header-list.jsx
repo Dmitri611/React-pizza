@@ -57,7 +57,9 @@ const HeaderList = () => {
           <Link to="/profile">
             <DropdownItem text="Кабинет" />
           </Link>
-          <DropdownItem text="Настройки" />
+          <Link to="/admin">
+            <DropdownItem text="Настройки" />
+          </Link>
         </Dropdown>
       </li>
     </ul>

@@ -6,8 +6,8 @@ import DropdownItem from "../../../../components/dropdown/dropdown-item/dropdown
 const Sort = () => {
   const [value, setValue] = useState("популярности");
 
-  const change = (evt) => {
-    setValue(evt.target.innerText);
+  const change = (e) => {
+    setValue(e.target.innerText);
   };
 
   return (

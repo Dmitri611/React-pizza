@@ -12,7 +12,8 @@
     font-weight: var(--font-weight-bold);
     border: none;
     background: transparent;
-    color: var(--color-bg-button);
+    // color: var(--color-bg-button);
+    color: inherit;
   }
 
   &--nav {

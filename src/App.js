@@ -7,6 +7,11 @@ import Home from "./pages/home/home";
 import Profile from "./pages/profile/profile";
 import Login from "./pages/login/login";
 import Registration from "./pages/registration/registration";
+import Admin from "./pages/admin/admin";
+import Products from "./pages/products/products";
+import Users from "./pages/users/users";
+import PromoCodes from "./pages/promoCodes/promoCodes";
+import Orders from "./pages/orders/orders";
 
 export default function App() {
   return (
@@ -16,6 +21,11 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/products" element={<Products />} />
+        <Route path="/admin/users" element={<Users />} />
+        <Route path="/admin/promo-codes" element={<PromoCodes />} />
+        <Route path="/admin/orders" element={<Orders />} />
       </Routes>
     </Layout>
   );
