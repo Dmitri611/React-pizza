@@ -13,6 +13,8 @@ import Users from "./pages/users/users";
 import PromoCodes from "./pages/promoCodes/promoCodes";
 import Orders from "./pages/orders/orders";
 import Basket from "./pages/basket/basket";
+import BasketEmpty from "./pages/basket/components/basketEmpty/basketEmpty";
+import Payment from "./pages/payment/payment";
 
 export default function App() {
   return (
@@ -23,6 +25,8 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/basket-empty" element={<BasketEmpty />} />
+        <Route path="/basket/payment" element={<Payment />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/products" element={<Products />} />
         <Route path="/admin/users" element={<Users />} />

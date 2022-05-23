@@ -1,0 +1,56 @@
+@import "src/scss/styles.scss";
+
+.basket__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &_promo {
+    max-width: 160px;
+    display: flex;
+    border-color: transparent;
+    border-radius: 5px;
+    color: var(--color-logo-description);
+
+    &:not(:hover) {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &_total {
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
+    line-height: 27px;
+
+    @include media-breakpoint-up(md) {
+      justify-content: space-between;
+    }
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+  }
+
+  &_span {
+    font-weight: var(--font-weight-bold);
+
+    &--orange {
+      color: var(--color-bg-button);
+    }
+  }
+
+  &_btns {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,42 @@
+@import "src/scss/styles.scss";
+
+.input {
+  width: 100%;
+  display: flex;
+  border-color: transparent;
+  border-radius: 5px;
+  color: var(--color-logo-description);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.06);
+
+  @include media-breakpoint-up(md) {
+    padding-left: 15px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-left: 10px;
+  }
+
+  &--size-s {
+    width: 100px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+input[type="time"] {
+  cursor: pointer;
+  font-size: 18px;
+
+  @include media-breakpoint-down(md) {
+    width: 30%;
+  }
+}

@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./logo.module.scss";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import LogoSvg from "../../assets/image/svg/logo.svg";
+import { ReactComponent as LogoSvg } from "../../assets/image/svg/logo.svg";
 
 const Logo = ({ className }) => {
   return (

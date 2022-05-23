@@ -1,8 +1,8 @@
 import React from "react";
 import Section from "../../components/section/section";
 import Form from "../../components/form/form";
-import FormCard from "../../components/form/form-card/form-card";
-import FormBottom from "../../components/form/form-bottom/form-bottom";
+import FormCard from "../../components/form/components/form-card/form-card";
+import FormBottom from "../../components/form/components/form-bottom/form-bottom";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button";
 

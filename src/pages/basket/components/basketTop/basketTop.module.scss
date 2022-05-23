@@ -1,0 +1,32 @@
+@import "src/scss/styles.scss";
+
+.basket__top {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
+  &_left {
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-weight-bold);
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  svg {
+    margin-right: 17px;
+
+    &:last-child {
+      margin-right: 7px;
+    }
+  }
+}

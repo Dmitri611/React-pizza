@@ -1,0 +1,14 @@
+@import "src/scss/styles.scss";
+
+.label {
+  cursor: pointer;
+  padding: 10px 20px;
+  white-space: nowrap;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--color-bg-button);
+  }
+}

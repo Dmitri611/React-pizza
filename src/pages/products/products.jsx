@@ -5,11 +5,11 @@ import SectionContent from "../../components/section/sectionContent/section-cont
 import SectionFooter from "../../components/section/sectionFooter/sectionFooter";
 import Table from "../../components/table/table";
 import { Link } from "react-router-dom";
-import TableCard from "../../components/table/tableCard/tableCard";
-import TableCardItem from "../../components/table/tableCard/tableCardItem/tableCardItem";
-import TableCardItemTh from "../../components/table/tableCard/tableCardItem/tableCardItemTh";
-import { Edit } from "../../assets/image/svg/draw.svg";
-import { Delete } from "../../assets/image/svg/delete.svg";
+import TableCard from "../../components/table/components/tableCard/tableCard";
+import TableCardItem from "../../components/table/components/tableCardItem/tableCardItem";
+import TableCardItemTh from "../../components/table/components/tableCardItem/tableCardItemTh";
+import { ReactComponent as Edit } from "../../assets/image/svg/draw.svg";
+import { ReactComponent as Delete } from "../../assets/image/svg/delete.svg";
 
 import image from "../../uploads/pizzas/pepperoni.webp";
 

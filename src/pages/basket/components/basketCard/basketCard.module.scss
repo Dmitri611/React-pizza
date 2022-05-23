@@ -1,6 +1,6 @@
 @import "src/scss/styles.scss";
 
-.basket-card {
+.card {
   display: flex;
   border-top: 1px solid var(--color-bottom-line);
   color: var(--color-logo-heading);
@@ -36,7 +36,7 @@
       max-width: 280px;
     }
 
-    &-image {
+    &_image {
       @include media-breakpoint-up(md) {
         width: 95px;
         height: 80px;
@@ -54,7 +54,7 @@
       }
     }
 
-    &-text {
+    &_text {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -62,7 +62,7 @@
       word-break: break-all;
     }
 
-    &-heading {
+    &_heading {
       font-weight: var(--font-weight-bold);
       line-height: 27px;
 
@@ -75,7 +75,7 @@
       }
     }
 
-    &-desc {
+    &_desc {
       line-height: 22px;
       color: var(--color-logo-description);
 
@@ -93,7 +93,7 @@
     display: flex;
     align-items: center;
 
-    &-number {
+    &_number {
       border: none;
       text-align: center;
       font-weight: var(--font-weight-bold);
