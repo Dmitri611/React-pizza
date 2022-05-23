@@ -15,11 +15,7 @@ const Dropdown = ({ children, btnContent }) => {
       <Button handler={change} className="button--reset">
         {btnContent}
       </Button>
-      <ul
-        className={
-          checked ? styles.dropdown__content : styles["dropdown__content--none"]
-        }
-      >
+      <ul className={checked ? styles.dropdown__content : styles["dropdown__content--none"]}>
         {children}
       </ul>
     </div>

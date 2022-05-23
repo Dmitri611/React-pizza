@@ -3,32 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.6.0",
-    "@emotion/styled": "^11.6.0",
-    "@mui/icons-material": "^5.1.1",
-    "@mui/material": "^5.1.1",
-    "@testing-library/jest-dom": "^5.11.4",
+    "@craco/craco": "^6.4.3",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.0",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "classnames": "^2.3.1",
     "modern-normalize": "^1.1.0",
     "node-sass": "^4.14.1",
     "prettier-eslint-cli": "^5.0.1",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^6.0.2",
-    "react-scripts": "^3.4.4",
-    "redux": "^4.1.2",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.8",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "lint": "eslint \"{,!(node_modules)/**/}*.{js,jsx}\"",
-    "prettier": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,scss}\""
+    "start": "craco start",
+    "build": "craco build",
+    "format": "prettier --write **/*.{js,jsx}",
+    "post-update": "npm upgrade --latest"
   },
   "eslintConfig": {
     "extends": [
@@ -49,12 +51,21 @@
     ]
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.3",
+    "@babel/core": "^7.17.12",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-env": "^7.17.12",
+    "@babel/preset-react": "^7.17.12",
+    "babel-plugin-import": "^1.13.5",
     "babel-plugin-module-resolver": "^4.1.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.27.1",
-    "prettier": "^2.5.0"
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "prettier": "^2.6.2"
   }
 }

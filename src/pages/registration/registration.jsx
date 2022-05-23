@@ -1,12 +1,12 @@
 import React from "react";
-import Section from "../../components/section/section";
-import Form from "../../components/form/form";
-import FormCard from "../../components/form/components/form-card/form-card";
-import FormBottom from "../../components/form/components/form-bottom/form-bottom";
 import { Link } from "react-router-dom";
-import Button from "../../components/button/button";
+import Section from "components/section/section";
+import Form from "components/form/form";
+import FormCard from "components/form/components/form-card/form-card";
+import FormBottom from "components/form/components/form-bottom/form-bottom";
+import Button from "components/button/button";
 
-export default function Registration() {
+const Registration = () => {
   return (
     <Section className="section__inner--size-m" title="Регистрация">
       <Form>
@@ -45,4 +45,6 @@ export default function Registration() {
       </Form>
     </Section>
   );
-}
+};
+
+export default Registration;

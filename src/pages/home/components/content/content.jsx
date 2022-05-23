@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./content.module.scss";
 import Card from "../card/card";
+import styles from "./content.module.scss";
 
-export default function Content() {
+const Content = () => {
   return (
     <div className={styles.content}>
       <h1 className={styles.content__title}>Все пиццы</h1>
@@ -11,4 +11,6 @@ export default function Content() {
       </div>
     </div>
   );
-}
+};
+
+export default Content;

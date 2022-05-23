@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./basketTop.module.scss";
-import Button from "../../../../components/button/button";
-import { ReactComponent as BasketSvg } from "../../../../assets/image/svg/shopping.svg";
-import { ReactComponent as BasketClearSvg } from "../../../../assets/image/svg/basket-clear.svg";
 import { Link } from "react-router-dom";
+import Button from "components/button/button";
+import { ReactComponent as BasketSvg } from "assets/image/svg/shopping.svg";
+import { ReactComponent as BasketClearSvg } from "assets/image/svg/basket-clear.svg";
+import styles from "./basketTop.module.scss";
 
 const BasketTop = () => {
   return (

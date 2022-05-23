@@ -1,17 +1,13 @@
 import React from "react";
-import styles from "./basketBottom.module.scss";
-import Button from "../../../../components/button/button";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
+import Button from "components/button/button";
+import styles from "./basketBottom.module.scss";
 
 const BasketBottom = () => {
   return (
     <div className={styles.basket__bottom}>
-      <input
-        className={styles.basket__bottom_promo}
-        type="text"
-        placeholder="Промокод"
-      />
+      <input className={styles.basket__bottom_promo} type="text" placeholder="Промокод" />
       <div className={styles.basket__bottom_total}>
         <span>
           Всего пицц: <span className={styles.basket__bottom_span}>3 шт.</span>

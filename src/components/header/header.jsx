@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./header.module.scss";
 import Logo from "../logo/logo";
-import HeaderList from "./header-list/header-list";
+import HeaderList from "./components/header-list/header-list";
 
 const Header = () => {
   return (

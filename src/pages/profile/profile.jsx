@@ -1,12 +1,12 @@
 import React from "react";
-import Section from "../../components/section/section";
-import Form from "../../components/form/form";
-import FormCard from "../../components/form/components/form-card/form-card";
-import FormBottom from "../../components/form/components/form-bottom/form-bottom";
-import Button from "../../components/button/button";
 import { Link } from "react-router-dom";
+import Section from "components/section/section";
+import Form from "components/form/form";
+import FormCard from "components/form/components/form-card/form-card";
+import FormBottom from "components/form/components/form-bottom/form-bottom";
+import Button from "components/button/button";
 
-export default function Profile() {
+const Profile = () => {
   return (
     <Section className="section__inner--size-m" title="Личный кабинет">
       <Form>
@@ -31,11 +31,7 @@ export default function Profile() {
           minLength="12"
           pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
         />
-        <FormCard
-          title="Адрес доставки"
-          type="text"
-          placeholder="Адрес доставки"
-        />
+        <FormCard title="Адрес доставки" type="text" placeholder="Адрес доставки" />
         <FormCard
           title="Почта"
           type="email"
@@ -43,7 +39,9 @@ export default function Profile() {
           minLength="8"
           pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         />
-        <Button className="button--size-m" text="История заказов" />
+        <Link to="/profile/orders-history">
+          <Button className="button--size-m" text="История заказов" />
+        </Link>
         <FormBottom>
           <Link to="/">
             <Button className="button--size-m" text="Назад" />
@@ -55,4 +53,6 @@ export default function Profile() {
       </Form>
     </Section>
   );
-}
+};
+
+export default Profile;

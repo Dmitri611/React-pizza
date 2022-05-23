@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import styles from "./home.module.scss";
 import HomeList from "./components/home-list/home-list";
-import Sort from "../../pages/home/components/sort/sort";
+import Sort from "./components/sort/sort";
 import Content from "./components/content/content";
+import styles from "./home.module.scss";
 
-export default function Home() {
+const Home = () => {
   return (
     <section className={styles.home}>
       <div className={styles.home__navigation}>
@@ -15,4 +15,6 @@ export default function Home() {
       <Content />
     </section>
   );
-}
+};
+
+export default Home;

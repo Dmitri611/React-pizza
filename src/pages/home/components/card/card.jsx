@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
+import Button from "components/button/button";
+import image from "uploads/pizzas/pepperoni.webp";
 import styles from "./card.module.scss";
-import Button from "../../../../components/button/button";
-
-import image from "../../../../uploads/pizzas/pepperoni.webp";
 
 const Card = () => {
   return (
@@ -26,11 +26,7 @@ const Card = () => {
             <label className={styles["card__list-label"]}>тонкое</label>
           </li>
           <li className={styles.card__list_item}>
-            <input
-              className={styles["card__list-input"]}
-              type="radio"
-              name="type1"
-            />
+            <input className={styles["card__list-input"]} type="radio" name="type1" />
             <label className={styles["card__list-label"]}>традиционное</label>
           </li>
         </ul>
@@ -45,19 +41,11 @@ const Card = () => {
             <label className={styles["card__list-label"]}>26</label>
           </li>
           <li className={styles.card__list_item}>
-            <input
-              className={styles["card__list-input"]}
-              type="radio"
-              name="size1"
-            />
+            <input className={styles["card__list-input"]} type="radio" name="size1" />
             <label className={styles["card__list-label"]}>30</label>
           </li>
           <li className={styles.card__list_item}>
-            <input
-              className={styles["card__list-input"]}
-              type="radio"
-              name="size1"
-            />
+            <input className={styles["card__list-input"]} type="radio" name="size1" />
             <label className={styles["card__list-label"]}>36</label>
           </li>
         </ul>

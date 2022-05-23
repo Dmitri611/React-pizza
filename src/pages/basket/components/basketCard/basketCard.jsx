@@ -1,19 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import Button from "components/button/button";
+import { ReactComponent as DeleteSvg } from "assets/image/svg/delete.svg";
 import styles from "./basketCard.module.scss";
-import Button from "../../../../components/button/button";
-import { ReactComponent as DeleteSvg } from "../../../../assets/image/svg/delete.svg";
 
 const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, amount, pizzaPrice }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__product}>
         <picture>
-          <img
-            className={styles.card__product_image}
-            src={pizzaImg}
-            alt="pizza"
-          />
+          <img className={styles.card__product_image} src={pizzaImg} alt="pizza" />
         </picture>
         <div className={styles.card__product_text}>
           <p className={styles.card__product_heading}>{pizzaName}</p>

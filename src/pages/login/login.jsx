@@ -1,12 +1,12 @@
 import React from "react";
-import Section from "../../components/section/section";
-import Form from "../../components/form/form";
-import FormCard from "../../components/form/components/form-card/form-card";
-import FormBottom from "../../components/form/components/form-bottom/form-bottom";
 import { Link } from "react-router-dom";
-import Button from "../../components/button/button";
+import Section from "components/section/section";
+import Form from "components/form/form";
+import FormCard from "components/form/components/form-card/form-card";
+import FormBottom from "components/form/components/form-bottom/form-bottom";
+import Button from "components/button/button";
 
-export default function Login() {
+const Login = () => {
   return (
     <Section className="section__inner--size-s" title="Вход">
       <Form>
@@ -36,4 +36,6 @@ export default function Login() {
       </Form>
     </Section>
   );
-}
+};
+
+export default Login;

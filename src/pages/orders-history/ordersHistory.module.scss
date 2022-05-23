@@ -1,0 +1,35 @@
+@import "src/scss/styles.scss";
+
+.content {
+  margin-top: 35px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  grid-template-rows: 400px;
+
+  @include media-breakpoint-up(xl) {
+    max-width: 1225px;
+    grid-column-gap: 35px;
+    grid-row-gap: 65px;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    max-width: 910px;
+    grid-column-gap: 35px;
+    grid-row-gap: 65px;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    grid-column-gap: 45px;
+    grid-row-gap: 65px;
+    max-width: 605px;
+  }
+
+  @include media-breakpoint-down(md) {
+    max-width: 280px;
+    grid-row-gap: 55px;
+  }
+}

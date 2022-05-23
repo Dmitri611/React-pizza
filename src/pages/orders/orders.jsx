@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import Button from "../../components/button/button";
-import Section from "../../components/section/section";
-import SectionContent from "../../components/section/sectionContent/section-content";
-import SectionFooter from "../../components/section/sectionFooter/sectionFooter";
-import Table from "../../components/table/table";
+import Button from "components/button/button";
+import Section from "components/section/section";
+import SectionContent from "components/section/components/sectionContent/section-content";
+import SectionFooter from "components/section/components/sectionFooter/sectionFooter";
+import Table from "components/table/table";
 import { Link } from "react-router-dom";
-import TableCard from "../../components/table/components/tableCard/tableCard";
-import TableCardItem from "../../components/table/components/tableCardItem/tableCardItem";
-import TableCardItemTh from "../../components/table/components/tableCardItem/tableCardItemTh";
-import Dropdown from "../../components/dropdown/dropdown";
-import DropdownItem from "../../components/dropdown/dropdown-item/dropdown-item";
+import TableCard from "components/table/components/tableCard/tableCard";
+import TableCardItem from "components/table/components/tableCardItem/tableCardItem";
+import TableCardItemTh from "components/table/components/tableCardItem/tableCardItemTh";
+import Dropdown from "components/dropdown/dropdown";
+import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
 
-export default function Orders() {
+const Orders = () => {
   const [value, setValue] = useState("обработан");
 
   const change = (e) => {
@@ -56,4 +56,6 @@ export default function Orders() {
       </SectionContent>
     </Section>
   );
-}
+};
+
+export default Orders;

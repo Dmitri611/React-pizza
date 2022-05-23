@@ -1,18 +1,18 @@
 import React from "react";
-import Button from "../../components/button/button";
-import Section from "../../components/section/section";
-import SectionContent from "../../components/section/sectionContent/section-content";
-import SectionFooter from "../../components/section/sectionFooter/sectionFooter";
-import Table from "../../components/table/table";
 import { Link } from "react-router-dom";
-import TableCard from "../../components/table/components/tableCard/tableCard";
-import TableCardItem from "../../components/table/components/tableCardItem/tableCardItem";
-import TableCardItemTh from "../../components/table/components/tableCardItem/tableCardItemTh";
-import bundle from "../../uploads/promo-codes/bundle.webp";
-import { ReactComponent as Edit } from "../../assets/image/svg/draw.svg";
-import { ReactComponent as Delete } from "../../assets/image/svg/delete.svg";
+import Button from "components/button/button";
+import Section from "components/section/section";
+import SectionContent from "components/section/components/sectionContent/section-content";
+import SectionFooter from "components/section/components/sectionFooter/sectionFooter";
+import Table from "components/table/table";
+import TableCard from "components/table/components/tableCard/tableCard";
+import TableCardItem from "components/table/components/tableCardItem/tableCardItem";
+import TableCardItemTh from "components/table/components/tableCardItem/tableCardItemTh";
+import bundle from "uploads/promo-codes/bundle.webp";
+import { ReactComponent as Edit } from "assets/image/svg/draw.svg";
+import { ReactComponent as Delete } from "assets/image/svg/delete.svg";
 
-export default function PromoCodes() {
+const PromoCodes = () => {
   return (
     <Section className="section__inner--size-s" title="Промо коды">
       <SectionContent>
@@ -57,4 +57,6 @@ export default function PromoCodes() {
       </SectionContent>
     </Section>
   );
-}
+};
+
+export default PromoCodes;

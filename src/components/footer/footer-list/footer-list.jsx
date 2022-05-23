@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./footer-list.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./footer-list.module.scss";
 
 const FooterList = () => {
   return (
     <ul className={styles.list}>
-      <li className={styles["list__item"]}>
+      <li className={styles.list__item}>
         <Link to="/" className={styles.list__text}>
           О Нас
         </Link>

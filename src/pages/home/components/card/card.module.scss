@@ -8,14 +8,11 @@
   user-select: none;
   border-radius: 15px;
   padding: 10px;
+  transition: .3s ease;
 
   &:hover {
     box-shadow: var(--shadow-2);
     transform: translateY(2px);
-
-    .card__image {
-      transform: translateY(5px);
-    }
   }
 
   &__image {

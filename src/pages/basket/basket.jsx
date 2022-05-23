@@ -1,11 +1,11 @@
 import React from "react";
+import BasketBottom from "pages/basket/components/basketBottom/basketBottom";
+import BasketTop from "pages/basket/components/basketTop/basketTop";
+import BasketCard from "pages/basket/components/basketCard/basketCard";
+import image from "uploads/pizzas/pepperoni.webp";
 import styles from "./basket.module.scss";
-import BasketBottom from "./components/basketBottom/basketBottom";
-import BasketTop from "./components/basketTop/basketTop";
-import BasketCard from "./components/basketCard/basketCard";
-import image from "../../uploads/pizzas/pepperoni.webp";
 
-export default function Basket() {
+const Basket = () => {
   return (
     <section className={styles.basket}>
       <div className={styles.basket__container}>
@@ -25,4 +25,6 @@ export default function Basket() {
       </div>
     </section>
   );
-}
+};
+
+export default Basket;

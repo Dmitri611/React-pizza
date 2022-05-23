@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./basketEmpty.module.scss";
-import Button from "../../../../components/button/button";
-import { ReactComponent as SmileSvg } from "../../../../assets/image/svg/smile.svg";
-import empty from "../../../../assets/image/jpg/empty-basket.jpg";
 import { Link } from "react-router-dom";
+import Button from "components/button/button";
+import { ReactComponent as SmileSvg } from "assets/image/svg/smile.svg";
+import empty from "assets/image/jpg/empty-basket.jpg";
+import styles from "./basketEmpty.module.scss";
 
-export default function BasketEmpty() {
+const BasketEmpty = () => {
   return (
     <section className={styles.basket}>
       <div className={styles.basket__container}>
@@ -25,4 +25,6 @@ export default function BasketEmpty() {
       </div>
     </section>
   );
-}
+};
+
+export default BasketEmpty;

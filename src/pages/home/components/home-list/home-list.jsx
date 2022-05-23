@@ -1,15 +1,9 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from "react";
 import styles from "./home-list.module.scss";
 
 const HomeList = () => {
-  const categoryList = [
-    "Все",
-    "Мясные",
-    "Вегетарианские",
-    "Гриль",
-    "Острые",
-    "Закрытые",
-  ];
+  const categoryList = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые"];
 
   const [activeCategory, setActiveCategory] = useState(categoryList[0]);
 

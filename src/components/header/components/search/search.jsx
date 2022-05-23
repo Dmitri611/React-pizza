@@ -1,6 +1,6 @@
 import React from "react";
+import { ReactComponent as SearchSvg } from "assets/image/svg/search.svg";
 import styles from "./search.module.scss";
-import { ReactComponent as SearchSvg } from "../../../assets/image/svg/search.svg";
 
 const Search = () => {
   return (
@@ -12,7 +12,7 @@ const Search = () => {
           name="search"
           placeholder="Поиск..."
         />
-        <button className={styles.search__btn}>
+        <button type="button" className={styles.search__btn}>
           <SearchSvg />
         </button>
       </div>

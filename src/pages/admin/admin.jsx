@@ -1,10 +1,10 @@
 import React from "react";
-import Section from "../../components/section/section";
-import Button from "../../components/button/button";
-import SectionContent from "../../components/section/sectionContent/section-content";
 import { Link } from "react-router-dom";
+import Section from "components/section/section";
+import Button from "components/button/button";
+import SectionContent from "components/section/components/sectionContent/section-content";
 
-export default function Admin() {
+const Admin = () => {
   return (
     <Section className="section__inner--size-s" title="Настройки">
       <SectionContent className="section__content">
@@ -26,4 +26,6 @@ export default function Admin() {
       </Link>
     </Section>
   );
-}
+};
+
+export default Admin;

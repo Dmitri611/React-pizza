@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./header-list.module.scss";
 import { Link } from "react-router-dom";
+import Dropdown from "components/dropdown/dropdown";
+import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
+import { ReactComponent as BasketSvg } from "assets/image/svg/shopping.svg";
+import { ReactComponent as ProfileSvg } from "assets/image/svg/profile.svg";
 import Search from "../search/search";
-import Dropdown from "../../dropdown/dropdown";
-import DropdownItem from "../../dropdown/dropdown-item/dropdown-item";
-import { ReactComponent as BasketSvg } from "../../../assets/image/svg/shopping.svg";
-import { ReactComponent as ProfileSvg } from "../../../assets/image/svg/profile.svg";
+import styles from "./header-list.module.scss";
 
 const HeaderList = () => {
   return (

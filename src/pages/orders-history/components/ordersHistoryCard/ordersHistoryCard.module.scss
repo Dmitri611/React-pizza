@@ -1,0 +1,72 @@
+.card {
+  max-width: 280px;
+  width: 100%;
+  text-align: start;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  user-select: none;
+  padding: 20px 20px 15px;
+  gap: 20px;
+  transition-duration: .3s;
+
+  &:not(:hover) {
+    box-shadow: var(--shadow-2);
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-3);
+    transform: translateY(2px);
+  }
+
+  &__products {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__total {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-bottom-line);
+  }
+
+  &__date,
+  &__text {
+    font-weight: var(--font-weight-bold);
+    line-height: 39px;
+    color: var(--color-logo-heading);
+  }
+
+  &__date {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  &__text {
+    font-size: 15px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}
