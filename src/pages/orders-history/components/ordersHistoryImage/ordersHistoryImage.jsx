@@ -1,15 +1,12 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React from "react";
 
-const OrdersHistoryImage = ({src}) => {
+const OrdersHistoryImage = ({ src }) => {
   return (
     <picture>
-          <img
-            src={src}
-            alt="pizza"
-          />
-        </picture>
+      <img src={src} alt="pizza" />
+    </picture>
   );
-}
+};
 
 export default OrdersHistoryImage;

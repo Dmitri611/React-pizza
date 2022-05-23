@@ -1,7 +1,7 @@
 import React from "react";
-import "./scss/styles.scss";
 import { Routes, Route } from "react-router-dom";
 import OrdersHistory from "pages/orders-history/ordersHistory";
+import Page404 from "pages/page404/page404";
 import Layout from "./components/layout";
 import Home from "./pages/home/home";
 import Profile from "./pages/profile/profile";
@@ -21,6 +21,7 @@ const App = () => {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<Page404 />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/orders-history" element={<OrdersHistory />} />
         <Route path="/login" element={<Login />} />

@@ -5,7 +5,7 @@ import classNames from "classnames";
 // import { Link } from "react-router-dom";
 import styles from "./ordersHistoryCard.module.scss";
 
-const OrdersHistoryCard = ({date, number, address, children, totalPrice}) => {
+const OrdersHistoryCard = ({ date, number, address, children, totalPrice }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__wrapper}>
@@ -16,9 +16,7 @@ const OrdersHistoryCard = ({date, number, address, children, totalPrice}) => {
         <span>Адрес</span>
         <h2 className={styles.card__text}>{address}</h2>
       </div>
-      <div className={classNames(styles.card__wrapper, styles.card__products)}>
-        {children}
-      </div>
+      <div className={classNames(styles.card__wrapper, styles.card__products)}>{children}</div>
       <div className={classNames(styles.card__wrapper, styles.card__total)}>
         <span className={styles.card__text}>Сумма</span>
         <span className={styles.card__text}>{totalPrice}</span>
