@@ -12,6 +12,7 @@ import Products from "./pages/products/products";
 import Users from "./pages/users/users";
 import PromoCodes from "./pages/promoCodes/promoCodes";
 import Orders from "./pages/orders/orders";
+import Basket from "./pages/basket/basket";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/basket" element={<Basket />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/products" element={<Products />} />
         <Route path="/admin/users" element={<Users />} />
