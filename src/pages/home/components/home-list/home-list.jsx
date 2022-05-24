@@ -1,30 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from "react";
+import React from "react";
 import styles from "./home-list.module.scss";
 
-const HomeList = () => {
-  const categoryList = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые"];
-
-  const [activeCategory, setActiveCategory] = useState(categoryList[0]);
-
-  return (
-    <ul className={styles.list}>
-      {categoryList.map((item) => (
-        <li key={item}>
-          <label className={styles.list__item}>
-            <input
-              className={styles.list__input}
-              name="category"
-              type="radio"
-              defaultChecked={item === activeCategory}
-              onClick={() => setActiveCategory(item)}
-            />
-            <span className={styles.list__text}>{item}</span>
-          </label>
-        </li>
-      ))}
-    </ul>
-  );
+const HomeList = ({ children }) => {
+  return <ul className={styles.list}>{children}</ul>;
 };
 
 export default HomeList;

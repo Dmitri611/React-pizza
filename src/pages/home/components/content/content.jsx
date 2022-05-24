@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import ModalProduct from "components/modalProduct/modalProduct";
 import image from "uploads/pizzas/pepperoni.webp";
 import Card from "../card/card";
 import styles from "./content.module.scss";
 
-const Content = () => {
+const Content = ({ title }) => {
   const [modalAddStyle, setModalAddStyle] = useState(null);
 
   const style = "modal-display";
@@ -20,7 +21,7 @@ const Content = () => {
   return (
     <>
       <div className={styles.content}>
-        <h1 className={styles.content__title}>Все пиццы</h1>
+        <h1 className={styles.content__title}>{title} пиццы</h1>
         <div className={styles.content__container}>
           <Card
             handle={openModal}
