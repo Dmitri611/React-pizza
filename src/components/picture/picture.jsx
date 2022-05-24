@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const Picture = ({ src, className }) => {
+const Picture = ({ src, className, wrapper }) => {
   return (
-    <picture>
+    <picture className={wrapper}>
       <img className={className} src={src} alt={src} />
     </picture>
   );

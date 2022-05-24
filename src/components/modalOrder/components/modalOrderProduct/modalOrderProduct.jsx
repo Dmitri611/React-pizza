@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import Picture from "components/picture/picture";
 import React from "react";
-import styles from './modalOrderProduct.module.scss';
+import styles from "./modalOrderProduct.module.scss";
 
-const ModalOrderProduct = ({src, pizzaName, pizzaDesc, amount, price}) => {
+const ModalOrderProduct = ({ src, pizzaName, pizzaDesc, amount, price }) => {
   return (
     <div className={styles.product}>
       <Picture src={src} />

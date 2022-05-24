@@ -1,0 +1,84 @@
+@import 'src/scss/styles.scss';
+
+.modal-product { 
+  &__title {
+    font-weight: var(--font-weight-bold);
+    line-height: 39px;
+    color: var(--color-logo-heading);
+    font-size: 22px;
+  }
+
+  &__callory {
+    color: var(--color-logo-heading);
+    font-weight: var(--font-weight-bold);
+  }
+
+  &__container{ 
+    height: 100%;
+  }
+
+  &__content {
+    padding: 20px 20px 13px 20px;
+    color: var(--color-logo-description);
+    font-size: 15px;
+    font-weight:  var(--font-weight-normal);
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__head {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__body {
+    display: flex;
+    height: 100%;
+    
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    @include media-breakpoint-up(md) {
+      width: 300px;
+      height: 300px;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 150px;
+      height: 150px;
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+
+    &-bottom {
+      display: flex;  
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-total {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

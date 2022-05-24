@@ -27,7 +27,13 @@ const ModalOrder = ({ display, handler }) => {
         <ModalOrderBlock title="Дата и время" text="13 мая 2022г. 10:00" />
         <ModalOrderBlock title="Адрес" text="Московский проспект 70 к3" />
         <ModalOrderBlock title="Товары">
-        <ModalOrderProduct src={image} pizzaName="Двойная пепперони" pizzaDesc="тонкое тесто, 26 см." amount="1" price="15р"/>
+          <ModalOrderProduct
+            src={image}
+            pizzaName="Двойная пепперони"
+            pizzaDesc="тонкое тесто, 26 см."
+            amount="1"
+            price="15р"
+          />
         </ModalOrderBlock>
         <ModalOrderBlock title="Сумма:" text="45р" />
       </div>

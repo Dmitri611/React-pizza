@@ -1,19 +1,20 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
 import Button from "components/button/button";
-import image from "uploads/pizzas/pepperoni.webp";
+import Picture from "components/picture/picture";
 import styles from "./card.module.scss";
 
-const Card = () => {
+const Card = ({ image, name, desc, price, handle }) => {
   return (
     <div className={styles.card}>
-      <picture className={styles.card__image_wrapper}>
-        <img className={styles.card__image} src={image} alt="pizza" />
-      </picture>
-      <h2 className={styles.card__name}>Пепперони</h2>
-      <div className={styles.card__ingredients}>
-        <p>Томатный соус, пикантная пепперони, моцарелла</p>
-      </div>
+      <a onClick={handle} href="#">
+        <Picture wrapper={styles.card__image_wrapper} className={styles.card__image} src={image} />
+        <h2 className={styles.card__name}>{name}</h2>
+        <div className={styles.card__ingredients}>
+          <p>{desc}</p>
+        </div>
+      </a>
       <div className={styles.card__params}>
         <ul className={styles.card__list}>
           <li className={styles.card__list_item}>
@@ -21,7 +22,7 @@ const Card = () => {
               className={styles["card__list-input"]}
               type="radio"
               name="type1"
-              defaultChecked="true"
+              defaultChecked
             />
             <label className={styles["card__list-label"]}>тонкое</label>
           </li>
@@ -36,7 +37,7 @@ const Card = () => {
               className={styles["card__list-input"]}
               type="radio"
               name="size1"
-              defaultChecked="true"
+              defaultChecked
             />
             <label className={styles["card__list-label"]}>26</label>
           </li>
@@ -51,7 +52,7 @@ const Card = () => {
         </ul>
       </div>
       <div className={styles.card__bottom}>
-        <span className={styles.card__bottom_price}>От 10.13р</span>
+        <span className={styles.card__bottom_price}>От {price}</span>
         <Button className="button--product">
           <span className={styles.card__bottom_span}>+</span>
           Добавить
