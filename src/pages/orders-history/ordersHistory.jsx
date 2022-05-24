@@ -5,8 +5,8 @@ import React from "react";
 import Button from "components/button/button";
 import { Link } from "react-router-dom";
 import pizzaImage from "uploads/pizzas/pepperoni.webp";
-import OrdersHistoryCard from "./components/ordersHistoryCard/ordersHistoryCard";
-import OrdersHistoryImage from "./components/ordersHistoryImage/ordersHistoryImage";
+import Picture from "components/picture/picture";
+import OrdersHistoryCard from "./ordersHistoryCard/ordersHistoryCard";
 import styles from "./ordersHistory.module.scss";
 
 const OrdersHistory = () => {
@@ -20,7 +20,7 @@ const OrdersHistory = () => {
             address="Московский проспект 70 к3"
             totalPrice="45р"
           >
-            <OrdersHistoryImage src={pizzaImage} />
+            <Picture src={pizzaImage} />
           </OrdersHistoryCard>
         </div>
         <SectionFooter className="section__footer--start">

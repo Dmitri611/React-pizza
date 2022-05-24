@@ -51,7 +51,6 @@ const Orders = () => {
           <Link to="/admin">
             <Button className="button--size-m" text="Назад" />
           </Link>
-          <Button className="button--default" text="Добавить" />
         </SectionFooter>
       </SectionContent>
     </Section>
