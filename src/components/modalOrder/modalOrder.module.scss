@@ -1,0 +1,65 @@
+@import 'src/scss/styles.scss';
+
+.modal-order {
+  &__title {
+    font-weight: var(--font-weight-bold);
+    line-height: 39px;
+    color: var(--color-logo-heading);
+    font-size: 22px;
+  }
+
+  &__container{ 
+    height: 100%;
+  }
+
+  &__content {
+    gap: 20px;
+    color: var(--color-logo-description);
+    font-size: 18px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-height: 750px;
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+  &__head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    background-color: var(--color-button-text);
+    top: 0;
+    padding: 20px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__bottom {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: sticky;
+    background-color: var(--color-button-text);
+    bottom: 0;
+    padding: 20px;
+  }
+}

@@ -5,7 +5,7 @@ import classNames from "classnames";
 // import { Link } from "react-router-dom";
 import styles from "./ordersHistoryCard.module.scss";
 
-const OrdersHistoryCard = ({ date, number, address, children, totalPrice }) => {
+const OrdersHistoryCard = ({ date, number, address, children, totalPrice, handler }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__wrapper}>
@@ -22,7 +22,7 @@ const OrdersHistoryCard = ({ date, number, address, children, totalPrice }) => {
         <span className={styles.card__text}>{totalPrice}</span>
       </div>
       <div className={styles.card__bottom}>
-        <Button text="подробнее" className="button--size-m" />
+        <Button handler={handler} text="подробнее" className="button--size-m" />
         <Button text="повторить" className="button--size-m" />
       </div>
     </div>

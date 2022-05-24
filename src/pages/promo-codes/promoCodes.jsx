@@ -17,9 +17,7 @@ import ModalWarn from "components/modalWarn/modalWarn";
 import Picture from "components/picture/picture";
 import modalAddStyles from "components/modalEdit/modalEdit.module.scss";
 
-
 const PromoCodes = () => {
-
   const [defaultSrc, setDefaultSrc] = useState(bundle);
 
   const def = (e) => {
@@ -58,52 +56,51 @@ const PromoCodes = () => {
     setModalEditStyle(null);
   };
 
-
   return (
     <>
-    <Section className="section__inner--size-s" title="Промо коды">
-      <SectionContent>
-        <Table>
-          <TableCard>
-            <TableCardItemTh text="№" />
-            <TableCardItemTh text="Постер" />
-            <TableCardItemTh text="Код" />
-            <TableCardItemTh text="Название" />
-            <TableCardItemTh text="%" />
-            <TableCardItemTh text="Изменить" />
-            <TableCardItemTh text="Удалить" />
-          </TableCard>
-          <TableCard>
-            <TableCardItem text="1" />
-            <TableCardItem>
-              <Picture src={bundle} />
-            </TableCardItem>
-            <TableCardItem text="NEW-EDA" />
-            <TableCardItem text="Первая пицца бесплатно" />
-            <TableCardItem text="100%" />
-            <TableCardItem>
-              <Button handler={editPromo} className="button--edit">
-                <Edit />
-              </Button>
-            </TableCardItem>
-            <TableCardItem>
-              <Button handler={modalWarn} className="button--edit">
-                <Delete />
-              </Button>
-            </TableCardItem>
-          </TableCard>
-        </Table>
-        <SectionFooter>
-          <Link to="/admin">
-            <Button className="button--size-m" text="Назад" />
-          </Link>
-          <Button handler={addPromo} className="button--default" text="Добавить" />
-        </SectionFooter>
-      </SectionContent>
-    </Section>
-    <ModalWarn display={modalWarnStyle} handler={close} />
-    <ModalEdit display={modalAddStyle} title="Добавить промо код" handler={close}>
-    <Picture className={modalAddStyles["modal-edit__image"]} src={imageUrl} />
+      <Section className="section__inner--size-s" title="Промо коды">
+        <SectionContent>
+          <Table>
+            <TableCard>
+              <TableCardItemTh text="№" />
+              <TableCardItemTh text="Постер" />
+              <TableCardItemTh text="Код" />
+              <TableCardItemTh text="Название" />
+              <TableCardItemTh text="%" />
+              <TableCardItemTh text="Изменить" />
+              <TableCardItemTh text="Удалить" />
+            </TableCard>
+            <TableCard>
+              <TableCardItem text="1" />
+              <TableCardItem>
+                <Picture src={bundle} />
+              </TableCardItem>
+              <TableCardItem text="NEW-EDA" />
+              <TableCardItem text="Первая пицца бесплатно" />
+              <TableCardItem text="100%" />
+              <TableCardItem>
+                <Button handler={editPromo} className="button--edit">
+                  <Edit />
+                </Button>
+              </TableCardItem>
+              <TableCardItem>
+                <Button handler={modalWarn} className="button--edit">
+                  <Delete />
+                </Button>
+              </TableCardItem>
+            </TableCard>
+          </Table>
+          <SectionFooter>
+            <Link to="/admin">
+              <Button className="button--size-m" text="Назад" />
+            </Link>
+            <Button handler={addPromo} className="button--default" text="Добавить" />
+          </SectionFooter>
+        </SectionContent>
+      </Section>
+      <ModalWarn display={modalWarnStyle} handler={close} />
+      <ModalEdit display={modalAddStyle} title="Добавить промо код" handler={close}>
+        <Picture className={modalAddStyles["modal-edit__image"]} src={imageUrl} />
         <label htmlFor="inputqq">
           <span>Добавить бандл</span>
           <input
@@ -113,13 +110,13 @@ const PromoCodes = () => {
             type="file"
           />
         </label>
-      <FormCard title="Код" type="text" placeholder="Код" />
-      <FormCard title="Название" type="text" placeholder="Название" />
-      <FormCard title="Скидка" type="email" placeholder="%" />
-      <Button type="submit" className="button--size-m" text="Добавить" />
-    </ModalEdit>
-    <ModalEdit display={modalEditStyle} title="Изменить промо код" handler={close}>
-    <Picture className={modalAddStyles["modal-edit__image"]} src={defaultSrc} />
+        <FormCard title="Код" type="text" placeholder="Код" />
+        <FormCard title="Название" type="text" placeholder="Название" />
+        <FormCard title="Скидка" type="email" placeholder="%" />
+        <Button type="submit" className="button--size-m" text="Добавить" />
+      </ModalEdit>
+      <ModalEdit display={modalEditStyle} title="Изменить промо код" handler={close}>
+        <Picture className={modalAddStyles["modal-edit__image"]} src={defaultSrc} />
         <label htmlFor="inputqq">
           <span>Изменить бандл</span>
           <input
@@ -129,11 +126,11 @@ const PromoCodes = () => {
             type="file"
           />
         </label>
-      <FormCard title="Код" type="text" placeholder="Код" />
-      <FormCard title="Название" type="text" placeholder="Название" />
-      <FormCard title="Скидка" type="email" placeholder="%" />
-      <Button type="submit" className="button--size-m" text="изменить" />
-    </ModalEdit>
+        <FormCard title="Код" type="text" placeholder="Код" />
+        <FormCard title="Название" type="text" placeholder="Название" />
+        <FormCard title="Скидка" type="email" placeholder="%" />
+        <Button type="submit" className="button--size-m" text="изменить" />
+      </ModalEdit>
     </>
   );
 };

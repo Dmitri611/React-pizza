@@ -94,7 +94,7 @@ const Users = () => {
         <Button type="submit" className="button--size-m" text="Добавить" />
       </ModalEdit>
       <ModalEdit display={modalEditStyle} title="Изменить пользователя" handler={close}>
-        <FormCard title="Роль" type="text" placeholder="Статус" /> 
+        <FormCard title="Роль" type="text" placeholder="Статус" />
         <FormCard title="Имя" type="text" placeholder="Имя" />
         <FormCard title="Фамилия" type="text" placeholder="Фамилия" />
         <FormCard title="Почта" type="email" placeholder="Почта" />
