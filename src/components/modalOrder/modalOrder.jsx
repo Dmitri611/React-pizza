@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import Modal from "components/modal/modal";
 import Button from "components/button/button";
 import { ReactComponent as Close } from "assets/image/svg/delete.svg";
 import image from "uploads/pizzas/pepperoni.webp";
+import PropTypes from "prop-types";
 import ModalOrderBlock from "./components/modalOrderBlock/modalOrderBlock";
 import ModalOrderProduct from "./components/modalOrderProduct/modalOrderProduct";
 import styles from "./modalOrder.module.scss";
@@ -12,7 +12,6 @@ const ModalOrder = ({ display, handler }) => {
   return (
     <Modal
       display={display}
-      modalName={styles["modal-order"]}
       container={styles["modal-order__container"]}
       content={styles["modal-order__content"]}
     >
@@ -42,6 +41,15 @@ const ModalOrder = ({ display, handler }) => {
       </div>
     </Modal>
   );
+};
+
+ModalOrder.propTypes = {
+  display: PropTypes.string,
+  handler: PropTypes.func.isRequired,
+};
+
+ModalOrder.defaultProps = {
+  display: null,
 };
 
 export default ModalOrder;

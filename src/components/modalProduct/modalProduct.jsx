@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/prop-types */
 import React from "react";
 import Modal from "components/modal/modal";
+import PropTypes from "prop-types";
 import { ReactComponent as Close } from "assets/image/svg/delete.svg";
 import Button from "components/button/button";
 import image from "uploads/pizzas/pepperoni.webp";
@@ -13,7 +12,6 @@ const ModalProduct = ({ display, handler }) => {
   return (
     <Modal
       display={display}
-      modalName={styles["modal-product"]}
       container={styles["modal-product__container"]}
       content={styles["modal-product__content"]}
     >
@@ -46,6 +44,15 @@ const ModalProduct = ({ display, handler }) => {
       </div>
     </Modal>
   );
+};
+
+ModalProduct.propTypes = {
+  display: PropTypes.string,
+  handler: PropTypes.func.isRequired,
+};
+
+ModalProduct.defaultProps = {
+  display: null,
 };
 
 export default ModalProduct;

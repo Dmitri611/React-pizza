@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import React from "react";
 import styles from "./paymentLabel.module.scss";
 
@@ -10,6 +9,12 @@ const PaymentLabel = ({ type, text, name }) => {
       {text}
     </label>
   );
+};
+
+PaymentLabel.propTypes = {
+  type: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default PaymentLabel;

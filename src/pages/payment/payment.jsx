@@ -13,21 +13,21 @@ const Payment = () => {
         <h1 className={styles.payment__title}>Куда доставить?</h1>
         <PaymentForm>
           <PaymentCard text="Введите адрес доставки">
-            <PaymentInput type="text" placeholder="Улица" />
-            <PaymentInput className="input--size-s" type="text" placeholder="Дом" />
+            <PaymentInput type="text" placeholder="Улица" name="street" />
+            <PaymentInput className="input--size-s" type="text" placeholder="Дом" name="home" />
           </PaymentCard>
           <PaymentCard>
-            <PaymentInput className="input--size-s" type="text" placeholder="Квартира" />
-            <PaymentInput className="input--size-s" type="text" placeholder="Подъезд" />
-            <PaymentInput className="input--size-s" type="text" placeholder="Код двери" />
-            <PaymentInput className="input--size-s" type="text" placeholder="Этаж" />
+            <PaymentInput className="input--size-s" type="text" placeholder="Квартира" name="kvartira" />
+            <PaymentInput className="input--size-s" type="text" placeholder="Подъезд" name="podezd" />
+            <PaymentInput className="input--size-s" type="text" placeholder="Код двери" name="code" />
+            <PaymentInput className="input--size-s" type="text" placeholder="Этаж" name="etag" />
           </PaymentCard>
           <PaymentCard text="Введите название адреса">
-            <PaymentInput type="text" placeholder="Название адреса" />
+            <PaymentInput type="text" placeholder="Название адреса" name="name-address" />
           </PaymentCard>
           <PaymentCard text="Выберите время доставки">
-            <PaymentInput type="time" />
-            <PaymentLabel text="Как можно быстрее" type="checkbox" />
+            <PaymentInput type="time" name="time" />
+            <PaymentLabel text="Как можно быстрее" type="checkbox" name="faster" />
           </PaymentCard>
           <PaymentCard text="Выберите способ оплаты">
             <PaymentLabel text="Картой курьеру" type="radio" name="pay" />

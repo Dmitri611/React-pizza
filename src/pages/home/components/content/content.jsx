@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import ModalProduct from "components/modalProduct/modalProduct";
 import image from "uploads/pizzas/pepperoni.webp";
@@ -24,7 +24,7 @@ const Content = ({ title }) => {
         <h1 className={styles.content__title}>{title} пиццы</h1>
         <div className={styles.content__container}>
           <Card
-            handle={openModal}
+            handler={openModal}
             image={image}
             name="Пепперони"
             desc="Томатный соус, пикантная пепперони, моцарелла"
@@ -35,6 +35,10 @@ const Content = ({ title }) => {
       <ModalProduct handler={close} display={modalAddStyle} />
     </>
   );
+};
+
+Content.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Content;

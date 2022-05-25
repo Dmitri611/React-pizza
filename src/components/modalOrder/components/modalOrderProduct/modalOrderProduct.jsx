@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import Picture from "components/picture/picture";
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./modalOrderProduct.module.scss";
 
 const ModalOrderProduct = ({ src, pizzaName, pizzaDesc, amount, price }) => {
@@ -15,6 +15,14 @@ const ModalOrderProduct = ({ src, pizzaName, pizzaDesc, amount, price }) => {
       <span className={styles.product__desc}>{price}</span>
     </div>
   );
+};
+
+ModalOrderProduct.propTypes = {
+  src: PropTypes.string.isRequired,
+  pizzaName: PropTypes.string.isRequired,
+  pizzaDesc: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
 };
 
 export default ModalOrderProduct;

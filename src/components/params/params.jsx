@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import styles from "./params.module.scss";
 
-const Params = ({typeName, sizeName}) => {
+const Params = ({ typeName, sizeName }) => {
   const typesList = ["тонкое", "традиционное"];
   const sizesList = ["26", "30", "36"];
 
@@ -45,6 +46,11 @@ const Params = ({typeName, sizeName}) => {
       </ul>
     </div>
   );
+};
+
+Params.propTypes = {
+  typeName: PropTypes.string.isRequired,
+  sizeName: PropTypes.string.isRequired,
 };
 
 export default Params;

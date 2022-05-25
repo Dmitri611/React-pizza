@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import Modal from "components/modal/modal";
 import Button from "components/button/button";
 import { ReactComponent as Close } from "assets/image/svg/delete.svg";
 import Form from "components/form/form";
+import PropTypes from "prop-types";
 
 import styles from "./modalEdit.module.scss";
 
@@ -11,7 +11,6 @@ const ModalEdit = ({ display, handler, title, children }) => {
   return (
     <Modal
       display={display}
-      modalName={styles["modal-edit"]}
       container={styles["modal-edit__container"]}
       content={styles["modal-edit__content"]}
     >
@@ -24,6 +23,17 @@ const ModalEdit = ({ display, handler, title, children }) => {
       <Form>{children}</Form>
     </Modal>
   );
+};
+
+ModalEdit.propTypes = {
+  display: PropTypes.string,
+  handler: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.array.isRequired,
+};
+
+ModalEdit.defaultProps = {
+  display: null,
 };
 
 export default ModalEdit;

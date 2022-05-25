@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import React from "react";
 import Button from "components/button/button";
 import classNames from "classnames";
-// import { Link } from "react-router-dom";
 import styles from "./ordersHistoryCard.module.scss";
 
 const OrdersHistoryCard = ({ date, number, address, children, totalPrice, handler }) => {
@@ -28,5 +27,14 @@ const OrdersHistoryCard = ({ date, number, address, children, totalPrice, handle
     </div>
   );
 };
+
+OrdersHistoryCard.propTypes = {
+  date: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
+  totalPrice: PropTypes.string.isRequired,
+  handler: PropTypes.func.isRequired,
+}
 
 export default OrdersHistoryCard;

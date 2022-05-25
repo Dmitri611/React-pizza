@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import classNames from "classnames";
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./section.module.scss";
 
 const Section = ({ children, title, className }) => {
@@ -12,6 +12,12 @@ const Section = ({ children, title, className }) => {
       </div>
     </section>
   );
+};
+
+Section.propTypes = {
+  children: PropTypes.any.isRequired,
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Section;

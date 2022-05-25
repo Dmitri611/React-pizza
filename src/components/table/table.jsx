@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import React from "react";
 import styles from "./table.module.scss";
 
@@ -8,6 +8,10 @@ const Table = ({ children }) => {
       <tbody className={styles.table__content}>{children}</tbody>
     </table>
   );
+};
+
+Table.propTypes = {
+  children: PropTypes.array.isRequired,
 };
 
 export default Table;

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./form-card.module.scss";
 
 const FormCard = ({
@@ -27,6 +28,28 @@ const FormCard = ({
       <p className={styles.card__desc}>{description}</p>
     </div>
   );
+};
+
+FormCard.propTypes = {
+  title: PropTypes.string,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  minLength: PropTypes.string,
+  maxLength: PropTypes.string,
+  pattern: PropTypes.string,
+  description: PropTypes.string,
+  autoComplete: PropTypes.string,
+};
+
+FormCard.defaultProps = {
+  title: null,
+  type: null,
+  placeholder: null,
+  minLength: null,
+  maxLength: null,
+  pattern: null,
+  description: null,
+  autoComplete: null,
 };
 
 export default FormCard;

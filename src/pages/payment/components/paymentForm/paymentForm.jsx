@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "components/button/button";
@@ -16,6 +16,10 @@ const PaymentForm = ({ children }) => {
       </div>
     </form>
   );
+};
+
+PaymentForm.propTypes = {
+  children: PropTypes.array.isRequired,
 };
 
 export default PaymentForm;

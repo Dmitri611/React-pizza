@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/label-has-associated-control */
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Button from "components/button/button";
 import Picture from "components/picture/picture";
 import Params from "components/params/params";
 import styles from "./card.module.scss";
 
-const Card = ({ image, name, desc, price, handle }) => {
+const Card = ({ image, name, desc, price, handler }) => {
   const [count, setCount] = useState(0);
 
   const countPlus = () => {
@@ -15,7 +14,7 @@ const Card = ({ image, name, desc, price, handle }) => {
 
   return (
     <div className={styles.card}>
-      <a onClick={handle} href="#">
+      <a onClick={handler} href="#">
         <Picture wrapper={styles.card__image_wrapper} className={styles.card__image} src={image} />
         <h2 className={styles.card__name}>{name}</h2>
         <div className={styles.card__ingredients}>
@@ -33,6 +32,14 @@ const Card = ({ image, name, desc, price, handle }) => {
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  handler: PropTypes.func.isRequired,
 };
 
 export default Card;

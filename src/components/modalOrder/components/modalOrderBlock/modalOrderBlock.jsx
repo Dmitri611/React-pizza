@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./modalOrderBlock.module.scss";
 
 const ModalOrderBlock = ({ title, text, children }) => {
@@ -10,6 +10,17 @@ const ModalOrderBlock = ({ title, text, children }) => {
       {children}
     </div>
   );
+};
+
+ModalOrderBlock.propTypes = {
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  children: PropTypes.object,
+};
+
+ModalOrderBlock.defaultProps = {
+  text: null,
+  children: null,
 };
 
 export default ModalOrderBlock;
