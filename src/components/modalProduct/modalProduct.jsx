@@ -33,7 +33,7 @@ const ModalProduct = ({ display, handler }) => {
           <span>Белки - 10,51г</span>
           <span>Углеводы - 17,22г</span>
           <span>Энергетическая ценность - 240,46 ккал.</span>
-          <div className={styles.card__params}>
+          {/* <div className={styles.card__params}>
             <ul className={styles.card__list}>
               <li className={styles["card__list-item"]}>
                 <input
@@ -68,7 +68,7 @@ const ModalProduct = ({ display, handler }) => {
                 <label className={styles["card__list-label"]}>36</label>
               </li>
             </ul>
-          </div>
+          </div> */}
           <div className={styles["modal-product__info-bottom"]}>
             <div className={styles["modal-product__info-total"]}>
               <span className={styles["modal-product__title"]}>10.13р</span>

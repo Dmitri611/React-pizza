@@ -51,7 +51,23 @@ module.exports = {
     "react-hooks/exhaustive-deps": 2,
     "import/no-unresolved": 0,
     "react/jsx-pascal-case": [2, { allowNamespace: true }],
-    "jsx-a11y/label-has-associated-control": 1,
+    // "jsx-a11y/label-has-associated-control": 1,
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        required: {
+          some: ["nesting", "id"],
+        },
+      },
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        required: {
+          some: ["nesting", "id"],
+        },
+      },
+    ],
     "react/function-component-definition": [2, { namedComponents: "arrow-function" }],
     "import/no-named-as-default": 0,
   },

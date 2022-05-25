@@ -5,16 +5,15 @@ import { ReactComponent as DeleteSvg } from "assets/image/svg/delete.svg";
 import styles from "./basketCard.module.scss";
 
 const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, pizzaPrice }) => {
-
   const [count, setCount] = useState(1);
 
   const countPlus = () => {
     setCount(count + 1);
-  }
+  };
 
   const countMinus = () => {
     setCount(count - 1);
-  }
+  };
 
   return (
     <div className={styles.card}>

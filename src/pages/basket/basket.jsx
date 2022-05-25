@@ -6,7 +6,6 @@ import image from "uploads/pizzas/pepperoni.webp";
 import styles from "./basket.module.scss";
 
 const Basket = () => {
-
   return (
     <section className={styles.basket}>
       <div className={styles.basket__container}>
