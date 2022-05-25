@@ -6,6 +6,7 @@ import image from "uploads/pizzas/pepperoni.webp";
 import styles from "./basket.module.scss";
 
 const Basket = () => {
+
   return (
     <section className={styles.basket}>
       <div className={styles.basket__container}>
@@ -16,7 +17,6 @@ const Basket = () => {
               pizzaImg={image}
               pizzaName="Пепперони"
               pizzaDesc="тонкое тесто, 26 см."
-              amount="1"
               pizzaPrice="15 р"
             />
           </div>

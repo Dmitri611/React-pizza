@@ -1,10 +1,21 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useState } from "react";
 import Button from "components/button/button";
 import { ReactComponent as DeleteSvg } from "assets/image/svg/delete.svg";
 import styles from "./basketCard.module.scss";
 
-const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, amount, pizzaPrice }) => {
+const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, pizzaPrice }) => {
+
+  const [count, setCount] = useState(1);
+
+  const countPlus = () => {
+    setCount(count + 1);
+  }
+
+  const countMinus = () => {
+    setCount(count - 1);
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.card__product}>
@@ -17,16 +28,17 @@ const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, amount, pizzaPrice }) => {
         </div>
       </div>
       <div className={styles.card__quantity}>
-        <Button className="button--size-s" text="−" />
+        <Button handler={countMinus} className="button--size-s" text="−" />
         <input
           className={styles.card__quantity_number}
           type="number"
           min="1"
           max="99"
           size="1"
-          value={amount}
+          value={count}
+          readOnly
         />
-        <Button className="button--size-s" text="+" />
+        <Button handler={countPlus} className="button--size-s" text="+" />
       </div>
       <p className={styles.card__price}>{pizzaPrice}</p>
       <Button className="button--edit">
