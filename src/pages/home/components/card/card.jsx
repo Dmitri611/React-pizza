@@ -22,7 +22,7 @@ const Card = ({ image, name, desc, price, handle }) => {
           <p>{desc}</p>
         </div>
       </a>
-      <Params />
+      <Params typeName="type1" sizeName="size1" />
       <div className={styles.card__bottom}>
         <span className={styles.card__bottom_price}>От {price}</span>
         <Button handler={countPlus} className="button--product">

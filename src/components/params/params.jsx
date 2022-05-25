@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styles from "./params.module.scss";
 
-const Params = () => {
+const Params = ({typeName, sizeName}) => {
   const typesList = ["тонкое", "традиционное"];
   const sizesList = ["26", "30", "36"];
 
@@ -17,7 +18,7 @@ const Params = () => {
               <input
                 className={styles.params__list_input}
                 type="radio"
-                name="type"
+                name={typeName}
                 defaultChecked={text === activeType}
                 onClick={() => setActiveType(text)}
               />
@@ -33,7 +34,7 @@ const Params = () => {
               <input
                 className={styles.params__list_input}
                 type="radio"
-                name="size"
+                name={sizeName}
                 defaultChecked={text === activeSize}
                 onClick={() => setActiveSize(text)}
               />

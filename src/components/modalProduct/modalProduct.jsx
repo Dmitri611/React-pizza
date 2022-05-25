@@ -6,6 +6,7 @@ import { ReactComponent as Close } from "assets/image/svg/delete.svg";
 import Button from "components/button/button";
 import image from "uploads/pizzas/pepperoni.webp";
 import Picture from "components/picture/picture";
+import Params from "components/params/params";
 import styles from "./modalProduct.module.scss";
 
 const ModalProduct = ({ display, handler }) => {
@@ -33,42 +34,7 @@ const ModalProduct = ({ display, handler }) => {
           <span>Белки - 10,51г</span>
           <span>Углеводы - 17,22г</span>
           <span>Энергетическая ценность - 240,46 ккал.</span>
-          {/* <div className={styles.card__params}>
-            <ul className={styles.card__list}>
-              <li className={styles["card__list-item"]}>
-                <input
-                  className={styles["card__list-input"]}
-                  type="radio"
-                  name="test1"
-                  defaultChecked
-                />
-                <label className={styles["card__list-label"]}>тонкое</label>
-              </li>
-              <li className="card__list-item">
-                <input className={styles["card__list-input"]} type="radio" name="test1" />
-                <label className={styles["card__list-label"]}>традиционное</label>
-              </li>
-            </ul>
-            <ul className="card__list">
-              <li className="card__list-item">
-                <input
-                  className={styles["card__list-input"]}
-                  type="radio"
-                  name="test-size1"
-                  defaultChecked
-                />
-                <label className={styles["card__list-label"]}>26</label>
-              </li>
-              <li className="card__list-item">
-                <input className={styles["card__list-input"]} type="radio" name="test-size1" />
-                <label className={styles["card__list-label"]}>30</label>
-              </li>
-              <li className="card__list-item">
-                <input className={styles["card__list-input"]} type="radio" name="test-size1" />
-                <label className={styles["card__list-label"]}>36</label>
-              </li>
-            </ul>
-          </div> */}
+          <Params typeName="type2" sizeName="size2" />
           <div className={styles["modal-product__info-bottom"]}>
             <div className={styles["modal-product__info-total"]}>
               <span className={styles["modal-product__title"]}>10.13р</span>
