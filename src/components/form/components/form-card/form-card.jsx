@@ -12,11 +12,13 @@ const FormCard = ({
   pattern,
   description,
   autoComplete,
+  name
 }) => {
   return (
     <div className={styles.card}>
       <p>{title}</p>
       <input
+        name={name}
         className={styles.card__input}
         type={type}
         placeholder={placeholder}
