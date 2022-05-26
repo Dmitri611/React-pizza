@@ -9,7 +9,7 @@ const pizzasState = {
       name: "Пепперони",
       category: "мясная",
       ingredients: "Томатный соус, пикантная пепперони, моцарелла",
-      price: 15.4,
+      price: 15,
       proteins: 14.42,
       fats: 10.51,
       carbohydrates: 17.22,
@@ -22,7 +22,7 @@ const pizzasState = {
       category: "мясная",
       ingredients:
         "Острые колбаски чоризо, соус барбекю, томаты, красный лук, моцарелла, томатный соус",
-      price: 17.9,
+      price: 17,
       proteins: 12.78,
       fats: 10.88,
       carbohydrates: 20.14,

@@ -20,6 +20,7 @@ const ModalProduct = ({
   pizzaHelf,
   pizzaPrice,
   pizzaImage,
+  onClick
 }) => {
   return (
     <Modal
@@ -50,7 +51,7 @@ const ModalProduct = ({
               <span className={styles["modal-product__title"]}>{pizzaPrice}р</span>
               <span>{pizzaHelf} гр</span>
             </div>
-            <Button className="button--default" text="В корзину" />
+            <Button handler={onClick} className="button--default" text="В корзину" />
           </div>
         </div>
       </div>
