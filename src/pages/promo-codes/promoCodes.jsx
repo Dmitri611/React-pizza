@@ -8,7 +8,6 @@ import Table from "components/table/table";
 import TableCard from "components/table/components/tableCard/tableCard";
 import TableCardItem from "components/table/components/tableCardItem/tableCardItem";
 import TableCardItemTh from "components/table/components/tableCardItem/tableCardItemTh";
-import bundle from "uploads/promo-codes/bundle.webp";
 import { ReactComponent as Edit } from "assets/image/svg/draw.svg";
 import { ReactComponent as Delete } from "assets/image/svg/delete.svg";
 import FormCard from "components/form/components/form-card/form-card";
@@ -18,7 +17,7 @@ import Picture from "components/picture/picture";
 import modalAddStyles from "components/modalEdit/modalEdit.module.scss";
 
 const PromoCodes = () => {
-  const [defaultSrc, setDefaultSrc] = useState(bundle);
+  const [defaultSrc, setDefaultSrc] = useState("uploads/promo-codes/bundle.webp");
 
   const def = (e) => {
     const src = URL.createObjectURL(e.target.files[0]);
@@ -73,7 +72,7 @@ const PromoCodes = () => {
             <TableCard>
               <TableCardItem text="1" />
               <TableCardItem>
-                <Picture src={bundle} />
+                <Picture src="uploads/promo-codes/bundle.webp" />
               </TableCardItem>
               <TableCardItem text="NEW-EDA" />
               <TableCardItem text="Первая пицца бесплатно" />

@@ -4,7 +4,6 @@ import SectionFooter from "components/section/components/sectionFooter/sectionFo
 import React, { useState } from "react";
 import Button from "components/button/button";
 import { Link } from "react-router-dom";
-import pizzaImage from "uploads/pizzas/pepperoni.webp";
 import Picture from "components/picture/picture";
 import ModalOrder from "components/modalOrder/modalOrder";
 import OrdersHistoryCard from "./ordersHistoryCard/ordersHistoryCard";
@@ -35,7 +34,7 @@ const OrdersHistory = () => {
               totalPrice="45р"
               handler={openModal}
             >
-              <Picture src={pizzaImage} />
+              <Picture src="uploads/pizzas/pepperoni.webp" />
             </OrdersHistoryCard>
           </div>
           <SectionFooter className="section__footer--start">

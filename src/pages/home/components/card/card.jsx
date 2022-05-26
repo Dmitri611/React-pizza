@@ -7,8 +7,17 @@ import Params from "components/params/params";
 import ModalProduct from "components/modalProduct/modalProduct";
 import styles from "./card.module.scss";
 
-const Card = ({ pizzaImage, pizzaPrice, pizzaHelf, pizzaEnergy, pizzaCarbohydrates, pizzaFats, pizzaProteins, pizzaDesc, pizzaName }) => {
-
+const Card = ({
+  pizzaImage,
+  pizzaPrice,
+  pizzaHelf,
+  pizzaEnergy,
+  pizzaCarbohydrates,
+  pizzaFats,
+  pizzaProteins,
+  pizzaDesc,
+  pizzaName,
+}) => {
   const [modalAddStyle, setModalAddStyle] = useState(null);
 
   const style = "modal-display";
@@ -43,7 +52,9 @@ const Card = ({ pizzaImage, pizzaPrice, pizzaHelf, pizzaEnergy, pizzaCarbohydrat
         </a>
         <Params typeName="type1" sizeName="size1" />
         <div className={styles.card__bottom}>
-          <span className={styles.card__bottom_price}>От {pizzaPrice *(count > 1 ? count : 1)}р</span>
+          <span className={styles.card__bottom_price}>
+            От {pizzaPrice * (count > 1 ? count : 1)}р
+          </span>
           <Button handler={countPlus} className="button--product">
             <span className={styles.card__bottom_span}>+</span>
             Добавить
@@ -51,20 +62,20 @@ const Card = ({ pizzaImage, pizzaPrice, pizzaHelf, pizzaEnergy, pizzaCarbohydrat
           </Button>
         </div>
       </div>
-        <ModalProduct
-          onClick={countPlus}
-          handler={close}
-          display={modalAddStyle}
-          pizzaName={pizzaName}
-          pizzaDesc={pizzaDesc}
-          pizzaProteins={pizzaProteins}
-          pizzaFats={pizzaFats}
-          pizzaCarbohydrates={pizzaCarbohydrates}
-          pizzaEnergy={pizzaEnergy}
-          pizzaHelf={pizzaHelf}
-          pizzaPrice={pizzaPrice}
-          pizzaImage={pizzaImage}
-        />
+      <ModalProduct
+        onClick={countPlus}
+        handler={close}
+        display={modalAddStyle}
+        pizzaName={pizzaName}
+        pizzaDesc={pizzaDesc}
+        pizzaProteins={pizzaProteins}
+        pizzaFats={pizzaFats}
+        pizzaCarbohydrates={pizzaCarbohydrates}
+        pizzaEnergy={pizzaEnergy}
+        pizzaHelf={pizzaHelf}
+        pizzaPrice={pizzaPrice}
+        pizzaImage={pizzaImage}
+      />
     </>
   );
 };

@@ -15,7 +15,8 @@ const Sort = () => {
       <span className="sort__text">Сортировка по:</span>
       <Dropdown btnContent={value}>
         <DropdownItem handler={change} text="популярности" />
-        <DropdownItem handler={change} text="по цене" />
+        <DropdownItem handler={change} text="дешевые" />
+        <DropdownItem handler={change} text="дорогие" />
         <DropdownItem handler={change} text="по алфавиту" />
       </Dropdown>
     </div>

@@ -12,7 +12,6 @@ import { ReactComponent as Edit } from "assets/image/svg/draw.svg";
 import { ReactComponent as Delete } from "assets/image/svg/delete.svg";
 import ModalEdit from "components/modalEdit/modalEdit";
 import ModalWarn from "components/modalWarn/modalWarn";
-import image from "uploads/pizzas/pepperoni.webp";
 import Picture from "components/picture/picture";
 import FormCard from "components/form/components/form-card/form-card";
 import modalAddStyles from "../../components/modalEdit/modalEdit.module.scss";
@@ -25,7 +24,7 @@ const Products = () => {
     setImageUrl(src);
   };
 
-  const [defaultSrc, setDefaultSrc] = useState(image);
+  const [defaultSrc, setDefaultSrc] = useState("uploads/pizzas/pepperoni.webp");
 
   const def = (e) => {
     const src = URL.createObjectURL(e.target.files[0]);
@@ -74,7 +73,7 @@ const Products = () => {
             <TableCard>
               <TableCardItem text="1" />
               <TableCardItem>
-                <Picture src={image} />
+                <Picture src="uploads/pizzas/pepperoni.webp" />
               </TableCardItem>
               <TableCardItem text="Пепперони" />
               <TableCardItem text="Мясная" />

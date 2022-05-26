@@ -1,13 +1,11 @@
-import pepperoni from "uploads/pizzas/pepperoni.webp";
-import barbecue from "uploads/pizzas/barbecue.webp";
 import { ADD_PIZZA, DELETE_PIZZA } from "../constants/constants";
 
 const pizzasState = {
   pizzas: [
     {
-      image: pepperoni,
+      image: "uploads/pizzas/pepperoni.webp",
       name: "Пепперони",
-      category: "мясная",
+      category: "Мясные",
       ingredients: "Томатный соус, пикантная пепперони, моцарелла",
       price: 15,
       proteins: 14.42,
@@ -17,9 +15,9 @@ const pizzasState = {
       helf: 575,
     },
     {
-      image: barbecue,
+      image: "uploads/pizzas/barbecue.webp",
       name: "Барбекю",
-      category: "мясная",
+      category: "Гриль",
       ingredients:
         "Острые колбаски чоризо, соус барбекю, томаты, красный лук, моцарелла, томатный соус",
       price: 17,
@@ -28,6 +26,56 @@ const pizzasState = {
       carbohydrates: 20.14,
       energy: 239.42,
       helf: 560,
+    },
+    {
+      image: "uploads/pizzas/vegetables-mushrooms.webp",
+      name: "Овощи и грибы",
+      category: "Вегетарианские",
+      ingredients:
+        "Итальянские травы, томатный соус, томаты, кубики брынзы, маслины, красный лук, сладкий перец, моцарелла, шампиньоны",
+      price: 14,
+      proteins: 9.78,
+      fats: 8.94,
+      carbohydrates: 15.3,
+      energy: 180.1,
+      helf: 455,
+    },
+    {
+      image: "uploads/pizzas/double-pepperoni.webp",
+      name: "Двойная пепперони",
+      category: "Мясные",
+      ingredients: "Томатный соус, пикантная пепперони, моцарелла",
+      price: 20,
+      proteins: 14.42,
+      fats: 10.51,
+      carbohydrates: 17.22,
+      energy: 240.46,
+      helf: 575,
+    },
+    {
+      image: "uploads/pizzas/cheesy.webp",
+      name: "Сырная",
+      category: "Сырные",
+      ingredients: "Моцарелла, сыры чеддер и пармезан, соус альфредо",
+      price: 11,
+      proteins: 12.22,
+      fats: 9.11,
+      carbohydrates: 15.92,
+      energy: 300.6,
+      helf: 500,
+    },
+    {
+      image: "uploads/pizzas/carbonara.webp",
+      name: "Карбонара",
+      category: "Острые",
+      ingredients:
+        "Бекон, сыры чеддер и пармезан, моцарелла, томаты, соус альфредо, красный лук, чеснок, итальянские травы",
+      price: 18,
+      proteins: 12.22,
+      fats: 9.11,
+      carbohydrates: 15.92,
+      energy: 300.6,
+      helf: 520,
     },
   ],
 };

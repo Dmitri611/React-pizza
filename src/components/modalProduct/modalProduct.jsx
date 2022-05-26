@@ -20,7 +20,7 @@ const ModalProduct = ({
   pizzaHelf,
   pizzaPrice,
   pizzaImage,
-  onClick
+  onClick,
 }) => {
   return (
     <Modal

@@ -2,7 +2,6 @@ import React from "react";
 import BasketBottom from "pages/basket/components/basketBottom/basketBottom";
 import BasketTop from "pages/basket/components/basketTop/basketTop";
 import BasketCard from "pages/basket/components/basketCard/basketCard";
-import image from "uploads/pizzas/pepperoni.webp";
 import styles from "./basket.module.scss";
 
 const Basket = () => {
@@ -13,7 +12,7 @@ const Basket = () => {
           <BasketTop />
           <div className={styles.basket__middle}>
             <BasketCard
-              pizzaImg={image}
+              pizzaImg="uploads/pizzas/pepperoni.webp"
               pizzaName="Пепперони"
               pizzaDesc="тонкое тесто, 26 см."
               pizzaPrice="15 р"

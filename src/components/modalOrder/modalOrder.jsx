@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "components/modal/modal";
 import Button from "components/button/button";
 import { ReactComponent as Close } from "assets/image/svg/delete.svg";
-import image from "uploads/pizzas/pepperoni.webp";
+// import image from "uploads/pizzas/pepperoni.webp";
 import PropTypes from "prop-types";
 import ModalOrderBlock from "./components/modalOrderBlock/modalOrderBlock";
 import ModalOrderProduct from "./components/modalOrderProduct/modalOrderProduct";
@@ -27,7 +27,7 @@ const ModalOrder = ({ display, handler }) => {
         <ModalOrderBlock title="Адрес" text="Московский проспект 70 к3" />
         <ModalOrderBlock title="Товары">
           <ModalOrderProduct
-            src={image}
+            src="uploads/pizzas/pepperoni.webp"
             pizzaName="Двойная пепперони"
             pizzaDesc="тонкое тесто, 26 см."
             amount="1"
