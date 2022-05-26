@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
@@ -5,11 +6,7 @@ import styles from "./button.module.scss";
 
 const Button = ({ text, className, handler, children, type }) => {
   return (
-    <button
-      type={type ? "button" : "submit"}
-      onClick={handler}
-      className={classNames(styles.button, styles[className])}
-    >
+    <button type={type} onClick={handler} className={classNames(styles.button, styles[className])}>
       {text}
       {children}
     </button>

@@ -14,11 +14,15 @@ const FormCard = ({
   autoComplete,
   name,
   onChange,
+  required,
+  value,
 }) => {
   return (
     <div className={styles.card}>
       <p>{title}</p>
       <input
+        value={value}
+        required={required}
         name={name}
         className={styles.card__input}
         type={type}

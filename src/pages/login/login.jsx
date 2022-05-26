@@ -27,46 +27,47 @@ const Login = () => {
   const checkUser = () => {
     const thisUser = users.find((item) => item.login === user.login);
 
-    if(thisUser){
-    if(user.password === thisUser.password){
-      alert(`Пользователь ${user.login} успешно авторизован!`);
+    if (thisUser) {
+      if (user.password === thisUser.password) {
+        alert(`Пользователь ${user.login} успешно авторизован!`);
+      } else {
+        alert("Неправельный пароль!");
+      }
     } else {
-      alert("Неправельный пароль!");
+      alert(`Пользователь ${user.login} не найден!`);
     }
-  } else {
-    alert(`Пользователь ${user.login} не найден!`);
-  }
   };
 
   return (
     <Section className="section__inner--size-s" title="Вход">
       <Form>
         <FormCard
+          required="required"
           name="login"
           title="Логин"
           type="text"
           placeholder="Логин"
           minLength="2"
-          pattern="^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$"
           description="Введите ваш логин!"
           onChange={handleChange}
+          autoComplete="on"
         />
         <FormCard
+          required="required"
           name="password"
           title="Пароль"
-          type="text"
+          type="password"
           placeholder="Пароль"
           minLength="8"
-          autoComplete="current-password"
-          pattern=".{8,}"
           description="Введите ваш пароль!"
           onChange={handleChange}
+          autoComplete="on"
         />
         <FormBottom>
           <Link to="/">
             <Button className="button--size-m" text="Назад" />
           </Link>
-          <Button handler={checkUser} className="button--size-m" type="submit" text="Войти" />
+          <Button handler={checkUser} className="button--size-m" text="Войти" type="button" />
         </FormBottom>
       </Form>
     </Section>

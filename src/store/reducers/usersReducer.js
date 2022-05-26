@@ -4,7 +4,7 @@ const usersState = {
   users: [
     {
       login: "admin",
-      password: "admin",
+      password: "adminadmin",
       email: "admin",
       firstName: "",
       lastName: "",
@@ -12,7 +12,7 @@ const usersState = {
     },
     {
       login: "dima",
-      password: "dima",
+      password: "dimadima",
       email: "dima",
       firstName: "Dmitri",
       lastName: "Novikov",

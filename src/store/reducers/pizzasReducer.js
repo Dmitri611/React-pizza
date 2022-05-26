@@ -1,20 +1,38 @@
+import pepperoni from "uploads/pizzas/pepperoni.webp";
+import barbecue from "uploads/pizzas/barbecue.webp";
 import { ADD_PIZZA, DELETE_PIZZA } from "../constants/constants";
 
 const pizzasState = {
   pizzas: [
     {
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/a5d272351fe241b1a90b3e10d2b5e2d0_292x292.jpeg",
+      image: pepperoni,
       name: "Пепперони",
       category: "мясная",
+      ingredients: "Томатный соус, пикантная пепперони, моцарелла",
+      price: 15.4,
+      proteins: 14.42,
+      fats: 10.51,
+      carbohydrates: 17.22,
+      energy: 240.46,
+      helf: 575,
+    },
+    {
+      image: barbecue,
+      name: "Барбекю",
+      category: "мясная",
       ingredients:
-        "Итальянские травы, томатный соус, томаты, пикантная пепперони, кубики брынзы, моцарелла, ветчина, шампиньоны",
-      price: "15.40",
+        "Острые колбаски чоризо, соус барбекю, томаты, красный лук, моцарелла, томатный соус",
+      price: 17.9,
+      proteins: 12.78,
+      fats: 10.88,
+      carbohydrates: 20.14,
+      energy: 239.42,
+      helf: 560,
     },
   ],
 };
 
-const pizzasReducer = (action, state = pizzasState) => {
+const pizzasReducer = (state = pizzasState, action) => {
   switch (action?.type) {
     case ADD_PIZZA:
       return {

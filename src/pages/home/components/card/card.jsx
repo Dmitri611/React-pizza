@@ -23,7 +23,7 @@ const Card = ({ image, name, desc, price, handler }) => {
       </a>
       <Params typeName="type1" sizeName="size1" />
       <div className={styles.card__bottom}>
-        <span className={styles.card__bottom_price}>От {price}</span>
+        <span className={styles.card__bottom_price}>От {price}р</span>
         <Button handler={countPlus} className="button--product">
           <span className={styles.card__bottom_span}>+</span>
           Добавить
@@ -38,7 +38,7 @@ Card.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   handler: PropTypes.func.isRequired,
 };
 

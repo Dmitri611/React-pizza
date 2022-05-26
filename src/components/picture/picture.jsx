@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Picture = ({ src, className, wrapper }) => {
   return (
     <picture className={wrapper}>
-      <img className={className} src={src} alt={src} />
+      <img className={className} src={src} alt="images" />
     </picture>
   );
 };
