@@ -12,7 +12,8 @@ const FormCard = ({
   pattern,
   description,
   autoComplete,
-  name
+  name,
+  onChange,
 }) => {
   return (
     <div className={styles.card}>
@@ -26,6 +27,7 @@ const FormCard = ({
         pattern={pattern}
         autoComplete={autoComplete}
         maxLength={maxLength}
+        onChange={onChange}
       />
       <p className={styles.card__desc}>{description}</p>
     </div>

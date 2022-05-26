@@ -17,9 +17,24 @@ const Payment = () => {
             <PaymentInput className="input--size-s" type="text" placeholder="Дом" name="home" />
           </PaymentCard>
           <PaymentCard>
-            <PaymentInput className="input--size-s" type="text" placeholder="Квартира" name="kvartira" />
-            <PaymentInput className="input--size-s" type="text" placeholder="Подъезд" name="podezd" />
-            <PaymentInput className="input--size-s" type="text" placeholder="Код двери" name="code" />
+            <PaymentInput
+              className="input--size-s"
+              type="text"
+              placeholder="Квартира"
+              name="kvartira"
+            />
+            <PaymentInput
+              className="input--size-s"
+              type="text"
+              placeholder="Подъезд"
+              name="podezd"
+            />
+            <PaymentInput
+              className="input--size-s"
+              type="text"
+              placeholder="Код двери"
+              name="code"
+            />
             <PaymentInput className="input--size-s" type="text" placeholder="Этаж" name="etag" />
           </PaymentCard>
           <PaymentCard text="Введите название адреса">

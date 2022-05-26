@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import React from "react";
 import styles from "./paymentInput.module.scss";
@@ -23,12 +23,12 @@ PaymentInput.propTypes = {
   placeholder: PropTypes.string,
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
-}
+};
 
 PaymentInput.defaultProps = {
   children: null,
   className: null,
   placeholder: null,
-}
+};
 
 export default PaymentInput;

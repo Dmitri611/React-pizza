@@ -17,6 +17,7 @@ module.exports = {
     "arrow-body-style": 0,
     "class-methods-use-this": 0,
     "function-paren-newline": 0,
+    "default-param-last": 0,
     "func-names": 0,
     "global-require": 0,
     "import/no-dynamic-require": 0,

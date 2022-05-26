@@ -21,8 +21,8 @@ const usersState = {
   ],
 };
 
-const usersReducer = (action, state = usersState) => {
-  switch (action?.type) {
+const usersReducer = (state = usersState, action) => {
+  switch (action.type) {
     case ADD_USER:
       return {
         ...state,

@@ -35,6 +35,6 @@ OrdersHistoryCard.propTypes = {
   children: PropTypes.object.isRequired,
   totalPrice: PropTypes.string.isRequired,
   handler: PropTypes.func.isRequired,
-}
+};
 
 export default OrdersHistoryCard;
