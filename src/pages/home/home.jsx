@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { pizzaSelector } from "store/selectors/selectors";
+import Dropdown from "components/dropdown/dropdown";
+import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
 import HomeList from "./components/home-list/home-list";
 import Sort from "./components/sort/sort";
 import Content from "./components/content/content";
@@ -14,11 +16,18 @@ const Home = () => {
   const [activeCategory, setActiveCategory] = useState(categoryList[0]);
   const pizzas = useSelector(pizzaSelector);
 
+  const sortList = ["популярности", "дешёвые", "дорогие"];
+  const [sortValue, setSortValue] = useState(sortList[0]);
+
+  const change = (e) => {
+    setSortValue(e.target.innerText);
+  };
+
   return (
     <section className={styles.home}>
       <div className={styles.home__navigation}>
         <HomeList>
-          {categoryList.map((item) => (
+          {categoryList.map(item => (
             <li key={item}>
               <label className={stylesItem.list__item}>
                 <input
@@ -33,9 +42,15 @@ const Home = () => {
             </li>
           ))}
         </HomeList>
-        <Sort />
+        <Sort>
+          <Dropdown btnContent={sortValue}>
+            {sortList.map(item => (
+              <DropdownItem key={item} handler={change} text={item} />
+            ))}
+          </Dropdown>
+        </Sort>
       </div>
-      <Content title={activeCategory}>{allPizzas(activeCategory, pizzas)}</Content>
+      <Content title={activeCategory}>{allPizzas(activeCategory, pizzas, sortValue)}</Content>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./components/card/card";
 
-const allPizzas = (activeCategory, pizzas) => {
+const allPizzas = (activeCategory, pizzas, sortValue) => {
   const card = (pizza) => {
     return (
       <Card
@@ -18,12 +18,21 @@ const allPizzas = (activeCategory, pizzas) => {
       />
     );
   };
-  const categoryPizzas = pizzas.filter((element) => element.category === activeCategory);
-  switch (categoryPizzas.length > 0) {
-    case true:
-      return categoryPizzas.map((pizza) => card(pizza));
+
+  const cheapPizzas = (a, b) => a.price - b.price;
+  const richPizzas = (a, b) => b.price - a.price;
+
+  const categoryPizzas = pizzas.filter(
+    (element) => activeCategory === "Все" || element.category === activeCategory
+  );
+
+  switch (sortValue) {
+    case "дешёвые":
+      return categoryPizzas.sort(cheapPizzas).map((pizza) => card(pizza));
+    case "дорогие":
+      return categoryPizzas.sort(richPizzas).map((pizza) => card(pizza));
     default:
-      return pizzas.map((pizza) => card(pizza));
+      return categoryPizzas.map((pizza) => card(pizza));
   }
 };
 
