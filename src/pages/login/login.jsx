@@ -46,10 +46,6 @@ const Login = () => {
     }
   };
 
-  React.useEffect(() => {
-    console.log(users);
-  }, [users]);
-
   return (
     <Section className="section__inner--size-s" title="Вход">
       <Form>
