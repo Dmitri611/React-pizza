@@ -4,10 +4,14 @@ import Dropdown from "components/dropdown/dropdown";
 import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
 import { ReactComponent as BasketSvg } from "assets/image/svg/shopping.svg";
 import { ReactComponent as ProfileSvg } from "assets/image/svg/profile.svg";
+import { useSelector } from "react-redux";
+import { authSelector } from "store/selectors/selectors";
 import Search from "../search/search";
 import styles from "./header-list.module.scss";
 
 const HeaderList = () => {
+  const auth = useSelector(authSelector);
+
   return (
     <ul className={styles.list}>
       <li className={styles.list__item}>
@@ -21,20 +25,26 @@ const HeaderList = () => {
         </Link>
       </li>
       <li className={styles.list__item}>
-        <Dropdown btnContent={<ProfileSvg />}>
-          <Link to="/login">
-            <DropdownItem text="Вход" />
-          </Link>
-          <Link to="/registration">
-            <DropdownItem text="Регистрация" />
-          </Link>
+        {auth.isAuth ? (
           <Link to="/profile">
-            <DropdownItem text="Кабинет" />
+            <ProfileSvg />
           </Link>
-          <Link to="/admin">
-            <DropdownItem text="Настройки" />
-          </Link>
-        </Dropdown>
+        ) : (
+          <Dropdown btnContent={<ProfileSvg />}>
+            <Link to="/login">
+              <DropdownItem text="Вход" />
+            </Link>
+            <Link to="/registration">
+              <DropdownItem text="Регистрация" />
+            </Link>
+            <Link to="/profile">
+              <DropdownItem text="Кабинет" />
+            </Link>
+            <Link to="/admin">
+              <DropdownItem text="Настройки" />
+            </Link>
+          </Dropdown>
+        )}
       </li>
     </ul>
   );

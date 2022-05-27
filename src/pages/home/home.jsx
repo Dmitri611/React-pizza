@@ -27,7 +27,7 @@ const Home = () => {
     <section className={styles.home}>
       <div className={styles.home__navigation}>
         <HomeList>
-          {categoryList.map(item => (
+          {categoryList.map((item) => (
             <li key={item}>
               <label className={stylesItem.list__item}>
                 <input
@@ -44,7 +44,7 @@ const Home = () => {
         </HomeList>
         <Sort>
           <Dropdown btnContent={sortValue}>
-            {sortList.map(item => (
+            {sortList.map((item) => (
               <DropdownItem key={item} handler={change} text={item} />
             ))}
           </Dropdown>

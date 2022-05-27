@@ -6,11 +6,13 @@ import Form from "components/form/form";
 import FormCard from "components/form/components/form-card/form-card";
 import FormBottom from "components/form/components/form-bottom/form-bottom";
 import Button from "components/button/button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "store/selectors/selectors";
+import { updateAuthAction } from "store/actions/authActions";
 
 const Login = () => {
   const users = useSelector(userSelector);
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState({
     login: null,
@@ -30,6 +32,11 @@ const Login = () => {
     if (thisUser) {
       if (user.password === thisUser.password) {
         alert(`Пользователь ${user.login} успешно авторизован!`);
+        if (thisUser.isAdmin === true) {
+          dispatch(updateAuthAction(true, true));
+        } else {
+          dispatch(updateAuthAction(false, true));
+        }
       } else {
         alert("Неправельный пароль!");
       }

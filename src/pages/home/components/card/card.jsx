@@ -4,6 +4,7 @@ import Button from "components/button/button";
 import Picture from "components/picture/picture";
 import Params from "components/params/params";
 import ModalProduct from "components/modalProduct/modalProduct";
+import realPrice from "components/params/realPrice";
 import styles from "./card.module.scss";
 
 const Card = ({
@@ -17,8 +18,13 @@ const Card = ({
   pizzaDesc,
   pizzaName,
 }) => {
+  const typesList = ["тонкое", "традиционное"];
+  const sizesList = ["26", "30", "36"];
+  const [activeType, setActiveType] = useState(typesList[0]);
+  const [activeSize, setActiveSize] = useState(sizesList[0]);
   const [modalAddStyle, setModalAddStyle] = useState(null);
   const [count, setCount] = useState(0);
+  const [price, setPrice] = useState(pizzaPrice);
 
   const openModal = () => {
     setModalAddStyle("modal-display");
@@ -46,11 +52,21 @@ const Card = ({
             <p>{pizzaDesc}</p>
           </div>
         </a>
-        <Params typeName={`type-${pizzaName}`} sizeName={`size-${pizzaName}`} />
+        <Params
+          onChange={(e) => {
+            realPrice(e, pizzaPrice, setPrice, price);
+          }}
+          typeName={`type-${pizzaName}`}
+          sizeName={`size-${pizzaName}`}
+          typesList={typesList}
+          activeType={activeType}
+          setActiveType={setActiveType}
+          sizesList={sizesList}
+          activeSize={activeSize}
+          setActiveSize={setActiveSize}
+        />
         <div className={styles.card__bottom}>
-          <span className={styles.card__bottom_price}>
-            От {pizzaPrice * (count > 1 ? count : 1)}р
-          </span>
+          <span className={styles.card__bottom_price}>{price * (count > 1 ? count : 1)}р</span>
           <Button handler={countPlus} className="button--product">
             <span className={styles.card__bottom_span}>+</span>
             Добавить

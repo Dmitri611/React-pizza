@@ -9,6 +9,8 @@ const usersState = {
       firstName: "",
       lastName: "",
       address: "",
+      tel: "",
+      isAdmin: true,
     },
     {
       login: "dima",
@@ -17,6 +19,8 @@ const usersState = {
       firstName: "Dmitri",
       lastName: "Novikov",
       address: "Vitebsk",
+      tel: "+375333910514",
+      isAdmin: false,
     },
   ],
 };
