@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Section from "components/section/section";
@@ -5,8 +6,7 @@ import Form from "components/form/form";
 import FormCard from "components/form/components/form-card/form-card";
 import FormBottom from "components/form/components/form-bottom/form-bottom";
 import Button from "components/button/button";
-import { useDispatch, useSelector } from "react-redux";
-import { userSelector } from "store/selectors/selectors";
+import { useDispatch } from "react-redux";
 import { addUserAction } from "store/actions/userActions";
 
 const Registration = () => {
