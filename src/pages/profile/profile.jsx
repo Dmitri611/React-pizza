@@ -15,7 +15,7 @@ const Profile = () => {
   const users = useSelector(userSelector);
   const auth = useSelector(authSelector);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const authUser = users.find((item) => item.login === auth.login);
 
@@ -35,20 +35,20 @@ const Profile = () => {
   };
 
   const updateUserInfo = () => {
-    dispatch(updateUserAction({...authUser, ...newInfo}));
+    dispatch(updateUserAction({ ...authUser, ...newInfo }));
     alert("Вы изменили свои данные!");
-  }
+  };
 
   const exit = () => {
     dispatch(updateAuthAction(false, false, null));
     navigate("/", { replace: true });
-  }
+  };
 
   const delProfile = () => {
     dispatch(delUserAction(authUser));
     dispatch(updateAuthAction(false, false, null));
     navigate("/", { replace: true });
-  }
+  };
 
   return (
     <Section className="section__inner--size-m" title="Личный кабинет">

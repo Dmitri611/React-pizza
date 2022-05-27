@@ -1,0 +1,32 @@
+@import "src/scss/styles.scss";
+
+.modal-info {
+  &__title {
+    font-weight: var(--font-weight-bold);
+    line-height: 39px;
+    padding: 20px;
+    color: var(--color-logo-heading);
+    @include media-breakpoint-down(md) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 22px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 5px 20px 13px 20px;
+    align-items: center;
+    border: 2px solid var(--color-bg-button--hover);
+
+    @include media-breakpoint-down(md){
+      max-width: 400px;
+    }
+
+    @include media-breakpoint-up(md){
+      max-width: 500px;
+    }
+  }
+}

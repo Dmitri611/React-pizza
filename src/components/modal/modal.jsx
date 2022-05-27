@@ -13,11 +13,13 @@ const Modal = ({ display, container, content, children }) => {
   );
 };
 
+// еще одно any!
+
 Modal.propTypes = {
   display: PropTypes.string,
   container: PropTypes.string,
   content: PropTypes.string,
-  children: PropTypes.array.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 Modal.defaultProps = {

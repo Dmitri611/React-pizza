@@ -5,6 +5,9 @@ import Picture from "components/picture/picture";
 import Params from "components/params/params";
 import ModalProduct from "components/modalProduct/modalProduct";
 import realPrice from "components/params/realPrice";
+import { useSelector } from "react-redux";
+import { authSelector } from "store/selectors/selectors";
+import ModalInfo from "components/modalInfo/modalInfo";
 import styles from "./card.module.scss";
 
 const Card = ({
@@ -23,8 +26,10 @@ const Card = ({
   const [activeType, setActiveType] = useState(typesList[0]);
   const [activeSize, setActiveSize] = useState(sizesList[0]);
   const [modalAddStyle, setModalAddStyle] = useState(null);
+  const [openModalInfo, setOpenModalInfo] = useState(null);
   const [count, setCount] = useState(0);
   const [price, setPrice] = useState(pizzaPrice);
+  const auth = useSelector(authSelector);
 
   const openModal = () => {
     setModalAddStyle("modal-display");
@@ -35,7 +40,14 @@ const Card = ({
   };
 
   const countPlus = () => {
-    setCount(count + 1);
+    return auth.isAuth ? (
+      setCount(count + 1)
+    ) : (
+      setOpenModalInfo("modal-display"),
+      setTimeout(() => {
+        setOpenModalInfo(null);
+      }, 2000)
+    );
   };
 
   return (
@@ -88,6 +100,7 @@ const Card = ({
         pizzaPrice={pizzaPrice}
         pizzaImage={pizzaImage}
       />
+      <ModalInfo display={openModalInfo} />
     </>
   );
 };

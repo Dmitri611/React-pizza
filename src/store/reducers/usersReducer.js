@@ -24,7 +24,7 @@ const usersState = {
     },
   ],
 };
-
+// добавить регистрацию!
 const usersReducer = (state = usersState, action) => {
   switch (action.type) {
     case ADD_USER:
