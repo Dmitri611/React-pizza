@@ -27,6 +27,7 @@ module.exports = {
     "jsx-a11y/href-no-hash": 0,
     "linebreak-style": 0,
     "no-console": 1,
+    "no-nested-ternary": 0,
     "no-irregular-whitespace": 0,
     "no-param-reassign": 0,
     "no-restricted-exports": 0,

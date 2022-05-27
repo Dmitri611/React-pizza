@@ -26,9 +26,22 @@ const HeaderList = () => {
       </li>
       <li className={styles.list__item}>
         {auth.isAuth ? (
+          (auth.isAdmin ? (
+            <Dropdown btnContent={<ProfileSvg />}>
           <Link to="/profile">
+            <DropdownItem text="Профиль" />
+          </Link>
+          <Link to="/admin">
+            <DropdownItem text="Настройки" />
+          </Link>
+        </Dropdown>
+          )
+          : (
+            <Link to="/profile">
             <ProfileSvg />
           </Link>
+          )
+          )
         ) : (
           <Dropdown btnContent={<ProfileSvg />}>
             <Link to="/login">
@@ -36,12 +49,6 @@ const HeaderList = () => {
             </Link>
             <Link to="/registration">
               <DropdownItem text="Регистрация" />
-            </Link>
-            <Link to="/profile">
-              <DropdownItem text="Кабинет" />
-            </Link>
-            <Link to="/admin">
-              <DropdownItem text="Настройки" />
             </Link>
           </Dropdown>
         )}

@@ -2,6 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import OrdersHistory from "pages/orders-history/ordersHistory";
 import Page404 from "pages/page404/page404";
+import { useSelector } from "react-redux";
+import { authSelector } from "store/selectors/selectors";
 import Layout from "./components/layout";
 import Home from "./pages/home/home";
 import Profile from "./pages/profile/profile";
@@ -17,24 +19,44 @@ import BasketEmpty from "./pages/basket/components/basketEmpty/basketEmpty";
 import Payment from "./pages/payment/payment";
 
 const App = () => {
+  const { isAdmin, isAuth } = useSelector(authSelector);
+
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Page404 />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/orders-history" element={<OrdersHistory />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/basket" element={<Basket />} />
-        <Route path="/basket-empty" element={<BasketEmpty />} />
-        <Route path="/basket/payment" element={<Payment />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/products" element={<Products />} />
-        <Route path="/admin/users" element={<Users />} />
-        <Route path="/admin/promo-codes" element={<PromoCodes />} />
-        <Route path="/admin/orders" element={<Orders />} />
-      </Routes>
+      {isAuth ? (
+        isAdmin ? (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<Page404 />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/orders-history" element={<OrdersHistory />} />
+            <Route path="/basket" element={<Basket />} />
+            <Route path="/basket-empty" element={<BasketEmpty />} />
+            <Route path="/basket/payment" element={<Payment />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/products" element={<Products />} />
+            <Route path="/admin/users" element={<Users />} />
+            <Route path="/admin/promo-codes" element={<PromoCodes />} />
+            <Route path="/admin/orders" element={<Orders />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<Page404 />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/orders-history" element={<OrdersHistory />} />
+            <Route path="/basket" element={<Basket />} />
+            <Route path="/basket-empty" element={<BasketEmpty />} />
+            <Route path="/basket/payment" element={<Payment />} />
+          </Routes>
+        )
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
+        </Routes>
+      )}
     </Layout>
   );
 };

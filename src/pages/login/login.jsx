@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Section from "components/section/section";
 import Form from "components/form/form";
 import FormCard from "components/form/components/form-card/form-card";
@@ -12,6 +12,7 @@ import { updateAuthAction } from "store/actions/authActions";
 
 const Login = () => {
   const users = useSelector(userSelector);
+  const navigate = useNavigate()
   const dispatch = useDispatch();
 
   const [user, setUser] = useState({
@@ -32,6 +33,7 @@ const Login = () => {
     if (thisUser) {
       if (user.password === thisUser.password) {
         alert(`Пользователь ${user.login} успешно авторизован!`);
+        navigate("/", { replace: true });
         if (thisUser.isAdmin === true) {
           dispatch(updateAuthAction(true, true));
         } else {
