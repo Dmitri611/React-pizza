@@ -32,7 +32,6 @@ const Login = () => {
 
     if (thisUser) {
       if (user.password === thisUser.password) {
-        alert(`Пользователь ${user.login} успешно авторизован!`);
         navigate("/", { replace: true });
         if (thisUser.isAdmin === true) {
           dispatch(updateAuthAction(true, true, thisUser.login));
@@ -46,6 +45,10 @@ const Login = () => {
       alert(`Пользователь ${user.login} не найден!`);
     }
   };
+
+  React.useEffect(() => {
+    console.log(users);
+  }, [users])
 
   return (
     <Section className="section__inner--size-s" title="Вход">

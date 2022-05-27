@@ -8,7 +8,7 @@ import FormBottom from "components/form/components/form-bottom/form-bottom";
 import Button from "components/button/button";
 import { useDispatch, useSelector } from "react-redux";
 import { authSelector, userSelector } from "store/selectors/selectors";
-import { updateUserAction } from "store/actions/userActions";
+import { delUserAction, updateUserAction } from "store/actions/userActions";
 import { updateAuthAction } from "store/actions/authActions";
 
 const Profile = () => {
@@ -20,11 +20,11 @@ const Profile = () => {
   const authUser = users.find((item) => item.login === auth.login);
 
   const [newInfo, setNewInfo] = useState({
-    email: authUser.email,
-    firstName: authUser.firstName,
-    lastName: authUser.lastName,
-    address: authUser.address,
-    tel: authUser.tel,
+    email: authUser?.email,
+    firstName: authUser?.firstName,
+    lastName: authUser?.lastName,
+    address: authUser?.address,
+    tel: authUser?.tel,
   });
 
   const handleCange = (e) => {
@@ -40,6 +40,12 @@ const Profile = () => {
   }
 
   const exit = () => {
+    dispatch(updateAuthAction(false, false, null));
+    navigate("/", { replace: true });
+  }
+
+  const delProfile = () => {
+    dispatch(delUserAction(authUser));
     dispatch(updateAuthAction(false, false, null));
     navigate("/", { replace: true });
   }
@@ -102,7 +108,7 @@ const Profile = () => {
           <Link to="/">
             <Button className="button--size-m" text="Назад" />
           </Link>
-          <Button className="button--size-m" text="Удалить профиль" />
+          <Button handler={delProfile} className="button--size-m" text="Удалить профиль" />
           <Button handler={updateUserInfo} className="button--size-m" text="Изменить" />
           <Button handler={exit} className="button--size-m" type="submit" text="Выйти" />
         </FormBottom>
