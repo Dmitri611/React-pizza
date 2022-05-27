@@ -35,9 +35,9 @@ const Login = () => {
         alert(`Пользователь ${user.login} успешно авторизован!`);
         navigate("/", { replace: true });
         if (thisUser.isAdmin === true) {
-          dispatch(updateAuthAction(true, true));
+          dispatch(updateAuthAction(true, true, thisUser.login));
         } else {
-          dispatch(updateAuthAction(false, true));
+          dispatch(updateAuthAction(false, true, thisUser.login));
         }
       } else {
         alert("Неправельный пароль!");

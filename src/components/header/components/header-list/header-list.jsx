@@ -20,7 +20,7 @@ const HeaderList = () => {
         </li>
         <li className={styles.list__item}>
           <Link to="/admin">
-          <ProfileSvg />
+            <ProfileSvg />
           </Link>
         </li>
       </ul>

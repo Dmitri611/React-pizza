@@ -1,9 +1,8 @@
-import { ADD_USER, DELETE_USER } from "../constants/constants";
+import { ADD_USER, DELETE_USER, UPDATE_USER } from "../constants/constants";
 
 const usersState = {
   users: [
     {
-      id: 1,
       login: "admin",
       password: "adminadmin",
       email: "admin",
@@ -14,7 +13,6 @@ const usersState = {
       isAdmin: true,
     },
     {
-      id: 2,
       login: "dima",
       password: "dimadima",
       email: "dima",
@@ -37,7 +35,17 @@ const usersReducer = (state = usersState, action) => {
     case DELETE_USER:
       return {
         ...state,
-        users: state.users.filter((user) => user.name !== action.delUser),
+        users: state.users.filter((user) => user.login !== action.delUser),
+      };
+    case UPDATE_USER:
+      return {
+        ...state,
+        users: [...state.users].map((user) => {
+          if (user.login === action.payload.login) {
+            return action.payload;
+          }
+          return user;
+        }),
       };
     default:
       return state;
