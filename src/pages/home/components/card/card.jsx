@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Button from "components/button/button";
 import Picture from "components/picture/picture";
@@ -19,18 +18,15 @@ const Card = ({
   pizzaName,
 }) => {
   const [modalAddStyle, setModalAddStyle] = useState(null);
-
-  const style = "modal-display";
+  const [count, setCount] = useState(0);
 
   const openModal = () => {
-    setModalAddStyle(style);
+    setModalAddStyle("modal-display");
   };
 
   const close = () => {
     setModalAddStyle(null);
   };
-
-  const [count, setCount] = useState(0);
 
   const countPlus = () => {
     setCount(count + 1);
@@ -50,7 +46,7 @@ const Card = ({
             <p>{pizzaDesc}</p>
           </div>
         </a>
-        <Params typeName="type1" sizeName="size1" />
+        <Params typeName={`type-${pizzaName}`} sizeName={`size-${pizzaName}`} />
         <div className={styles.card__bottom}>
           <span className={styles.card__bottom_price}>
             От {pizzaPrice * (count > 1 ? count : 1)}р
@@ -79,12 +75,5 @@ const Card = ({
     </>
   );
 };
-
-// Card.propTypes = {
-//   image: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   desc: PropTypes.string.isRequired,
-//   price: PropTypes.number.isRequired,
-// };
 
 export default Card;

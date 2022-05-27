@@ -45,7 +45,7 @@ const ModalProduct = ({
           <span>Белки - {pizzaFats}г</span>
           <span>Углеводы - {pizzaCarbohydrates}г</span>
           <span>Энергетическая ценность - {pizzaEnergy} ккал.</span>
-          <Params typeName="type2" sizeName="size2" />
+          <Params typeName={`typeinfo-${pizzaName}`} sizeName={`sizeinfo-${pizzaName}-info`}/>
           <div className={styles["modal-product__info-bottom"]}>
             <div className={styles["modal-product__info-total"]}>
               <span className={styles["modal-product__title"]}>{pizzaPrice}р</span>
