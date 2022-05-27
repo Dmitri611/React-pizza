@@ -27,27 +27,22 @@ const App = () => {
         isAdmin ? (
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="*" element={<Page404 />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/profile/orders-history" element={<OrdersHistory />} />
-            <Route path="/basket" element={<Basket />} />
-            <Route path="/basket-empty" element={<BasketEmpty />} />
-            <Route path="/basket/payment" element={<Payment />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/products" element={<Products />} />
             <Route path="/admin/users" element={<Users />} />
             <Route path="/admin/promo-codes" element={<PromoCodes />} />
             <Route path="/admin/orders" element={<Orders />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
         ) : (
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="*" element={<Page404 />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/orders-history" element={<OrdersHistory />} />
             <Route path="/basket" element={<Basket />} />
             <Route path="/basket-empty" element={<BasketEmpty />} />
             <Route path="/basket/payment" element={<Payment />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
         )
       ) : (
@@ -55,6 +50,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       )}
     </Layout>

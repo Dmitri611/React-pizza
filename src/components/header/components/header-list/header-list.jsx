@@ -12,46 +12,49 @@ import styles from "./header-list.module.scss";
 const HeaderList = () => {
   const auth = useSelector(authSelector);
 
-  return (
+  return auth.isAuth ? (
+    auth.isAdmin ? (
+      <ul className={styles.list}>
+        <li className={styles.list__item}>
+          <Search />
+        </li>
+        <li className={styles.list__item}>
+          <Link to="/admin">
+          <ProfileSvg />
+          </Link>
+        </li>
+      </ul>
+    ) : (
+      <ul className={styles.list}>
+        <li className={styles.list__item}>
+          <Search />
+        </li>
+        <li className={styles.list__item}>
+          <Link to="/basket">
+            <BasketSvg />
+          </Link>
+        </li>
+        <li className={styles.list__item}>
+          <Link to="/profile">
+            <ProfileSvg />
+          </Link>
+        </li>
+      </ul>
+    )
+  ) : (
     <ul className={styles.list}>
       <li className={styles.list__item}>
         <Search />
       </li>
       <li className={styles.list__item}>
-        <Link to="/basket">
-          <span className={styles.list__basket} aria-label="basket">
-            <BasketSvg />
-          </span>
-        </Link>
-      </li>
-      <li className={styles.list__item}>
-        {auth.isAuth ? (
-          (auth.isAdmin ? (
-            <Dropdown btnContent={<ProfileSvg />}>
-          <Link to="/profile">
-            <DropdownItem text="Профиль" />
+        <Dropdown btnContent={<ProfileSvg />}>
+          <Link to="/login">
+            <DropdownItem text="Вход" />
           </Link>
-          <Link to="/admin">
-            <DropdownItem text="Настройки" />
+          <Link to="/registration">
+            <DropdownItem text="Регистрация" />
           </Link>
         </Dropdown>
-          )
-          : (
-            <Link to="/profile">
-            <ProfileSvg />
-          </Link>
-          )
-          )
-        ) : (
-          <Dropdown btnContent={<ProfileSvg />}>
-            <Link to="/login">
-              <DropdownItem text="Вход" />
-            </Link>
-            <Link to="/registration">
-              <DropdownItem text="Регистрация" />
-            </Link>
-          </Dropdown>
-        )}
       </li>
     </ul>
   );

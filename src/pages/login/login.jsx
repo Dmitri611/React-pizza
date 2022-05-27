@@ -12,7 +12,7 @@ import { updateAuthAction } from "store/actions/authActions";
 
 const Login = () => {
   const users = useSelector(userSelector);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [user, setUser] = useState({

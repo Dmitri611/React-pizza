@@ -3,6 +3,7 @@ import { ADD_USER, DELETE_USER } from "../constants/constants";
 const usersState = {
   users: [
     {
+      id: 1,
       login: "admin",
       password: "adminadmin",
       email: "admin",
@@ -13,6 +14,7 @@ const usersState = {
       isAdmin: true,
     },
     {
+      id: 2,
       login: "dima",
       password: "dimadima",
       email: "dima",
