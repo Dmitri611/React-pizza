@@ -9,3 +9,5 @@ export const DELETE_PIZZA = "DELETE_PIZZA";
 
 // auth
 export const UPDATE_AUTH = "UPDATE_AUTH";
+
+// promo
