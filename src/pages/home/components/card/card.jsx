@@ -100,7 +100,7 @@ const Card = ({
         pizzaPrice={pizzaPrice}
         pizzaImage={pizzaImage}
       />
-      <ModalInfo display={openModalInfo} />
+      <ModalInfo display={openModalInfo} title="Сначала пройдите авторизацию!" />
     </>
   );
 };
