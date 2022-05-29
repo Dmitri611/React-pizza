@@ -3,6 +3,7 @@ import { ADD_PIZZA, DELETE_PIZZA } from "../constants/constants";
 const pizzasState = {
   pizzas: [
     {
+      id: 1,
       image: "uploads/pizzas/pepperoni.webp",
       name: "Пепперони",
       category: "Мясные",
@@ -15,6 +16,7 @@ const pizzasState = {
       helf: 575,
     },
     {
+      id: 2,
       image: "uploads/pizzas/barbecue.webp",
       name: "Барбекю",
       category: "Гриль",
@@ -28,6 +30,7 @@ const pizzasState = {
       helf: 560,
     },
     {
+      id: 3,
       image: "uploads/pizzas/vegetables-mushrooms.webp",
       name: "Овощи и грибы",
       category: "Вегетарианские",
@@ -41,6 +44,7 @@ const pizzasState = {
       helf: 455,
     },
     {
+      id: 4,
       image: "uploads/pizzas/double-pepperoni.webp",
       name: "Двойная пепперони",
       category: "Мясные",
@@ -53,6 +57,7 @@ const pizzasState = {
       helf: 575,
     },
     {
+      id: 5,
       image: "uploads/pizzas/cheesy.webp",
       name: "Сырная",
       category: "Сырные",
@@ -65,6 +70,7 @@ const pizzasState = {
       helf: 500,
     },
     {
+      id: 6,
       image: "uploads/pizzas/carbonara.webp",
       name: "Карбонара",
       category: "Острые",
@@ -85,12 +91,12 @@ const pizzasReducer = (state = pizzasState, action) => {
     case ADD_PIZZA:
       return {
         ...state,
-        pizzas: [action.newPizza, ...state.pizzas],
+        pizzas: [action.payload, ...state.pizzas],
       };
     case DELETE_PIZZA:
       return {
         ...state,
-        pizzas: state.pizzas.filter((pizza) => pizza.name !== action.delPizza),
+        pizzas: [state.pizzas].filter((pizza) => pizza.name !== action.payload),
       };
     default:
       return state;

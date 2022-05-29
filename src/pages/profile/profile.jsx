@@ -51,7 +51,7 @@ const Profile = () => {
     setModalInfoUpdate("modal-display");
     setTimeout(() => {
       setModalInfoUpdate(null);
-    }, 1000)
+    }, 1000);
   };
 
   const exit = () => {
@@ -61,72 +61,90 @@ const Profile = () => {
 
   return (
     <>
-    <Section className="section__inner--size-m" title="Личный кабинет">
-      <Form>
-        <FormCard
-          onChange={handleCange}
-          value={newInfo.firstName}
-          name="firstName"
-          title="Имя"
-          type="text"
-          placeholder="Имя"
-          minLength="2"
-          pattern="^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$"
-        />
-        <FormCard
-          onChange={handleCange}
-          value={newInfo.lastName}
-          name="lastName"
-          title="Фамилия"
-          type="text"
-          placeholder="Фамилия"
-          minLength="2"
-          pattern="^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$"
-        />
-        <FormCard
-          onChange={handleCange}
-          value={newInfo.tel}
-          name="tel"
-          title="Номер телефона"
-          type="tel"
-          placeholder="Номер телефона"
-          minLength="12"
-          pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
-        />
-        <FormCard
-          onChange={handleCange}
-          value={newInfo.address}
-          name="address"
-          title="Адрес доставки"
-          type="text"
-          placeholder="Адрес доставки"
-        />
-        <FormCard
-          onChange={handleCange}
-          value={newInfo.email}
-          name="email"
-          title="Почта"
-          type="email"
-          placeholder="Почта"
-          minLength="8"
-          pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-        />
-        <Link to="/profile/orders-history">
-          <Button className="button--size-m" text="История заказов" />
-        </Link>
-        <FormBottom>
-          <Link to="/">
-            <Button className="button--size-m" text="Назад" />
+      <Section className="section__inner--size-m" title="Личный кабинет">
+        <Form>
+          <FormCard
+            onChange={handleCange}
+            value={newInfo.firstName}
+            name="firstName"
+            title="Имя"
+            type="text"
+            placeholder="Имя"
+            minLength="2"
+            pattern="^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$"
+          />
+          <FormCard
+            onChange={handleCange}
+            value={newInfo.lastName}
+            name="lastName"
+            title="Фамилия"
+            type="text"
+            placeholder="Фамилия"
+            minLength="2"
+            pattern="^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$"
+          />
+          <FormCard
+            onChange={handleCange}
+            value={newInfo.tel}
+            name="tel"
+            title="Номер телефона"
+            type="tel"
+            placeholder="Номер телефона"
+            minLength="12"
+            pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
+          />
+          <FormCard
+            onChange={handleCange}
+            value={newInfo.address}
+            name="address"
+            title="Адрес доставки"
+            type="text"
+            placeholder="Адрес доставки"
+          />
+          <FormCard
+            onChange={handleCange}
+            value={newInfo.email}
+            name="email"
+            title="Почта"
+            type="email"
+            placeholder="Почта"
+            minLength="8"
+            pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+          />
+          <Link to="/profile/orders-history">
+            <Button className="button--size-m" text="История заказов" />
           </Link>
-          <Button handler={() => setModalWarnDel("modal-display")} className="button--size-m" text="Удалить профиль" />
-          <Button handler={updateUserInfo} className="button--size-m" text="Изменить" />
-          <Button handler={() => setModalWarnExit("modal-display")} className="button--size-m" text="Выйти" />
-        </FormBottom>
-      </Form>
-    </Section>
-    <ModalWarn display={modalWarnExit} handler={() => setModalWarnExit(null)} handlerOk={exit} title="Вы уверены что хотите выйти?" />
-    <ModalWarn display={modalWarnDel} handler={() => setModalWarnDel(null)} handlerOk={delProfile} title="Вы уверены что хотите удалить свой аккаунт?" />
-    <ModalInfo display={modalInfoUpdate} title="Данные успешно обновлены!" />
+          <FormBottom>
+            <Link to="/">
+              <Button className="button--size-m" text="Назад" />
+            </Link>
+            <Button
+              handler={() => setModalWarnDel("modal-display")}
+              className="button--size-m"
+              text="Удалить профиль"
+            />
+            <Button handler={updateUserInfo} className="button--size-m" text="Изменить" />
+            <Button
+              handler={() => setModalWarnExit("modal-display")}
+              className="button--size-m"
+              text="Выйти"
+            />
+          </FormBottom>
+        </Form>
+      </Section>
+      <ModalWarn
+        display={modalWarnExit}
+        handler={() => setModalWarnExit(null)}
+        handlerOk={exit}
+        title="Вы уверены что хотите выйти?"
+      />
+      <ModalWarn
+        display={modalWarnDel}
+        handler={() => setModalWarnDel(null)}
+        handlerOk={delProfile}
+        title="Вы уверены что хотите удалить свой аккаунт?"
+      />
+      <ModalInfo display={modalInfoUpdate} title="Данные успешно обновлены!" />
     </>
   );
 };

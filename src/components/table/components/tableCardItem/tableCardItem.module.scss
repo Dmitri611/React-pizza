@@ -4,6 +4,10 @@
   color: inherit;
   max-width: 300px;
 
+  &--big {
+    min-width: 300px;
+  }
+
   @include media-breakpoint-down(sm) {
     padding: 8px;
   }

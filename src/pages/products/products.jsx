@@ -14,6 +14,8 @@ import ModalEdit from "components/modalEdit/modalEdit";
 import ModalWarn from "components/modalWarn/modalWarn";
 import Picture from "components/picture/picture";
 import FormCard from "components/form/components/form-card/form-card";
+import { useSelector } from "react-redux";
+import { pizzaSelector } from "store/selectors/selectors";
 import modalAddStyles from "../../components/modalEdit/modalEdit.module.scss";
 
 const Products = () => {
@@ -55,6 +57,8 @@ const Products = () => {
     setModalEditStyle(null);
   };
 
+  const pizzas = useSelector(pizzaSelector);
+
   return (
     <>
       <Section className="section__inner--size-s" title="Пиццы">
@@ -70,26 +74,30 @@ const Products = () => {
               <TableCardItemTh text="Изменить" />
               <TableCardItemTh text="Удалить" />
             </TableCard>
-            <TableCard>
-              <TableCardItem text="1" />
-              <TableCardItem>
-                <Picture src="uploads/pizzas/pepperoni.webp" />
-              </TableCardItem>
-              <TableCardItem text="Пепперони" />
-              <TableCardItem text="Мясная" />
-              <TableCardItem text="Томатный соус, пикантная пепперони, моцарелла" />
-              <TableCardItem text="От 10.13р" />
-              <TableCardItem>
-                <Button handler={editPizza} className="button--edit">
-                  <Edit />
-                </Button>
-              </TableCardItem>
-              <TableCardItem>
-                <Button handler={modalWarn} className="button--edit">
-                  <Delete />
-                </Button>
-              </TableCardItem>
-            </TableCard>
+            {pizzas.map((pizza) => {
+              return (
+                <TableCard key={pizza.name}>
+                  <TableCardItem text={pizza.id} />
+                  <TableCardItem>
+                    <Picture src={pizza.image} />
+                  </TableCardItem>
+                  <TableCardItem text={pizza.name} />
+                  <TableCardItem text={pizza.category} />
+                  <TableCardItem text={pizza.ingredients} className="table__item--big" />
+                  <TableCardItem text={`${pizza.price}р`} />
+                  <TableCardItem>
+                    <Button handler={editPizza} className="button--edit">
+                      <Edit />
+                    </Button>
+                  </TableCardItem>
+                  <TableCardItem>
+                    <Button handler={modalWarn} className="button--edit">
+                      <Delete />
+                    </Button>
+                  </TableCardItem>
+                </TableCard>
+              );
+            })}
           </Table>
           <SectionFooter>
             <Link to="/admin">
@@ -101,31 +109,21 @@ const Products = () => {
       </Section>
       <ModalEdit display={modalAddStyle} title="Добавить пиццу" handler={close}>
         <Picture className={modalAddStyles["modal-edit__image"]} src={imageUrl} />
-        <label htmlFor="inputqq">
+        <label>
           <span>Добавить фото</span>
-          <input
-            onChange={change}
-            id="inputqq"
-            className={modalAddStyles["modal-edit__input"]}
-            type="file"
-          />
+          <input onChange={change} className={modalAddStyles["modal-edit__input"]} type="file" />
         </label>
         <FormCard title="Название" type="text" placeholder="Название" />
         <FormCard title="Категория" type="text" placeholder="Категория" />
         <FormCard title="Ингредиенты" type="text" placeholder="Ингредиенты" />
         <FormCard title="Цена" type="text" placeholder="Цена" />
-        <Button type="submit" className="button--size-m" text="Добавить" />
+        <Button className="button--size-m" text="Добавить" />
       </ModalEdit>
       <ModalEdit display={modalEditStyle} title="Изменить пиццу" handler={close}>
         <Picture className={modalAddStyles["modal-edit__image"]} src={defaultSrc} />
-        <label htmlFor="inputqq">
+        <label>
           <span>Изменить фото</span>
-          <input
-            onChange={def}
-            id="inputqq"
-            className={modalAddStyles["modal-edit__input"]}
-            type="file"
-          />
+          <input onChange={def} className={modalAddStyles["modal-edit__input"]} type="file" />
         </label>
         <FormCard title="Название" type="text" placeholder="Название" />
         <FormCard title="Категория" type="text" placeholder="Категория" />
@@ -133,7 +131,7 @@ const Products = () => {
         <FormCard title="Цена" type="text" placeholder="Цена" />
         <Button type="submit" className="button--size-m" text="изменить" />
       </ModalEdit>
-      <ModalWarn display={modalWarnStyle} handler={close} />
+      <ModalWarn display={modalWarnStyle} handler={close} title="Вы уверены что хотите удалить эту пиццу?" />
     </>
   );
 };

@@ -8,7 +8,6 @@ import { updateAuthAction } from "store/actions/authActions";
 import SectionFooter from "components/section/components/sectionFooter/sectionFooter";
 
 const Admin = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -33,11 +32,11 @@ const Admin = () => {
           <Button className="button--default" text="Заказы" />
         </Link>
         <SectionFooter>
-      <Link to="/">
-        <Button className="button--size-m" text="Назад" />
-      </Link>
-      <Button handler={exit} className="button--size-m" text="Выйти" />
-      </SectionFooter>
+          <Link to="/">
+            <Button className="button--size-m" text="Назад" />
+          </Link>
+          <Button handler={exit} className="button--size-m" text="Выйти" />
+        </SectionFooter>
       </SectionContent>
     </Section>
   );

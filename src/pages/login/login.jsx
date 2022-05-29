@@ -47,52 +47,52 @@ const Login = () => {
         setOpenModaInfoErrorPassword("modal-display");
         setTimeout(() => {
           setOpenModaInfoErrorPassword(null);
-          }, 1500);
+        }, 1500);
       }
     } else {
       setOpenModaInfoErrorUser("modal-display");
       setTimeout(() => {
         setOpenModaInfoErrorUser(null);
-      }, 1500)
+      }, 1500);
     }
   };
 
   return (
     <>
-    <Section className="section__inner--size-s" title="Вход">
-      <Form>
-        <FormCard
-          required="required"
-          name="login"
-          title="Логин"
-          type="text"
-          placeholder="Логин"
-          minLength="2"
-          description="Введите ваш логин!"
-          onChange={handleChange}
-          autoComplete="on"
-        />
-        <FormCard
-          required="required"
-          name="password"
-          title="Пароль"
-          type="password"
-          placeholder="Пароль"
-          minLength="8"
-          description="Введите ваш пароль!"
-          onChange={handleChange}
-          autoComplete="on"
-        />
-        <FormBottom>
-          <Link to="/">
-            <Button className="button--size-m" text="Назад" />
-          </Link>
-          <Button handler={checkUser} className="button--size-m" text="Войти" type="button" />
-        </FormBottom>
-      </Form>
-    </Section>
-    <ModalInfo display={openModaInfoErrorPassword} title="Неправильный пароль!" />
-    <ModalInfo display={openModaInfoErrorUser} title={`Пользователь ${user.login} не найден!`} />
+      <Section className="section__inner--size-s" title="Вход">
+        <Form>
+          <FormCard
+            required="required"
+            name="login"
+            title="Логин"
+            type="text"
+            placeholder="Логин"
+            minLength="2"
+            description="Введите ваш логин!"
+            onChange={handleChange}
+            autoComplete="on"
+          />
+          <FormCard
+            required="required"
+            name="password"
+            title="Пароль"
+            type="password"
+            placeholder="Пароль"
+            minLength="8"
+            description="Введите ваш пароль!"
+            onChange={handleChange}
+            autoComplete="on"
+          />
+          <FormBottom>
+            <Link to="/">
+              <Button className="button--size-m" text="Назад" />
+            </Link>
+            <Button handler={checkUser} className="button--size-m" text="Войти" type="button" />
+          </FormBottom>
+        </Form>
+      </Section>
+      <ModalInfo display={openModaInfoErrorPassword} title="Неправильный пароль!" />
+      <ModalInfo display={openModaInfoErrorUser} title={`Пользователь ${user.login} не найден!`} />
     </>
   );
 };

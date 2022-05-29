@@ -42,15 +42,13 @@ const Card = ({
   };
 
   const countPlus = () => {
-    return auth.isAuth ? (
-      setCount(count + 1)
-    ) : (
-      setOpenModalInfo("modal-display"),
-      setTimeout(() => {
-        setOpenModalInfo(null);
-        navigate("/login", { replace: true });
-      }, 1500)
-    );
+    return auth.isAuth
+      ? setCount(count + 1)
+      : (setOpenModalInfo("modal-display"),
+        setTimeout(() => {
+          setOpenModalInfo(null);
+          navigate("/login", { replace: true });
+        }, 1500));
   };
 
   return (
