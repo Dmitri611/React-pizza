@@ -8,6 +8,7 @@ import realPrice from "components/params/realPrice";
 import { useSelector } from "react-redux";
 import { authSelector } from "store/selectors/selectors";
 import ModalInfo from "components/modalInfo/modalInfo";
+import { useNavigate } from "react-router-dom";
 import styles from "./card.module.scss";
 
 const Card = ({
@@ -30,6 +31,7 @@ const Card = ({
   const [count, setCount] = useState(0);
   const [price, setPrice] = useState(pizzaPrice);
   const auth = useSelector(authSelector);
+  const navigate = useNavigate();
 
   const openModal = () => {
     setModalAddStyle("modal-display");
@@ -46,7 +48,8 @@ const Card = ({
       setOpenModalInfo("modal-display"),
       setTimeout(() => {
         setOpenModalInfo(null);
-      }, 2000)
+        navigate("/login", { replace: true });
+      }, 1500)
     );
   };
 

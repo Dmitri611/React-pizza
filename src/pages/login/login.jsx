@@ -9,11 +9,14 @@ import Button from "components/button/button";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "store/selectors/selectors";
 import { updateAuthAction } from "store/actions/authActions";
+import ModalInfo from "components/modalInfo/modalInfo";
 
 const Login = () => {
   const users = useSelector(userSelector);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [openModaInfoErrorPassword, setOpenModaInfoErrorPassword] = useState(null);
+  const [openModaInfoErrorUser, setOpenModaInfoErrorUser] = useState(null);
 
   const [user, setUser] = useState({
     login: null,
@@ -27,6 +30,8 @@ const Login = () => {
     });
   };
 
+  // проверка на зарегистрированный логин!
+  // сообщение о успешной авторизации!
   const checkUser = () => {
     const thisUser = users.find((item) => item.login === user.login);
 
@@ -39,14 +44,21 @@ const Login = () => {
           dispatch(updateAuthAction(false, true, thisUser.login));
         }
       } else {
-        alert("Неправельный пароль!");
+        setOpenModaInfoErrorPassword("modal-display");
+        setTimeout(() => {
+          setOpenModaInfoErrorPassword(null);
+          }, 1500);
       }
     } else {
-      alert(`Пользователь ${user.login} не найден!`);
+      setOpenModaInfoErrorUser("modal-display");
+      setTimeout(() => {
+        setOpenModaInfoErrorUser(null);
+      }, 1500)
     }
   };
 
   return (
+    <>
     <Section className="section__inner--size-s" title="Вход">
       <Form>
         <FormCard
@@ -79,6 +91,9 @@ const Login = () => {
         </FormBottom>
       </Form>
     </Section>
+    <ModalInfo display={openModaInfoErrorPassword} title="Неправильный пароль!" />
+    <ModalInfo display={openModaInfoErrorUser} title={`Пользователь ${user.login} не найден!`} />
+    </>
   );
 };
 

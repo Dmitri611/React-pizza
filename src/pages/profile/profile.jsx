@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { authSelector, userSelector } from "store/selectors/selectors";
 import { delUserAction, updateUserAction } from "store/actions/userActions";
 import { updateAuthAction } from "store/actions/authActions";
+import ModalWarn from "components/modalWarn/modalWarn";
+import ModalInfo from "components/modalInfo/modalInfo";
 
 const Profile = () => {
   const users = useSelector(userSelector);
@@ -34,15 +36,9 @@ const Profile = () => {
     });
   };
 
-  const updateUserInfo = () => {
-    dispatch(updateUserAction({ ...authUser, ...newInfo }));
-    alert("Вы изменили свои данные!");
-  };
-
-  const exit = () => {
-    dispatch(updateAuthAction(false, false, null));
-    navigate("/", { replace: true });
-  };
+  const [modalWarnExit, setModalWarnExit] = useState(null);
+  const [modalWarnDel, setModalWarnDel] = useState(null);
+  const [modalInfoUpdate, setModalInfoUpdate] = useState(null);
 
   const delProfile = () => {
     dispatch(delUserAction(authUser));
@@ -50,7 +46,21 @@ const Profile = () => {
     navigate("/", { replace: true });
   };
 
+  const updateUserInfo = () => {
+    dispatch(updateUserAction({ ...authUser, ...newInfo }));
+    setModalInfoUpdate("modal-display");
+    setTimeout(() => {
+      setModalInfoUpdate(null);
+    }, 1000)
+  };
+
+  const exit = () => {
+    dispatch(updateAuthAction(false, false, null));
+    navigate("/", { replace: true });
+  };
+
   return (
+    <>
     <Section className="section__inner--size-m" title="Личный кабинет">
       <Form>
         <FormCard
@@ -108,12 +118,16 @@ const Profile = () => {
           <Link to="/">
             <Button className="button--size-m" text="Назад" />
           </Link>
-          <Button handler={delProfile} className="button--size-m" text="Удалить профиль" />
+          <Button handler={() => setModalWarnDel("modal-display")} className="button--size-m" text="Удалить профиль" />
           <Button handler={updateUserInfo} className="button--size-m" text="Изменить" />
-          <Button handler={exit} className="button--size-m" type="submit" text="Выйти" />
+          <Button handler={() => setModalWarnExit("modal-display")} className="button--size-m" text="Выйти" />
         </FormBottom>
       </Form>
     </Section>
+    <ModalWarn display={modalWarnExit} handler={() => setModalWarnExit(null)} handlerOk={exit} title="Вы уверены что хотите выйти?" />
+    <ModalWarn display={modalWarnDel} handler={() => setModalWarnDel(null)} handlerOk={delProfile} title="Вы уверены что хотите удалить свой аккаунт?" />
+    <ModalInfo display={modalInfoUpdate} title="Данные успешно обновлены!" />
+    </>
   );
 };
 

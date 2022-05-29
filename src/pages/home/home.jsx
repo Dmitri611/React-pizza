@@ -23,7 +23,6 @@ const Home = () => {
     setSortValue(e.target.innerText);
   };
 
-  // при клике на кнопку добавить показывает модалку авторизации || navigate
   return (
     <section className={styles.home}>
       <div className={styles.home__navigation}>

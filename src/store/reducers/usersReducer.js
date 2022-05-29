@@ -21,6 +21,7 @@ const usersState = {
       address: "Vitebsk",
       tel: "+375333910514",
       isAdmin: false,
+      basket: [{}, {}],
     },
   ],
 };
