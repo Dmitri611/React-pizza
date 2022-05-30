@@ -15,16 +15,22 @@ import ModalEdit from "components/modalEdit/modalEdit";
 import FormCard from "components/form/components/form-card/form-card";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "store/selectors/selectors";
-import { addUserAction } from "store/actions/userActions";
+import { addUserAction, delUserAction } from "store/actions/userActions";
 import ModalInfo from "components/modalInfo/modalInfo";
 
 const Users = () => {
   const users = useSelector(userSelector);
   const dispatch = useDispatch();
   const [openModalAdd, setOpenModalAdd] = useState(null);
-  const [modalEditStyle, setModalEditStyle] = useState(null);
-  const [modalWarnStyle, setModalWarnStyle] = useState(null);
+  const [openModalEdit, setOpenModalEdit] = useState(null);
+  const [openModalWarn, setOpenModalWarn] = useState(null);
   const [newUser, setNewUser] = useState({});
+  const [delname, setDelname] = useState('');
+
+  const modalDel = (e) => {
+    setOpenModalWarn("modal-display");
+    setDelname(e.target.name);
+  }
 
   const handleChangeAdd = (e) => {
     setNewUser({
@@ -47,6 +53,12 @@ const Users = () => {
 
   const addUser = () => {
     dispatch(addUserAction(newUser));
+  }
+
+  const deluser = () => {
+    const thisDelPizza = users.find((user) => user.login === delname);
+    dispatch(delUserAction(thisDelPizza));
+    setOpenModalWarn(null);
   }
 
   return (
@@ -79,12 +91,12 @@ const Users = () => {
               <TableCardItem text={user.tel} />
               <TableCardItem text={user.password} />
               <TableCardItem>
-                <Button handler={() => setModalEditStyle("modal-display")} className="button--edit">
+                <Button name={user.login} handler={() => setOpenModalEdit("modal-display")} className="button--edit">
                   <Edit />
                 </Button>
               </TableCardItem>
               <TableCardItem>
-                <Button handler={() => setModalWarnStyle("modal-display")} className="button--edit">
+                <Button name={user.login} handler={modalDel} className="button--edit">
                   <Delete />
                 </Button>
               </TableCardItem>
@@ -110,7 +122,7 @@ const Users = () => {
         <FormCard name="password" onChange={handleChangeAdd} title="Пароль" type="text" placeholder="Пароль" />
         <Button handler={addUser} type="submit" className="button--size-m" text="Добавить" />
       </ModalEdit>
-      <ModalEdit display={modalEditStyle} title="Изменить пользователя" handler={() => setModalEditStyle(null)}>
+      <ModalEdit display={openModalEdit} title="Изменить пользователя" handler={() => setOpenModalEdit(null)}>
         <FormCard title="Роль" type="text" placeholder="Статус" />
         <FormCard title="Логин" type="text" placeholder="Логин" />
         <FormCard title="Имя" type="text" placeholder="Имя" />
@@ -121,7 +133,7 @@ const Users = () => {
         <FormCard title="Пароль" type="text" placeholder="Пароль" />
         <Button type="submit" className="button--size-m" text="изменить" />
       </ModalEdit>
-      <ModalWarn display={modalWarnStyle} handler={() => setModalWarnStyle(null)} title="Вы уверены что хотите удалить пользователя?" />
+      <ModalWarn display={openModalWarn} handler={() => setOpenModalWarn(null)} handlerOk={deluser} title="Вы уверены что хотите удалить пользователя?" />
       <ModalInfo />
     </>
   );
