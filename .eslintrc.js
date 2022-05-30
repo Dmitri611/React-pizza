@@ -15,6 +15,7 @@ module.exports = {
   },
   rules: {
     "arrow-body-style": 0,
+    "no-unused-expressions": 0,
     "class-methods-use-this": 0,
     "function-paren-newline": 0,
     "default-param-last": 0,

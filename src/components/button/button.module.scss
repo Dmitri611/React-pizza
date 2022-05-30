@@ -8,6 +8,10 @@
   user-select: none;
   white-space: nowrap;
 
+  & > svg {
+    pointer-events: none;
+  }
+
   &--reset {
     font-weight: var(--font-weight-bold);
     border: none;

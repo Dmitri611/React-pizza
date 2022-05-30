@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Section from "components/section/section";
@@ -30,8 +29,6 @@ const Login = () => {
     });
   };
 
-  // проверка на зарегистрированный логин!
-  // сообщение о успешной авторизации!
   const checkUser = () => {
     const thisUser = users.find((item) => item.login === user.login);
 

@@ -1,4 +1,4 @@
-import { ADD_PIZZA, DELETE_PIZZA } from "../constants/constants";
+import { ADD_PIZZA, DELETE_PIZZA, UPDATE_PIZZA } from "../constants/constants";
 
 const pizzasState = {
   pizzas: [
@@ -96,7 +96,17 @@ const pizzasReducer = (state = pizzasState, action) => {
     case DELETE_PIZZA:
       return {
         ...state,
-        pizzas: [state.pizzas].filter((pizza) => pizza.name !== action.payload),
+        pizzas: [...state.pizzas].filter((pizza) => pizza.name !== action.payload.name),
+      };
+    case UPDATE_PIZZA:
+      return {
+        ...state,
+        pizzas: [...state.pizzas].map((pizza) => {
+          if (pizza.name === action.payload.name) {
+            return action.payload;
+          }
+          return pizza;
+        }),
       };
     default:
       return state;

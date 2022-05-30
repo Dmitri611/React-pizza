@@ -15,7 +15,7 @@ const usersState = {
     {
       login: "dima",
       password: "dimadima",
-      email: "dima",
+      email: "dimkanov543@gmail.com",
       firstName: "Dmitri",
       lastName: "Novikov",
       address: "Vitebsk",
