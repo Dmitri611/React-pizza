@@ -137,7 +137,7 @@ const Products = () => {
             </TableCard>
             {pizzas.map((pizza) => {
               return (
-                <TableCard key={pizza.id}>
+                <TableCard key={pizza.name}>
                   <TableCardItem text={pizza.id} />
                   <TableCardItem>
                     <Picture src={`http://localhost:3000/${pizza.image}`} />
@@ -331,7 +331,7 @@ const Products = () => {
       </ModalEdit>
       <ModalInfo display={openModalInfoName} title="Пицца с таким названием уже есть!" />
       <ModalInfo display={openModalInfoEditPizza} title="Пицца успешно изменена!" />
-      <ModalWarn display={openModalWarn}  handler={() => setOpenModalWarn(null)} title="Вы уверены что хотите удалить пуццу?" handlerOk={deletePizza} />
+      <ModalWarn display={openModalWarn}  handler={() => setOpenModalWarn(null)} title={`Вы уверены что хотите удалить пуццу "${delname}"?`} handlerOk={deletePizza} />
     </>
   );
 };
