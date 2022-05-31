@@ -19,9 +19,14 @@ const HeaderList = () => {
           <Search />
         </li>
         <li className={styles.list__item}>
-          <Link to="/admin">
-            <ProfileSvg />
-          </Link>
+          <Dropdown btnContent={<ProfileSvg />}>
+            <Link to="/profile">
+              <DropdownItem text="Профиль" />
+            </Link>
+            <Link to="/admin">
+              <DropdownItem text="Настройки" />
+            </Link>
+          </Dropdown>
         </li>
       </ul>
     ) : (

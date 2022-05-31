@@ -110,9 +110,11 @@ const Profile = () => {
             minLength="8"
             pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
           />
-          <Link to="/profile/orders-history">
-            <Button className="button--size-m" text="История заказов" />
-          </Link>
+          {auth.isAdmin ? null : (
+            <Link to="/profile/orders-history">
+              <Button className="button--size-m" text="История заказов" />
+            </Link>
+          )}
           <FormBottom>
             <Link to="/">
               <Button className="button--size-m" text="Назад" />

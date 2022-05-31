@@ -27,6 +27,7 @@ const App = () => {
         isAdmin ? (
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/products" element={<Products />} />
             <Route path="/admin/users" element={<Users />} />

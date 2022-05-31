@@ -11,7 +11,13 @@ const ModalWarn = ({ display, handler, handlerOk, title, name }) => {
       <h2 className={styles["modal-warn__title"]}>{title}</h2>
       <div className={styles["modal-warn__bottom"]}>
         <Button handler={handler} className="button--size-m" text="отмена" />
-        <Button name={name} handler={handlerOk} type="submit" className="button--size-m" text="принять" />
+        <Button
+          name={name}
+          handler={handlerOk}
+          type="submit"
+          className="button--size-m"
+          text="принять"
+        />
       </div>
     </Modal>
   );

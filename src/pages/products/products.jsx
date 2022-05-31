@@ -29,7 +29,7 @@ const Products = () => {
   const [openModalInfoName, setOpenModalInfoName] = useState(null);
   const [openModalWarn, setOpenModalWarn] = useState(null);
   const [openModalInfoEditPizza, setOpenModalInfoEditPizza] = useState(null);
-  const [delname, setDelname] = useState('');
+  const [delname, setDelname] = useState("");
   const [newPizza, setNewPizza] = useState({
     id: 1,
     image: "",
@@ -43,7 +43,6 @@ const Products = () => {
     energy: "",
     helf: "",
   });
-
   const [editPizza, setEditPizza] = useState({
     id: 1,
     image: "",
@@ -55,11 +54,11 @@ const Products = () => {
     fats: "",
     carbohydrates: "",
     energy: "",
-    helf: ""
+    helf: "",
   });
 
   const editPizzaModal = (e) => {
-    setEditPizza(pizzas.find((item) => item.name === e.target.name))
+    setEditPizza(pizzas.find((item) => item.name === e.target.name));
     setModalEditStyle("modal-display");
   };
 
@@ -88,7 +87,7 @@ const Products = () => {
         image: `uploads/pizzas/${e.target.files[0].name}`,
       });
     }
-  }
+  };
 
   const addNewPizza = () => {
     const existingPizza = pizzas.find((item) => item.name === newPizza.name);
@@ -107,7 +106,7 @@ const Products = () => {
       setOpenModalInfoEditPizza(null);
       setModalEditStyle(null);
     }, 1500);
-  }
+  };
 
   const deletePizza = () => {
     const thisDelPizza = pizzas.find((item) => item.name === delname);
@@ -117,8 +116,8 @@ const Products = () => {
 
   const openWarn = (e) => {
     setOpenModalWarn("modal-display");
-    setDelname(e.target.name)
-  }
+    setDelname(e.target.name);
+  };
 
   return (
     <>
@@ -164,11 +163,19 @@ const Products = () => {
             <Link to="/admin">
               <Button className="button--size-m" text="Назад" />
             </Link>
-            <Button handler={() => setModalAddStyle("modal-display")} className="button--default" text="Добавить" />
+            <Button
+              handler={() => setModalAddStyle("modal-display")}
+              className="button--default"
+              text="Добавить"
+            />
           </SectionFooter>
         </SectionContent>
       </Section>
-      <ModalEdit display={modalAddStyle} title="Добавить пиццу" handler={() => setModalAddStyle(null)}>
+      <ModalEdit
+        display={modalAddStyle}
+        title="Добавить пиццу"
+        handler={() => setModalAddStyle(null)}
+      >
         <Picture className={modalAddStyles["modal-edit__image"]} src={imageUrl} />
         <label>
           <span>Добавить фото</span>
@@ -244,8 +251,15 @@ const Products = () => {
         />
         <Button handler={addNewPizza} className="button--size-m" text="Добавить" />
       </ModalEdit>
-      <ModalEdit display={modalEditStyle} title="Изменить пиццу" handler={() => setModalEditStyle(null)}>
-        <Picture className={modalAddStyles["modal-edit__image"]} src={editPizza.image && `http://localhost:3000/${editPizza.image}`} />
+      <ModalEdit
+        display={modalEditStyle}
+        title="Изменить пиццу"
+        handler={() => setModalEditStyle(null)}
+      >
+        <Picture
+          className={modalAddStyles["modal-edit__image"]}
+          src={editPizza.image && `http://localhost:3000/${editPizza.image}`}
+        />
         <label>
           <span>Изменить фото</span>
           <input
@@ -331,7 +345,12 @@ const Products = () => {
       </ModalEdit>
       <ModalInfo display={openModalInfoName} title="Пицца с таким названием уже есть!" />
       <ModalInfo display={openModalInfoEditPizza} title="Пицца успешно изменена!" />
-      <ModalWarn display={openModalWarn}  handler={() => setOpenModalWarn(null)} title={`Вы уверены что хотите удалить пуццу "${delname}"?`} handlerOk={deletePizza} />
+      <ModalWarn
+        display={openModalWarn}
+        handler={() => setOpenModalWarn(null)}
+        title={`Вы уверены что хотите удалить пуццу "${delname}"?`}
+        handlerOk={deletePizza}
+      />
     </>
   );
 };
