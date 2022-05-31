@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   pizzas: pizzasReducer,
   users: usersReducer,
   auth: authReducer,
-  promo: promoReducer,
+  promos: promoReducer,
 });
 
 export const store = configureStore({ reducer: rootReducer }, composeWithDevTools());

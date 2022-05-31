@@ -4,5 +4,4 @@ export const userSelector = (state) => state.users.users;
 
 export const authSelector = (state) => state.auth;
 
-// promo code selector
-export const promoSelector = (state) => state.promo;
+export const promoSelector = (state) => state.promos.promos;

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { promoSelector } from "store/selectors/selectors";
 import Button from "components/button/button";
 import Section from "components/section/section";
 import SectionContent from "components/section/components/sectionContent/section-content";
@@ -15,45 +17,82 @@ import ModalEdit from "components/modalEdit/modalEdit";
 import ModalWarn from "components/modalWarn/modalWarn";
 import Picture from "components/picture/picture";
 import modalAddStyles from "components/modalEdit/modalEdit.module.scss";
+import { addPromoAction, delPromoAction, updatePromoAction } from "store/actions/promoActions";
+
 
 const PromoCodes = () => {
-  const [defaultSrc, setDefaultSrc] = useState("uploads/promo-codes/bundle.webp");
+  const promos = useSelector(promoSelector);
+  const dispatch = useDispatch();
+  const [imageUrl, setImageUrl] = useState(null);
+  const [openModalAdd, setOpenModalAdd] = useState(null);
+  const [openModalEdit, setOpenModalEdit] = useState(null);
+  const [openModalWarn, setOpenModalWarn] = useState(null);
+  const [delname, setDelname] = useState("");
+  const [newPromo, setNewPromo] = useState({
+    id: 1,
+    image: "",
+    code: "",
+    name: "",
+    discount: "",
+  });
+  const [editPromo, setEditPromo] = useState({
+    id: 1,
+    image: "",
+    code: "",
+    name: "",
+    discount: "",
+  });
 
-  const def = (e) => {
-    const src = URL.createObjectURL(e.target.files[0]);
-    setDefaultSrc(src);
+  const openModalDelete = (e) => {
+    setOpenModalWarn("modal-display");
+    setDelname(e.target.name);
+  }
+
+  const openModalEditPromo = (e) => {
+    setEditPromo(promos.find((item) => item.code === e.target.name));
+    setOpenModalEdit("modal-display");
+  }
+
+  const handleChangeAdd = (e) => {
+    setNewPromo({
+      ...newPromo,
+      [e.target.name]: e.target.value,
+    });
+    if (e.target.name === "image") {
+      setNewPromo({
+        ...newPromo,
+        image: `uploads/pizzas/${e.target.files[0].name}`,
+      });
+    }
+    setImageUrl(URL.createObjectURL(e.target.files[0]));
+  }
+
+  const handleChangeEdit = (e) => {
+    setEditPromo({
+      ...editPromo,
+      [e.target.name]: e.target.value,
+    });
+    if (e.target.name === "image") {
+      setEditPromo({
+        ...editPromo,
+        image: `uploads/pizzas/${e.target.files[0].name}`,
+      });
+    }
+  }
+
+  const addNewPromo = () => {
+    dispatch(addPromoAction(newPromo));
+  }
+
+  const deletePromo = () => {
+    const thisDelPromo = promos.find((item) => item.code === delname);
+    dispatch(delPromoAction(thisDelPromo));
+    setOpenModalWarn(null);
   };
 
-  const [imageUrl, setImageUrl] = useState();
-
-  const change = (e) => {
-    const src = URL.createObjectURL(e.target.files[0]);
-    setImageUrl(src);
-  };
-
-  const [modalAddStyle, setModalAddStyle] = useState(null);
-  const [modalEditStyle, setModalEditStyle] = useState(null);
-  const [modalWarnStyle, setModalWarnStyle] = useState(null);
-
-  const style = "modal-display";
-
-  const addPromo = () => {
-    setModalAddStyle(style);
-  };
-
-  const editPromo = () => {
-    setModalEditStyle(style);
-  };
-
-  const modalWarn = () => {
-    setModalWarnStyle(style);
-  };
-
-  const close = () => {
-    setModalAddStyle(null);
-    setModalWarnStyle(null);
-    setModalEditStyle(null);
-  };
+  const updatePromo = () => {
+    dispatch(updatePromoAction(editPromo));
+  }
 
   return (
     <>
@@ -69,67 +108,86 @@ const PromoCodes = () => {
               <TableCardItemTh text="Изменить" />
               <TableCardItemTh text="Удалить" />
             </TableCard>
-            <TableCard>
-              <TableCardItem text="1" />
-              <TableCardItem>
-                <Picture src="uploads/promo-codes/bundle.webp" />
-              </TableCardItem>
-              <TableCardItem text="NEW-EDA" />
-              <TableCardItem text="Первая пицца бесплатно" />
-              <TableCardItem text="100%" />
-              <TableCardItem>
-                <Button handler={editPromo} className="button--edit">
-                  <Edit />
-                </Button>
-              </TableCardItem>
-              <TableCardItem>
-                <Button handler={modalWarn} className="button--edit">
-                  <Delete />
-                </Button>
-              </TableCardItem>
-            </TableCard>
+            {promos.map((promo) => {
+              return (
+                <TableCard key={promo.code}>
+                  <TableCardItem text={promo.id} />
+                  <TableCardItem>
+                    <Picture src={`http://localhost:3000/${promo.image}`} />
+                  </TableCardItem>
+                  <TableCardItem text={promo.code} />
+                  <TableCardItem className="table__item--big" text={promo.name} />
+                  <TableCardItem text={promo.discount} />
+                  <TableCardItem>
+                    <Button
+                      name={promo.code}
+                      handler={openModalEditPromo}
+                      className="button--edit"
+                    >
+                      <Edit />
+                    </Button>
+                  </TableCardItem>
+                  <TableCardItem>
+                    <Button
+                      name={promo.code}
+                      handler={openModalDelete}
+                      className="button--edit"
+                    >
+                      <Delete />
+                    </Button>
+                  </TableCardItem>
+                </TableCard>
+              );
+            })}
           </Table>
           <SectionFooter>
             <Link to="/admin">
               <Button className="button--size-m" text="Назад" />
             </Link>
-            <Button handler={addPromo} className="button--default" text="Добавить" />
+            <Button
+              handler={() => setOpenModalAdd("modal-display")}
+              className="button--default"
+              text="Добавить"
+            />
           </SectionFooter>
         </SectionContent>
       </Section>
-      <ModalWarn display={modalWarnStyle} handler={close} />
-      <ModalEdit display={modalAddStyle} title="Добавить промо код" handler={close}>
+      <ModalEdit
+        display={openModalAdd}
+        title="Добавить промо код"
+        handler={() => setOpenModalAdd(null)}
+      >
         <Picture className={modalAddStyles["modal-edit__image"]} src={imageUrl} />
-        <label htmlFor="inputqq">
+        <label>
           <span>Добавить бандл</span>
-          <input
-            onChange={change}
-            id="inputqq"
-            className={modalAddStyles["modal-edit__input"]}
-            type="file"
-          />
+          <input onChange={handleChangeAdd} name="image" className={modalAddStyles["modal-edit__input"]} type="file" />
         </label>
-        <FormCard title="Код" type="text" placeholder="Код" />
-        <FormCard title="Название" type="text" placeholder="Название" />
-        <FormCard title="Скидка" type="email" placeholder="%" />
-        <Button type="submit" className="button--size-m" text="Добавить" />
+        <FormCard onChange={handleChangeAdd} name="code" title="Код" type="text" placeholder="Код" />
+        <FormCard onChange={handleChangeAdd} name="name" title="Название" type="text" placeholder="Название" />
+        <FormCard onChange={handleChangeAdd} name="discount" title="Скидка" type="email" placeholder="%" />
+        <Button handler={addNewPromo} type="submit" className="button--size-m" text="Добавить" />
       </ModalEdit>
-      <ModalEdit display={modalEditStyle} title="Изменить промо код" handler={close}>
-        <Picture className={modalAddStyles["modal-edit__image"]} src={defaultSrc} />
-        <label htmlFor="inputqq">
+      <ModalEdit
+        display={openModalEdit}
+        title="Изменить промо код"
+        handler={() => setOpenModalEdit(null)}
+      >
+        <Picture className={modalAddStyles["modal-edit__image"]} src={editPromo.image && `http://localhost:3000/${editPromo.image}`} />
+        <label>
           <span>Изменить бандл</span>
-          <input
-            onChange={def}
-            id="inputqq"
-            className={modalAddStyles["modal-edit__input"]}
-            type="file"
-          />
+          <input name="image" onChange={handleChangeEdit} className={modalAddStyles["modal-edit__input"]} type="file" />
         </label>
-        <FormCard title="Код" type="text" placeholder="Код" />
-        <FormCard title="Название" type="text" placeholder="Название" />
-        <FormCard title="Скидка" type="email" placeholder="%" />
-        <Button type="submit" className="button--size-m" text="изменить" />
+        <FormCard value={editPromo.code} onChange={handleChangeEdit} name="code" title="Код" type="text" placeholder="Код" />
+        <FormCard value={editPromo.name} onChange={handleChangeEdit} name="name" title="Название" type="text" placeholder="Название" />
+        <FormCard value={editPromo.discount} onChange={handleChangeEdit} name="discount" title="Скидка" type="email" placeholder="%" />
+        <Button handler={updatePromo} className="button--size-m" text="изменить" />
       </ModalEdit>
+      <ModalWarn
+        display={openModalWarn}
+        handler={() => setOpenModalWarn(null)}
+        title={`Вы уверены что хотите удалить промо код "${delname}"?`}
+        handlerOk={deletePromo}
+      />
     </>
   );
 };
