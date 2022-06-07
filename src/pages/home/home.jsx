@@ -19,8 +19,15 @@ const Home = () => {
   const sortList = ["популярности", "дешёвые", "дорогие"];
   const [sortValue, setSortValue] = useState(sortList[0]);
 
+  const [checked, setChecked] = useState(false);
+
+  const open = () => {
+    setChecked(!checked);
+  };
+
   const change = (e) => {
     setSortValue(e.target.innerText);
+    setChecked(!checked);
   };
 
   return (
@@ -43,7 +50,7 @@ const Home = () => {
           ))}
         </HomeList>
         <Sort>
-          <Dropdown btnContent={sortValue}>
+          <Dropdown btnContent={sortValue} handler={open} check={checked}>
             {sortList.map((item) => (
               <DropdownItem key={item} handler={change} text={item} />
             ))}

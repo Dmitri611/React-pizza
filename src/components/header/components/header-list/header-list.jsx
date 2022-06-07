@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "components/dropdown/dropdown";
 import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
@@ -11,7 +11,12 @@ import styles from "./header-list.module.scss";
 
 const HeaderList = () => {
   const auth = useSelector(authSelector);
+  const [checked, setChecked] = useState(false);
 
+  const change = () => {
+    setChecked(!checked);
+  };
+  
   return auth.isAuth ? (
     auth.isAdmin ? (
       <ul className={styles.list}>
@@ -19,12 +24,12 @@ const HeaderList = () => {
           <Search />
         </li>
         <li className={styles.list__item}>
-          <Dropdown btnContent={<ProfileSvg />}>
+          <Dropdown btnContent={<ProfileSvg />} handler={change} check={checked} >
             <Link to="/profile">
-              <DropdownItem text="Профиль" />
+              <DropdownItem handler={change} text="Профиль" />
             </Link>
             <Link to="/admin">
-              <DropdownItem text="Настройки" />
+              <DropdownItem handler={change} text="Настройки" />
             </Link>
           </Dropdown>
         </li>
@@ -52,12 +57,12 @@ const HeaderList = () => {
         <Search />
       </li>
       <li className={styles.list__item}>
-        <Dropdown btnContent={<ProfileSvg />}>
+        <Dropdown btnContent={<ProfileSvg />} handler={change} check={checked}>
           <Link to="/login">
-            <DropdownItem text="Вход" />
+            <DropdownItem handler={change} text="Вход" />
           </Link>
           <Link to="/registration">
-            <DropdownItem text="Регистрация" />
+            <DropdownItem handler={change} text="Регистрация" />
           </Link>
         </Dropdown>
       </li>
