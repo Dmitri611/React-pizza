@@ -34,7 +34,54 @@ const OrdersHistory = () => {
               totalPrice="45р"
               handler={openModal}
             >
-              <Picture src="uploads/pizzas/pepperoni.webp" />
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
+              <Picture src="../../uploads/pizzas/carbonara.webp" />
+              <Picture src="../../uploads/pizzas/cheeseburger-pizza.webp" />
+              <Picture src="../../uploads/pizzas/cheesy.webp" />
+              <Picture src="../../uploads/pizzas/four-cheeses.webp" />
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
+            </OrdersHistoryCard>
+            <OrdersHistoryCard
+              number="№1"
+              date="13 мая 2022г. 10:00"
+              address="Московский проспект 70 к3"
+              totalPrice="45р"
+              handler={openModal}
+            >
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
+              <Picture src="../../uploads/pizzas/carbonara.webp" />
+              <Picture src="../../uploads/pizzas/cheeseburger-pizza.webp" />
+              <Picture src="../../uploads/pizzas/cheesy.webp" />
+              <Picture src="../../uploads/pizzas/four-cheeses.webp" />
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
+            </OrdersHistoryCard>
+            <OrdersHistoryCard
+              number="№1"
+              date="13 мая 2022г. 10:00"
+              address="Московский проспект 70 к3"
+              totalPrice="45р"
+              handler={openModal}
+            >
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
+              <Picture src="../../uploads/pizzas/carbonara.webp" />
+              <Picture src="../../uploads/pizzas/cheeseburger-pizza.webp" />
+              <Picture src="../../uploads/pizzas/cheesy.webp" />
+              <Picture src="../../uploads/pizzas/four-cheeses.webp" />
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
+            </OrdersHistoryCard>
+            <OrdersHistoryCard
+              number="№1"
+              date="13 мая 2022г. 10:00"
+              address="Московский проспект 70 к3"
+              totalPrice="45р"
+              handler={openModal}
+            >
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
+              <Picture src="../../uploads/pizzas/carbonara.webp" />
+              <Picture src="../../uploads/pizzas/cheeseburger-pizza.webp" />
+              <Picture src="../../uploads/pizzas/cheesy.webp" />
+              <Picture src="../../uploads/pizzas/four-cheeses.webp" />
+              <Picture src="../../uploads/pizzas/barbecue.webp" />
             </OrdersHistoryCard>
           </div>
           <SectionFooter className="section__footer--start">

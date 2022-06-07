@@ -10,7 +10,7 @@ const BasketBottom = () => {
       <input className={styles.basket__bottom_promo} type="text" placeholder="Промокод" />
       <div className={styles.basket__bottom_total}>
         <span>
-          Всего пицц: <span className={styles.basket__bottom_span}>3 шт.</span>
+          Всего пицц: <span className={styles.basket__bottom_span}>1 шт.</span>
         </span>
         <span>
           Сумма заказа:{" "}
@@ -20,7 +20,7 @@ const BasketBottom = () => {
               styles["basket__bottom_span--orange"]
             )}
           >
-            45 р.
+            15 р.
           </span>
         </span>
       </div>

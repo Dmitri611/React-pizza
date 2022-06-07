@@ -6,7 +6,7 @@ const usersState = {
       id: "1",
       login: "admin",
       password: "adminadmin",
-      email: "admin",
+      email: "admin@mail.ru",
       firstName: "",
       lastName: "",
       address: "",
@@ -26,7 +26,7 @@ const usersState = {
     },
   ],
 };
-// добавить регистрацию!
+
 const usersReducer = (state = usersState, action) => {
   switch (action.type) {
     case ADD_USER:

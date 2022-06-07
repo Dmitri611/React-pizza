@@ -33,8 +33,36 @@ const ModalOrder = ({ display, handler }) => {
             amount="1"
             price="15р"
           />
+          <ModalOrderProduct
+            src="uploads/pizzas/pepperoni.webp"
+            pizzaName="Двойная пепперони"
+            pizzaDesc="тонкое тесто, 26 см."
+            amount="1"
+            price="15р"
+          />
+          <ModalOrderProduct
+            src="uploads/pizzas/pepperoni.webp"
+            pizzaName="Двойная пепперони"
+            pizzaDesc="тонкое тесто, 26 см."
+            amount="1"
+            price="15р"
+          />
+          <ModalOrderProduct
+            src="uploads/pizzas/pepperoni.webp"
+            pizzaName="Двойная пепперони"
+            pizzaDesc="тонкое тесто, 26 см."
+            amount="1"
+            price="15р"
+          />
+          <ModalOrderProduct
+            src="uploads/pizzas/pepperoni.webp"
+            pizzaName="Двойная пепперони"
+            pizzaDesc="тонкое тесто, 26 см."
+            amount="1"
+            price="15р"
+          />
         </ModalOrderBlock>
-        <ModalOrderBlock title="Сумма:" text="45р" />
+        <ModalOrderBlock title="Сумма:" text="15р" />
       </div>
       <div className={styles["modal-order__bottom"]}>
         <Button className="button--size-m" text="повторить" />
