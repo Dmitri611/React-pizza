@@ -16,7 +16,7 @@ const HeaderList = () => {
   const change = () => {
     setChecked(!checked);
   };
-  
+
   return auth.isAuth ? (
     auth.isAdmin ? (
       <ul className={styles.list}>
@@ -24,7 +24,7 @@ const HeaderList = () => {
           <Search />
         </li>
         <li className={styles.list__item}>
-          <Dropdown btnContent={<ProfileSvg />} handler={change} check={checked} >
+          <Dropdown btnContent={<ProfileSvg />} handler={change} check={checked}>
             <Link to="/profile">
               <DropdownItem handler={change} text="Профиль" />
             </Link>

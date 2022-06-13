@@ -23,6 +23,7 @@ const usersState = {
       address: "Московский проспект 70к3",
       tel: "+375333910514",
       isAdmin: false,
+      basket: [1, 3],
     },
   ],
 };

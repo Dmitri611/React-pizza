@@ -19,7 +19,6 @@ import Picture from "components/picture/picture";
 import modalAddStyles from "components/modalEdit/modalEdit.module.scss";
 import { addPromoAction, delPromoAction, updatePromoAction } from "store/actions/promoActions";
 
-
 const PromoCodes = () => {
   const promos = useSelector(promoSelector);
   const dispatch = useDispatch();
@@ -46,12 +45,12 @@ const PromoCodes = () => {
   const openModalDelete = (e) => {
     setOpenModalWarn("modal-display");
     setDelname(e.target.name);
-  }
+  };
 
   const openModalEditPromo = (e) => {
     setEditPromo(promos.find((item) => item.code === e.target.name));
     setOpenModalEdit("modal-display");
-  }
+  };
 
   const handleChangeAdd = (e) => {
     setNewPromo({
@@ -65,7 +64,7 @@ const PromoCodes = () => {
       });
     }
     setImageUrl(URL.createObjectURL(e.target.files[0]));
-  }
+  };
 
   const handleChangeEdit = (e) => {
     setEditPromo({
@@ -78,11 +77,11 @@ const PromoCodes = () => {
         image: `uploads/pizzas/${e.target.files[0].name}`,
       });
     }
-  }
+  };
 
   const addNewPromo = () => {
     dispatch(addPromoAction(newPromo));
-  }
+  };
 
   const deletePromo = () => {
     const thisDelPromo = promos.find((item) => item.code === delname);
@@ -92,7 +91,7 @@ const PromoCodes = () => {
 
   const updatePromo = () => {
     dispatch(updatePromoAction(editPromo));
-  }
+  };
 
   return (
     <>
@@ -119,20 +118,12 @@ const PromoCodes = () => {
                   <TableCardItem className="table__item--big" text={promo.name} />
                   <TableCardItem text={promo.discount} />
                   <TableCardItem>
-                    <Button
-                      name={promo.code}
-                      handler={openModalEditPromo}
-                      className="button--edit"
-                    >
+                    <Button name={promo.code} handler={openModalEditPromo} className="button--edit">
                       <Edit />
                     </Button>
                   </TableCardItem>
                   <TableCardItem>
-                    <Button
-                      name={promo.code}
-                      handler={openModalDelete}
-                      className="button--edit"
-                    >
+                    <Button name={promo.code} handler={openModalDelete} className="button--edit">
                       <Delete />
                     </Button>
                   </TableCardItem>
@@ -160,11 +151,34 @@ const PromoCodes = () => {
         <Picture className={modalAddStyles["modal-edit__image"]} src={imageUrl} />
         <label>
           <span>Добавить бандл</span>
-          <input onChange={handleChangeAdd} name="image" className={modalAddStyles["modal-edit__input"]} type="file" />
+          <input
+            onChange={handleChangeAdd}
+            name="image"
+            className={modalAddStyles["modal-edit__input"]}
+            type="file"
+          />
         </label>
-        <FormCard onChange={handleChangeAdd} name="code" title="Код" type="text" placeholder="Код" />
-        <FormCard onChange={handleChangeAdd} name="name" title="Название" type="text" placeholder="Название" />
-        <FormCard onChange={handleChangeAdd} name="discount" title="Скидка" type="email" placeholder="%" />
+        <FormCard
+          onChange={handleChangeAdd}
+          name="code"
+          title="Код"
+          type="text"
+          placeholder="Код"
+        />
+        <FormCard
+          onChange={handleChangeAdd}
+          name="name"
+          title="Название"
+          type="text"
+          placeholder="Название"
+        />
+        <FormCard
+          onChange={handleChangeAdd}
+          name="discount"
+          title="Скидка"
+          type="email"
+          placeholder="%"
+        />
         <Button handler={addNewPromo} type="submit" className="button--size-m" text="Добавить" />
       </ModalEdit>
       <ModalEdit
@@ -172,14 +186,43 @@ const PromoCodes = () => {
         title="Изменить промо код"
         handler={() => setOpenModalEdit(null)}
       >
-        <Picture className={modalAddStyles["modal-edit__image"]} src={editPromo.image && `http://localhost:3000/${editPromo.image}`} />
+        <Picture
+          className={modalAddStyles["modal-edit__image"]}
+          src={editPromo.image && `http://localhost:3000/${editPromo.image}`}
+        />
         <label>
           <span>Изменить бандл</span>
-          <input name="image" onChange={handleChangeEdit} className={modalAddStyles["modal-edit__input"]} type="file" />
+          <input
+            name="image"
+            onChange={handleChangeEdit}
+            className={modalAddStyles["modal-edit__input"]}
+            type="file"
+          />
         </label>
-        <FormCard value={editPromo.code} onChange={handleChangeEdit} name="code" title="Код" type="text" placeholder="Код" />
-        <FormCard value={editPromo.name} onChange={handleChangeEdit} name="name" title="Название" type="text" placeholder="Название" />
-        <FormCard value={editPromo.discount} onChange={handleChangeEdit} name="discount" title="Скидка" type="email" placeholder="%" />
+        <FormCard
+          value={editPromo.code}
+          onChange={handleChangeEdit}
+          name="code"
+          title="Код"
+          type="text"
+          placeholder="Код"
+        />
+        <FormCard
+          value={editPromo.name}
+          onChange={handleChangeEdit}
+          name="name"
+          title="Название"
+          type="text"
+          placeholder="Название"
+        />
+        <FormCard
+          value={editPromo.discount}
+          onChange={handleChangeEdit}
+          name="discount"
+          title="Скидка"
+          type="email"
+          placeholder="%"
+        />
         <Button handler={updatePromo} className="button--size-m" text="изменить" />
       </ModalEdit>
       <ModalWarn

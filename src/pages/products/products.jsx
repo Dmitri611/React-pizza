@@ -176,7 +176,11 @@ const Products = () => {
         title="Добавить пиццу"
         handler={() => setModalAddStyle(null)}
       >
-        <Picture wrapper={modalAddStyles["modal-edit__image"]} className={modalAddStyles["modal-edit__image"]} src={imageUrl || null} />
+        <Picture
+          wrapper={modalAddStyles["modal-edit__image"]}
+          className={modalAddStyles["modal-edit__image"]}
+          src={imageUrl || null}
+        />
         <label>
           <span>Добавить фото</span>
           <input

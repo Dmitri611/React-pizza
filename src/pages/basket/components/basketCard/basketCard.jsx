@@ -1,4 +1,5 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
+// import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Button from "components/button/button";
 import { ReactComponent as DeleteSvg } from "assets/image/svg/delete.svg";
@@ -47,11 +48,11 @@ const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, pizzaPrice }) => {
   );
 };
 
-BasketCard.propTypes = {
-  pizzaImg: PropTypes.string.isRequired,
-  pizzaName: PropTypes.string.isRequired,
-  pizzaDesc: PropTypes.string.isRequired,
-  pizzaPrice: PropTypes.string.isRequired,
-};
+// BasketCard.propTypes = {
+//   pizzaImg: PropTypes.string.isRequired,
+//   pizzaName: PropTypes.string.isRequired,
+//   pizzaDesc: PropTypes.string.isRequired,
+//   pizzaPrice: PropTypes.string.isRequired,
+// };
 
 export default BasketCard;
