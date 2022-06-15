@@ -18,6 +18,7 @@ import ModalWarn from "components/modalWarn/modalWarn";
 import Picture from "components/picture/picture";
 import modalAddStyles from "components/modalEdit/modalEdit.module.scss";
 import { addPromoAction, delPromoAction, updatePromoAction } from "store/actions/promoActions";
+import ModalInfo from "components/modalInfo/modalInfo";
 
 const PromoCodes = () => {
   const promos = useSelector(promoSelector);
@@ -41,6 +42,10 @@ const PromoCodes = () => {
     name: "",
     discount: "",
   });
+
+  const [openModalInfoName, setOpenModalInfoName] = useState(null);
+  const [openModalInfoEditPromo, setOpenModalInfoEditPromo] = useState(null);
+  const [openModalInfoAddPromo, setOpenModalInfoAddPromo] = useState(null);
 
   const openModalDelete = (e) => {
     setOpenModalWarn("modal-display");
@@ -80,7 +85,21 @@ const PromoCodes = () => {
   };
 
   const addNewPromo = () => {
-    dispatch(addPromoAction(newPromo));
+    const existingPromo = promos.find((item) => item.code === newPromo.code);
+    existingPromo
+    ? (setOpenModalInfoName('modal-display'),
+    setTimeout(() => {
+      setOpenModalInfoName(null)
+    }, 1500)
+    ) 
+    :
+    (setOpenModalInfoAddPromo("modal-display"),
+    setTimeout(() => {
+      setOpenModalInfoAddPromo(null)
+    setOpenModalAdd(null)
+    }, 1500),
+    dispatch(addPromoAction(newPromo))
+    )
   };
 
   const deletePromo = () => {
@@ -91,6 +110,11 @@ const PromoCodes = () => {
 
   const updatePromo = () => {
     dispatch(updatePromoAction(editPromo));
+    setOpenModalInfoEditPromo('modal-display');
+    setTimeout(() => {
+      setOpenModalInfoEditPromo(null)
+      setOpenModalEdit(null)
+    }, 1500);
   };
 
   return (
@@ -176,10 +200,10 @@ const PromoCodes = () => {
           onChange={handleChangeAdd}
           name="discount"
           title="Скидка"
-          type="email"
+          type="text"
           placeholder="%"
         />
-        <Button handler={addNewPromo} type="submit" className="button--size-m" text="Добавить" />
+        <Button handler={addNewPromo} className="button--size-m" text="Добавить" />
       </ModalEdit>
       <ModalEdit
         display={openModalEdit}
@@ -231,6 +255,9 @@ const PromoCodes = () => {
         title={`Вы уверены что хотите удалить промо код "${delname}"?`}
         handlerOk={deletePromo}
       />
+      <ModalInfo display={openModalInfoName} title="такой промо код уже есть!" />
+      <ModalInfo display={openModalInfoAddPromo} title="Промо код успешно добавлен!" />
+      <ModalInfo display={openModalInfoEditPromo} title="Промо код успешно изменен!" />
     </>
   );
 };

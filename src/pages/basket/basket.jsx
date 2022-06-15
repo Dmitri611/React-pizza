@@ -16,9 +16,8 @@ const Basket = () => {
   const getPizzas = [];
 
   for (const value of thisUser.basket) {
-    getPizzas.push(allPizzas.find((item) => item.id === value.idPizza));  
+    getPizzas.push(allPizzas.find((item) => item.id === value.idPizza));
   }
-
 
   return (
     <section className={styles.basket}>

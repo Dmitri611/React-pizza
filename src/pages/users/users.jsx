@@ -37,6 +37,10 @@ const Users = () => {
     tel: "",
     isAdmin: false,
   });
+  const [openModalInfoName, setOpenModalInfoName] = useState(null);
+  const [openModalInfoEmail, setOpenModalInfoEmail] = useState(null);
+  const [openModalInfoAddUser, setOpenModalInfoAddUser] = useState(null);
+  const [openModalInfoEditUser, setOpenModalInfoEditUser] = useState(null);
 
   const modalDel = (e) => {
     setOpenModalWarn("modal-display");
@@ -86,10 +90,29 @@ const Users = () => {
   };
 
   const addUser = () => {
-    dispatch(addUserAction(newUser));
+    const existingUserLogin = users.find((item) => item.login === newUser.name);
+    const existingUserEmail = users.find((item) => item.email === newUser.email);
+
+    existingUserLogin
+      ? (setOpenModalInfoName("modal-display"),
+        setTimeout(() => {
+          setOpenModalInfoName(null);
+        }, 1500))
+      : existingUserEmail
+      ? (setOpenModalInfoEmail("modal-display"),
+        setTimeout(() => {
+          setOpenModalInfoEmail(null);
+        }, 1500))
+      : (dispatch(addUserAction(newUser)),
+        setOpenModalInfoAddUser("modal-display"),
+        setTimeout(() => {
+          setOpenModalInfoAddUser(null);
+          setOpenModalAdd(null)
+        }, 1500))
   };
 
-  const deluser = () => {
+
+  const delUser = () => {
     const thisDelPizza = users.find((user) => user.login === delname);
     dispatch(delUserAction(thisDelPizza));
     setOpenModalWarn(null);
@@ -97,6 +120,10 @@ const Users = () => {
 
   const editUser = () => {
     dispatch(updateUserAction(editUserInfo));
+    setOpenModalInfoEditUser('modal-display');
+    setTimeout(() => {
+      setOpenModalInfoEditUser(null)
+    }, 1500);
   };
 
   return (
@@ -214,7 +241,7 @@ const Users = () => {
           type="text"
           placeholder="Пароль"
         />
-        <Button handler={addUser} type="submit" className="button--size-m" text="Добавить" />
+        <Button handler={addUser} className="button--size-m" text="Добавить" />
       </ModalEdit>
       <ModalEdit
         display={openModalEdit}
@@ -291,10 +318,16 @@ const Users = () => {
       <ModalWarn
         display={openModalWarn}
         handler={() => setOpenModalWarn(null)}
-        handlerOk={deluser}
+        handlerOk={delUser}
         title="Вы уверены что хотите удалить пользователя?"
       />
-      <ModalInfo />
+      <ModalInfo display={openModalInfoName} title="Пользователь с таким логином уже есть!" />
+      <ModalInfo
+        display={openModalInfoEmail}
+        title="На эту почту уже зарегистрирован пользователь!"
+      />
+      <ModalInfo display={openModalInfoAddUser} title="Пользователь успешно добавлен!" />
+      <ModalInfo display={openModalInfoEditUser} title="Пользователь успешно изменен!" />
     </>
   );
 };

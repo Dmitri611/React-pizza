@@ -35,9 +35,7 @@ const Card = ({
 
   const countPlus = () => {
     return auth.isAuth
-      ? setCount(count + 1,
-        
-        )
+      ? setCount(count + 1)
       : (setOpenModalInfo("modal-display"),
         setTimeout(() => {
           setOpenModalInfo(null);
