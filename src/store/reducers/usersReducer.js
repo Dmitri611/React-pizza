@@ -1,4 +1,10 @@
-import { ADD_USER, DELETE_USER, UPDATE_USER } from "../constants/constants";
+import {
+  ADD_BASKET_ITEM,
+  ADD_USER,
+  DELETE_BASKET_ITEM,
+  DELETE_USER,
+  UPDATE_USER,
+} from "../constants/constants";
 
 const usersState = {
   users: [
@@ -23,7 +29,16 @@ const usersState = {
       address: "Московский проспект 70к3",
       tel: "+375333910514",
       isAdmin: false,
-      basket: [1, 3],
+      basket: [
+        {
+          idPizza: 1,
+          count: 1,
+        },
+        {
+          idPizza: 3,
+          count: 3,
+        },
+      ],
     },
   ],
 };
@@ -49,6 +64,16 @@ const usersReducer = (state = usersState, action) => {
           }
           return user;
         }),
+      };
+    case ADD_BASKET_ITEM:
+      return {
+        ...state,
+        users: [action.payload, [...state.users].find((item) => item.basket).basket],
+      };
+    case DELETE_BASKET_ITEM:
+      return {
+        ...state,
+        users: [],
       };
     default:
       return state;

@@ -5,8 +5,8 @@ import Button from "components/button/button";
 import { ReactComponent as DeleteSvg } from "assets/image/svg/delete.svg";
 import styles from "./basketCard.module.scss";
 
-const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, pizzaPrice }) => {
-  const [count, setCount] = useState(1);
+const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, pizzaPrice, countPizza }) => {
+  const [count, setCount] = useState(countPizza);
 
   const countPlus = () => {
     setCount(count + 1);

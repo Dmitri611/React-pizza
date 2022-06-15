@@ -33,14 +33,6 @@ const Card = ({
   const auth = useSelector(authSelector);
   const navigate = useNavigate();
 
-  const openModal = () => {
-    setModalAddStyle("modal-display");
-  };
-
-  const close = () => {
-    setModalAddStyle(null);
-  };
-
   const countPlus = () => {
     return auth.isAuth
       ? setCount(count + 1,
@@ -56,7 +48,7 @@ const Card = ({
   return (
     <>
       <div className={styles.card}>
-        <a onClick={openModal} href="#">
+        <a onClick={() => setModalAddStyle("modal-display")} href="#">
           <Picture
             wrapper={styles.card__image_wrapper}
             className={styles.card__image}
@@ -91,7 +83,7 @@ const Card = ({
       </div>
       <ModalProduct
         onClick={countPlus}
-        handler={close}
+        handler={() => setModalAddStyle(null)}
         display={modalAddStyle}
         pizzaName={pizzaName}
         pizzaDesc={pizzaDesc}

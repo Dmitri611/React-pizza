@@ -12,16 +12,13 @@ const Basket = () => {
   const authUser = useSelector(authSelector);
   const allUsers = useSelector(userSelector);
   const allPizzas = useSelector(pizzaSelector);
-
   const thisUser = allUsers.find((user) => user.login === authUser.login);
-
-  // console.log(thisUser.basket.filter(item => item === allPizzas.id));
-
-  const rendPizzas = [];
+  const getPizzas = [];
 
   for (const value of thisUser.basket) {
-    rendPizzas.push(allPizzas.find((item) => item.id === value));
+    getPizzas.push(allPizzas.find((item) => item.id === value.idPizza));  
   }
+
 
   return (
     <section className={styles.basket}>
@@ -29,13 +26,14 @@ const Basket = () => {
         <div className={styles.basket__content}>
           <BasketTop />
           <div className={styles.basket__middle}>
-            {rendPizzas.map((pizza) => (
+            {getPizzas.map((pizza) => (
               <BasketCard
                 key={pizza.id}
+                countPizza={1}
                 pizzaImg={pizza.image}
                 pizzaName={pizza.name}
                 pizzaDesc={pizza.ingredients}
-                pizzaPrice={pizza.price}
+                pizzaPrice={`${pizza.price} р.`}
               />
             ))}
           </div>
