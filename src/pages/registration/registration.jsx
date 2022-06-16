@@ -16,6 +16,7 @@ const Registration = () => {
   const navigate = useNavigate();
   const [modalInfoLogin, setModalInfoLogin] = useState(null);
   const [modalInfoEmail, setModalInfoEmail] = useState(null);
+  const [modalInfoAccess, setModalInfoAccess] = useState(null);
 
   const [newUser, setNewUser] = useState({
     login: null,
@@ -54,7 +55,14 @@ const Registration = () => {
         setTimeout(() => {
           setModalInfoEmail(null);
         }, 1500))
-      : (dispatch(addUserAction(newUser)), navigate("/login", { replace: true }));
+      : (
+        dispatch(addUserAction(newUser)),
+        setModalInfoAccess('modal-display'),
+        setTimeout(() => {
+          setModalInfoAccess(null);
+          navigate("/login", { replace: true })
+        }, 1500)
+        )
   };
 
   return (
@@ -114,6 +122,7 @@ const Registration = () => {
       </Section>
       <ModalInfo display={modalInfoEmail} title="На эту почту уже зарегистрирован пользователь!" />
       <ModalInfo display={modalInfoLogin} title="Этот логин занят!" />
+      <ModalInfo display={modalInfoAccess} title={`Пользователь "${newUser.login}" успешно зарегистрирован!`} />
     </>
   );
 };
