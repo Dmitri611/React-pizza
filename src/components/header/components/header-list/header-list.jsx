@@ -24,6 +24,11 @@ const HeaderList = () => {
           <Search />
         </li>
         <li className={styles.list__item}>
+          <Link to="/basket">
+            <BasketSvg />
+          </Link>
+        </li>
+        <li className={styles.list__item}>
           <Dropdown btnContent={<ProfileSvg />} handler={change} check={checked}>
             <Link to="/profile">
               <DropdownItem handler={change} text="Профиль" />
