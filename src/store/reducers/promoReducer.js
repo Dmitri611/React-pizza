@@ -5,16 +5,16 @@ const promosState = {
     {
       id: 1,
       image: "uploads/promo-codes/bundle.webp",
-      code: "NEW-EDA",
-      name: "Первая пицца бесплатно",
-      discount: "100",
+      code: "1234",
+      name: "10% на весь заказ",
+      discount: "0.9",
     },
     {
       id: 2,
       image: "uploads/promo-codes/bundle.webp",
       code: "5050",
-      name: "-50% за любую пиццу",
-      discount: "50",
+      name: "-25% на весь заказ",
+      discount: "0.75",
     },
   ],
 };

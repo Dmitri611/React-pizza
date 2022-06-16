@@ -95,17 +95,17 @@ const Products = () => {
       ? (setOpenModalInfoName("modal-display"),
         setTimeout(() => {
           setOpenModalInfoName(null);
-        }, 1500))
+        }, 1000))
       : (dispatch(addPizzaAction(newPizza)), setModalAddStyle(null));
   };
 
   const updatePizza = () => {
-    dispatch(updatePizzaAction(editPizza));
     setOpenModalInfoEditPizza("modal-display");
     setTimeout(() => {
       setOpenModalInfoEditPizza(null);
       setModalEditStyle(null);
-    }, 1500);
+      dispatch(updatePizzaAction(editPizza));
+    }, 1000);
   };
 
   const deletePizza = () => {

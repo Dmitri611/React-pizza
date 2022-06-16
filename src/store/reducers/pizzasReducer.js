@@ -102,7 +102,7 @@ const pizzasReducer = (state = pizzasState, action) => {
       return {
         ...state,
         pizzas: [...state.pizzas].map((pizza) => {
-          if (pizza.name === action.payload.name) {
+          if (pizza.id === action.payload.id) {
             return action.payload;
           }
           return pizza;

@@ -87,19 +87,16 @@ const PromoCodes = () => {
   const addNewPromo = () => {
     const existingPromo = promos.find((item) => item.code === newPromo.code);
     existingPromo
-    ? (setOpenModalInfoName('modal-display'),
-    setTimeout(() => {
-      setOpenModalInfoName(null)
-    }, 1500)
-    ) 
-    :
-    (setOpenModalInfoAddPromo("modal-display"),
-    setTimeout(() => {
-      setOpenModalInfoAddPromo(null)
-    setOpenModalAdd(null)
-    }, 1500),
-    dispatch(addPromoAction(newPromo))
-    )
+      ? (setOpenModalInfoName("modal-display"),
+        setTimeout(() => {
+          setOpenModalInfoName(null);
+        }, 1500))
+      : (setOpenModalInfoAddPromo("modal-display"),
+        setTimeout(() => {
+          setOpenModalInfoAddPromo(null);
+          setOpenModalAdd(null);
+        }, 1500),
+        dispatch(addPromoAction(newPromo)));
   };
 
   const deletePromo = () => {
@@ -110,10 +107,10 @@ const PromoCodes = () => {
 
   const updatePromo = () => {
     dispatch(updatePromoAction(editPromo));
-    setOpenModalInfoEditPromo('modal-display');
+    setOpenModalInfoEditPromo("modal-display");
     setTimeout(() => {
-      setOpenModalInfoEditPromo(null)
-      setOpenModalEdit(null)
+      setOpenModalInfoEditPromo(null);
+      setOpenModalEdit(null);
     }, 1500);
   };
 

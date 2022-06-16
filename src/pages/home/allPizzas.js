@@ -2,22 +2,32 @@ import React from "react";
 import Card from "./components/card/card";
 
 const allPizzas = (activeCategory, pizzas, sortValue) => {
-  const card = (pizza) => {
-    return (
-      <Card
-        key={pizza.name}
-        pizzaName={pizza.name}
-        pizzaDesc={pizza.ingredients}
-        pizzaProteins={pizza.proteins}
-        pizzaFats={pizza.fats}
-        pizzaCarbohydrates={pizza.carbohydrates}
-        pizzaEnergy={pizza.energy}
-        pizzaHelf={pizza.helf}
-        pizzaPrice={pizza.price}
-        pizzaImage={pizza.image}
-      />
-    );
-  };
+  const card = ({
+    name,
+    ingredients,
+    proteins,
+    fats,
+    carbohydrates,
+    energy,
+    helf,
+    price,
+    image,
+    id,
+  }) => (
+    <Card
+      key={name}
+      pizzaId={id}
+      pizzaName={name}
+      pizzaDesc={ingredients}
+      pizzaProteins={proteins}
+      pizzaFats={fats}
+      pizzaCarbohydrates={carbohydrates}
+      pizzaEnergy={energy}
+      pizzaHelf={helf}
+      pizzaPrice={price}
+      pizzaImage={image}
+    />
+  );
 
   const cheapPizzas = (a, b) => a.price - b.price;
   const richPizzas = (a, b) => b.price - a.price;

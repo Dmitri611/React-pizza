@@ -1,21 +1,20 @@
 /* eslint-disable react/prop-types */
 // import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import Button from "components/button/button";
 import { ReactComponent as DeleteSvg } from "assets/image/svg/delete.svg";
 import styles from "./basketCard.module.scss";
 
-const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, pizzaPrice, countPizza }) => {
-  const [count, setCount] = useState(countPizza);
-
-  const countPlus = () => {
-    setCount(count + 1);
-  };
-
-  const countMinus = () => {
-    setCount(count - 1);
-  };
-
+const BasketCard = ({
+  pizzaImg,
+  pizzaName,
+  pizzaDesc,
+  pizzaPrice,
+  countPizza,
+  countPlus,
+  countMinus,
+  delClick,
+}) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__product}>
@@ -35,24 +34,17 @@ const BasketCard = ({ pizzaImg, pizzaName, pizzaDesc, pizzaPrice, countPizza }) 
           min="1"
           max="99"
           size="1"
-          value={count}
+          value={countPizza}
           readOnly
         />
         <Button handler={countPlus} className="button--size-s" text="+" />
       </div>
       <p className={styles.card__price}>{pizzaPrice}</p>
-      <Button className="button--edit">
+      <Button handler={delClick} className="button--edit">
         <DeleteSvg />
       </Button>
     </div>
   );
 };
-
-// BasketCard.propTypes = {
-//   pizzaImg: PropTypes.string.isRequired,
-//   pizzaName: PropTypes.string.isRequired,
-//   pizzaDesc: PropTypes.string.isRequired,
-//   pizzaPrice: PropTypes.string.isRequired,
-// };
 
 export default BasketCard;

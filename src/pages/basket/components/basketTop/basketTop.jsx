@@ -3,9 +3,19 @@ import { Link } from "react-router-dom";
 import Button from "components/button/button";
 import { ReactComponent as BasketSvg } from "assets/image/svg/shopping.svg";
 import { ReactComponent as BasketClearSvg } from "assets/image/svg/basket-clear.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { basketSelector } from "store/selectors/selectors";
+import { delBasketItemAction } from "store/actions/basketActions";
 import styles from "./basketTop.module.scss";
 
 const BasketTop = () => {
+  const basket = useSelector(basketSelector);
+  const dispatch = useDispatch();
+
+  const clearBasket = () => {
+    basket.map((item) => dispatch(delBasketItemAction(item.idPizza)));
+  };
+
   return (
     <div className={styles.basket__top}>
       <div className={styles.basket__top_left}>
@@ -13,7 +23,7 @@ const BasketTop = () => {
         <h1>Корзина</h1>
       </div>
       <Link to="/basket-empty">
-        <Button className="button--size-m">
+        <Button handler={clearBasket} className="button--size-m">
           <BasketClearSvg />
           Очистить корзину
         </Button>

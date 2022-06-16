@@ -5,13 +5,16 @@ import Picture from "components/picture/picture";
 import Params from "components/params/params";
 import ModalProduct from "components/modalProduct/modalProduct";
 import realPrice from "components/params/realPrice";
-import { useSelector } from "react-redux";
-import { authSelector } from "store/selectors/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { authSelector, basketSelector } from "store/selectors/selectors";
 import ModalInfo from "components/modalInfo/modalInfo";
 import { useNavigate } from "react-router-dom";
+import { updateCountAction } from "store/actions/basketActions";
+import { INCREASE } from "store/constants/constants";
 import styles from "./card.module.scss";
 
 const Card = ({
+  pizzaId,
   pizzaImage,
   pizzaPrice,
   pizzaHelf,
@@ -28,19 +31,24 @@ const Card = ({
   const [activeSize, setActiveSize] = useState(sizesList[0]);
   const [modalAddStyle, setModalAddStyle] = useState(null);
   const [openModalInfo, setOpenModalInfo] = useState(null);
-  const [count, setCount] = useState(0);
+  const basket = useSelector(basketSelector);
+  const [count, setCount] = useState(basket.find(({ idPizza }) => idPizza === pizzaId)?.count || 0);
   const [price, setPrice] = useState(pizzaPrice);
   const auth = useSelector(authSelector);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const countPlus = () => {
-    return auth.isAuth
-      ? setCount(count + 1)
-      : (setOpenModalInfo("modal-display"),
-        setTimeout(() => {
-          setOpenModalInfo(null);
-          navigate("/login", { replace: true });
-        }, 1500));
+    if (auth.isAuth) {
+      setCount(count + 1);
+      dispatch(updateCountAction({ id: pizzaId, action: INCREASE }));
+    } else {
+      setOpenModalInfo("modal-display");
+      setTimeout(() => {
+        setOpenModalInfo(null);
+        navigate("/login", { replace: true });
+      }, 1500);
+    }
   };
 
   return (
@@ -72,7 +80,7 @@ const Card = ({
         />
         <div className={styles.card__bottom}>
           <span className={styles.card__bottom_price}>{price * (count > 1 ? count : 1)}р</span>
-          <Button handler={countPlus} className="button--product">
+          <Button handler={() => countPlus()} className="button--product">
             <span className={styles.card__bottom_span}>+</span>
             Добавить
             <span className={styles.card__bottom_span}>{count}</span>

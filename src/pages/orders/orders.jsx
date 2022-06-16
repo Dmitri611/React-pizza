@@ -14,7 +14,10 @@ import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
 const Orders = () => {
   const [value, setValue] = useState("обработан");
 
+  const [checked, setChecked] = useState(false);
+
   const change = (e) => {
+    setChecked(!checked);
     setValue(e.target.innerText);
   };
 
@@ -39,7 +42,7 @@ const Orders = () => {
             <TableCardItem text="1" />
             <TableCardItem text="10.13р" />
             <TableCardItem>
-              <Dropdown btnContent={value}>
+              <Dropdown btnContent={value} handler={change} check={checked}>
                 <DropdownItem handler={change} text="обработан" />
                 <DropdownItem handler={change} text="отменен" />
                 <DropdownItem handler={change} text="выполнен" />

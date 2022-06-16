@@ -107,10 +107,9 @@ const Users = () => {
         setOpenModalInfoAddUser("modal-display"),
         setTimeout(() => {
           setOpenModalInfoAddUser(null);
-          setOpenModalAdd(null)
-        }, 1500))
+          setOpenModalAdd(null);
+        }, 1500));
   };
-
 
   const delUser = () => {
     const thisDelPizza = users.find((user) => user.login === delname);
@@ -120,9 +119,9 @@ const Users = () => {
 
   const editUser = () => {
     dispatch(updateUserAction(editUserInfo));
-    setOpenModalInfoEditUser('modal-display');
+    setOpenModalInfoEditUser("modal-display");
     setTimeout(() => {
-      setOpenModalInfoEditUser(null)
+      setOpenModalInfoEditUser(null);
     }, 1500);
   };
 

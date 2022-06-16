@@ -1,10 +1,4 @@
-import {
-  ADD_BASKET_ITEM,
-  ADD_USER,
-  DELETE_BASKET_ITEM,
-  DELETE_USER,
-  UPDATE_USER,
-} from "../constants/constants";
+import { ADD_USER, DELETE_USER, UPDATE_USER } from "../constants/constants";
 
 const usersState = {
   users: [
@@ -38,6 +32,10 @@ const usersState = {
           idPizza: 3,
           count: 3,
         },
+        {
+          idPizza: 2,
+          count: 1,
+        },
       ],
     },
   ],
@@ -64,16 +62,6 @@ const usersReducer = (state = usersState, action) => {
           }
           return user;
         }),
-      };
-    case ADD_BASKET_ITEM:
-      return {
-        ...state,
-        users: [action.payload, [...state.users].find((item) => item.basket).basket],
-      };
-    case DELETE_BASKET_ITEM:
-      return {
-        ...state,
-        users: [],
       };
     default:
       return state;

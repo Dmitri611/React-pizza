@@ -27,35 +27,35 @@ const ModalOrder = ({ display, handler }) => {
         <ModalOrderBlock title="Адрес" text="Московский проспект 70 к3" />
         <ModalOrderBlock title="Товары">
           <ModalOrderProduct
-            src="uploads/pizzas/pepperoni.webp"
+            src="../../uploads/pizzas/double-pepperoni.webp"
             pizzaName="Двойная пепперони"
             pizzaDesc="тонкое тесто, 26 см."
             amount="1"
             price="15р"
           />
           <ModalOrderProduct
-            src="uploads/pizzas/pepperoni.webp"
+            src="../../uploads/pizzas/pepperoni.webp"
             pizzaName="Двойная пепперони"
             pizzaDesc="тонкое тесто, 26 см."
             amount="1"
             price="15р"
           />
           <ModalOrderProduct
-            src="uploads/pizzas/pepperoni.webp"
+            src="../../uploads/pizzas/pepperoni.webp"
             pizzaName="Двойная пепперони"
             pizzaDesc="тонкое тесто, 26 см."
             amount="1"
             price="15р"
           />
           <ModalOrderProduct
-            src="uploads/pizzas/pepperoni.webp"
+            src="../../uploads/pizzas/pepperoni.webp"
             pizzaName="Двойная пепперони"
             pizzaDesc="тонкое тесто, 26 см."
             amount="1"
             price="15р"
           />
           <ModalOrderProduct
-            src="uploads/pizzas/pepperoni.webp"
+            src="../../uploads/pizzas/pepperoni.webp"
             pizzaName="Двойная пепперони"
             pizzaDesc="тонкое тесто, 26 см."
             amount="1"
