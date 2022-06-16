@@ -21,11 +21,25 @@ import ModalInfo from "components/modalInfo/modalInfo";
 const Users = () => {
   const users = useSelector(userSelector);
   const dispatch = useDispatch();
+  const [openModalInfoName, setOpenModalInfoName] = useState(null);
+  const [openModalInfoEmail, setOpenModalInfoEmail] = useState(null);
+  const [openModalInfoAddUser, setOpenModalInfoAddUser] = useState(null);
+  const [openModalInfoEditUser, setOpenModalInfoEditUser] = useState(null);
   const [openModalAdd, setOpenModalAdd] = useState(null);
   const [openModalEdit, setOpenModalEdit] = useState(null);
   const [openModalWarn, setOpenModalWarn] = useState(null);
-  const [newUser, setNewUser] = useState({});
   const [delname, setDelname] = useState("");
+  const [newUser, setNewUser] = useState({
+    id: users.length,
+    login: "",
+    password: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    tel: "",
+    isAdmin: false,
+  });
   const [editUserInfo, setEditUserInfo] = useState({
     id: 1,
     login: "",
@@ -37,10 +51,6 @@ const Users = () => {
     tel: "",
     isAdmin: false,
   });
-  const [openModalInfoName, setOpenModalInfoName] = useState(null);
-  const [openModalInfoEmail, setOpenModalInfoEmail] = useState(null);
-  const [openModalInfoAddUser, setOpenModalInfoAddUser] = useState(null);
-  const [openModalInfoEditUser, setOpenModalInfoEditUser] = useState(null);
 
   const modalDel = (e) => {
     setOpenModalWarn("modal-display");
@@ -57,18 +67,6 @@ const Users = () => {
       ...newUser,
       [e.target.name]: e.target.value,
     });
-    switch (e.target.value) {
-      case "админ":
-        return setNewUser({
-          ...newUser,
-          isAdmin: true,
-        });
-      default:
-        return setNewUser({
-          ...newUser,
-          isAdmin: false,
-        });
-    }
   };
 
   const handleChangeEdit = (e) => {
@@ -76,39 +74,30 @@ const Users = () => {
       ...editUserInfo,
       [e.target.name]: e.target.value,
     });
-    if (e.target.value === "admin") {
-      setEditUserInfo({
-        ...editUserInfo,
-        isAdmin: true,
-      });
-    } else if (e.target.value === "пользователь") {
-      setEditUserInfo({
-        ...editUserInfo,
-        isAdmin: false,
-      });
-    }
   };
 
   const addUser = () => {
-    const existingUserLogin = users.find((item) => item.login === newUser.name);
-    const existingUserEmail = users.find((item) => item.email === newUser.email);
+    const existingUserLogin = users.filter((item) => item.login === newUser.login);
+    const existingUserEmail = users.filter((item) => item.email === newUser.email);
 
-    existingUserLogin
-      ? (setOpenModalInfoName("modal-display"),
-        setTimeout(() => {
-          setOpenModalInfoName(null);
-        }, 1500))
-      : existingUserEmail
-      ? (setOpenModalInfoEmail("modal-display"),
+    if(existingUserLogin.length > 0) {
+      setOpenModalInfoName("modal-display")
+      setTimeout(() => {
+        setOpenModalInfoName(null);
+      }, 1500)
+    } else if(existingUserEmail.length > 0) {
+        setOpenModalInfoEmail("modal-display")
         setTimeout(() => {
           setOpenModalInfoEmail(null);
-        }, 1500))
-      : (dispatch(addUserAction(newUser)),
-        setOpenModalInfoAddUser("modal-display"),
+        }, 1500)
+      } else {
+        dispatch(addUserAction(newUser))
+        setOpenModalInfoAddUser("modal-display")
         setTimeout(() => {
           setOpenModalInfoAddUser(null);
           setOpenModalAdd(null);
-        }, 1500));
+        }, 1500)
+      }
   };
 
   const delUser = () => {
@@ -122,6 +111,7 @@ const Users = () => {
     setOpenModalInfoEditUser("modal-display");
     setTimeout(() => {
       setOpenModalInfoEditUser(null);
+      setOpenModalEdit(null)
     }, 1500);
   };
 
@@ -184,13 +174,13 @@ const Users = () => {
         title="Добавить пользователя"
         handler={() => setOpenModalAdd(null)}
       >
-        <FormCard
+        {/* <FormCard
           name="isAdmin"
           onChange={handleChangeAdd}
           title="Роль"
           type="text"
           placeholder="Статус"
-        />
+        /> */}
         <FormCard
           name="login"
           onChange={handleChangeAdd}
@@ -329,6 +319,6 @@ const Users = () => {
       <ModalInfo display={openModalInfoEditUser} title="Пользователь успешно изменен!" />
     </>
   );
-};
+}
 
 export default Users;

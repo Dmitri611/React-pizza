@@ -31,7 +31,7 @@ const Products = () => {
   const [openModalInfoEditPizza, setOpenModalInfoEditPizza] = useState(null);
   const [delname, setDelname] = useState("");
   const [newPizza, setNewPizza] = useState({
-    id: 1,
+    id: pizzas.length,
     image: "",
     name: "",
     category: "",

@@ -23,20 +23,6 @@ const usersState = {
       address: "Московский проспект 70к3",
       tel: "+375333910514",
       isAdmin: false,
-      basket: [
-        {
-          idPizza: 1,
-          count: 1,
-        },
-        {
-          idPizza: 3,
-          count: 3,
-        },
-        {
-          idPizza: 2,
-          count: 1,
-        },
-      ],
     },
   ],
 };
