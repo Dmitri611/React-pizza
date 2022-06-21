@@ -18,6 +18,7 @@ import { pizzaSelector } from "store/selectors/selectors";
 import { addPizzaAction, delPizzaAction, updatePizzaAction } from "store/actions/pizzaActions";
 import ModalInfo from "components/modalInfo/modalInfo";
 import ModalWarn from "components/modalWarn/modalWarn";
+import addInfoInDB from "addInfoInDB";
 import modalAddStyles from "../../components/modalEdit/modalEdit.module.scss";
 
 const Products = () => {
@@ -96,7 +97,13 @@ const Products = () => {
         setTimeout(() => {
           setOpenModalInfoName(null);
         }, 1000))
-      : (dispatch(addPizzaAction(newPizza)), setModalAddStyle(null));
+      : (
+        dispatch(addPizzaAction(newPizza)), setModalAddStyle(null),
+          indexedDB.open("store").onsuccess = (e) => {
+          const db = e.target.result;
+          addInfoInDB("pizzas", newPizza, db)
+        }
+        );
   };
 
   const updatePizza = () => {

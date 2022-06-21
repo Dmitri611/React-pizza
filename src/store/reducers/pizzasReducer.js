@@ -1,3 +1,5 @@
+import addInfoInDB from "addInfoInDB";
+import createDB from "indexedDB";
 import { ADD_PIZZA, DELETE_PIZZA, UPDATE_PIZZA } from "../constants/constants";
 
 const pizzasState = {
@@ -20,8 +22,7 @@ const pizzasState = {
       image: "uploads/pizzas/barbecue.webp",
       name: "Барбекю",
       category: "Гриль",
-      ingredients:
-        "Острые колбаски чоризо, соус барбекю, томаты, красный лук, моцарелла, томатный соус",
+      ingredients: "Колбаски чоризо, соус барбекю, томаты, красный лук, моцарелла, томатный соус",
       price: 17,
       proteins: 12.78,
       fats: 10.88,
@@ -75,7 +76,7 @@ const pizzasState = {
       name: "Карбонара",
       category: "Острые",
       ingredients:
-        "Бекон, сыры чеддер и пармезан, моцарелла, томаты, соус альфредо, красный лук, чеснок, итальянские травы",
+        "Острый бекон, сыры чеддер и пармезан, моцарелла, томаты, соус альфредо, красный лук, чеснок, итальянские травы",
       price: 18,
       proteins: 12.22,
       fats: 9.11,
@@ -85,6 +86,17 @@ const pizzasState = {
     },
   ],
 };
+
+// createDB();
+
+// const openRequest = indexedDB.open("store");
+
+// openRequest.onsuccess = async (e) => {
+//   const db = e.target.result;
+//   pizzasState.pizzas.forEach(function (item) {
+//     addInfoInDB("pizzas", item, db);
+//   });
+// };
 
 const pizzasReducer = (state = pizzasState, action) => {
   switch (action?.type) {

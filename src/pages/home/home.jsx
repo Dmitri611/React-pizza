@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { pizzaSelector } from "store/selectors/selectors";
 import Dropdown from "components/dropdown/dropdown";
 import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
+import getInfoDB from "getInfoDB";
 import HomeList from "./components/home-list/home-list";
 import Sort from "./components/sort/sort";
 import Content from "./components/content/content";
@@ -15,6 +16,13 @@ const Home = () => {
   const categoryList = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Сырные"];
   const [activeCategory, setActiveCategory] = useState(categoryList[0]);
   const pizzas = useSelector(pizzaSelector);
+
+  indexedDB.open("store").onsuccess = (e) => {
+    const db = e.target.result
+    const result = getInfoDB('pizzas', db);
+    console.log(result.result);
+  }
+
 
   const sortList = ["популярности", "дешёвые", "дорогие"];
   const [sortValue, setSortValue] = useState(sortList[0]);
