@@ -1,12 +1,16 @@
-const getInfoDB = (name, db) => {
-  const transaction = db.transaction(name, "readonly");
-  const store = transaction.objectStore(name);
-  const data = store.getAll();
-  data.onsuccess = () => {
-    // console.log(data.result);
-    return data.result;
-  };
-  return data;
-};
+async function getInfoDB() {
+  return new Promise((resolve) => {
+    const openRequest = indexedDB.open("store", 1);
+    openRequest.onsuccess = () => {
+      const db = openRequest.result;
+      const transaction = db.transaction("pizzas", "readonly");
+      const store = transaction.objectStore("pizzas");
+      const data = store.getAll();
+      data.onsuccess = () => {
+        resolve(data.result);
+      };
+    };
+  });
+}
 
 export default getInfoDB;

@@ -7,7 +7,7 @@ const createDB = () => {
     db = openRequest.result;
 
     if (!db.objectStoreNames.contains("pizzas")) {
-      db.createObjectStore("pizzas", { keyPath: "id" }, { autoIncrement: true });
+      db.createObjectStore("pizzas", { autoIncrement: true });
     }
 
     if (!db.objectStoreNames.contains("users")) {

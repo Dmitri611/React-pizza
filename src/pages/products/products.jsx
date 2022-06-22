@@ -18,7 +18,7 @@ import { pizzaSelector } from "store/selectors/selectors";
 import { addPizzaAction, delPizzaAction, updatePizzaAction } from "store/actions/pizzaActions";
 import ModalInfo from "components/modalInfo/modalInfo";
 import ModalWarn from "components/modalWarn/modalWarn";
-import addInfoInDB from "addInfoInDB";
+// import addInfoInDB from "addInfoInDB";
 import modalAddStyles from "../../components/modalEdit/modalEdit.module.scss";
 
 const Products = () => {
@@ -32,7 +32,7 @@ const Products = () => {
   const [openModalInfoEditPizza, setOpenModalInfoEditPizza] = useState(null);
   const [delname, setDelname] = useState("");
   const [newPizza, setNewPizza] = useState({
-    id: pizzas.length,
+    id: pizzas.length + 1,
     image: "",
     name: "",
     category: "",
@@ -98,11 +98,11 @@ const Products = () => {
           setOpenModalInfoName(null);
         }, 1000))
       : (
-        dispatch(addPizzaAction(newPizza)), setModalAddStyle(null),
-          indexedDB.open("store").onsuccess = (e) => {
-          const db = e.target.result;
-          addInfoInDB("pizzas", newPizza, db)
-        }
+        dispatch(addPizzaAction(newPizza)), setModalAddStyle(null)
+          // indexedDB.open("store").onsuccess = (e) => {
+          // const db = e.target.result;
+          // addInfoInDB("pizzas", newPizza, db)
+        // }
         );
   };
 
