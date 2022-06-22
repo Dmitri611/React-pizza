@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { pizzaSelector } from "store/selectors/selectors";
 import Dropdown from "components/dropdown/dropdown";
 import DropdownItem from "components/dropdown/dropdown-item/dropdown-item";
-// import getInfoDB from "getInfoDB";
 import getInfoDB from "getInfoDB";
 import HomeList from "./components/home-list/home-list";
 import Sort from "./components/sort/sort";
@@ -32,7 +31,7 @@ const Home = () => {
     setChecked(!checked);
   };
 
-  getInfoDB().then(res => res);
+  getInfoDB().then(res => console.log(res));
 
   return (
     <section className={styles.home}>
